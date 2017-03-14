@@ -5,21 +5,31 @@
         <title>Login NERDBOOK</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Davide Curreli">
+        <meta name="keywords" content="social nerd nerdbook amici boh login">
     </head>
     <body>
-        <ul id="navbar">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="descrizione.html">Descrizione</a></li>
-            <li><a href="login.html">Login</a> </li>
-            <li><a href="bacheca.html">Bacheca</a></li>
-            <li><a href="profilo.html">Profilo</a></li>
-        </ul>
-        
+        <header>
+            <div id="title">
+                <h1>NERDBOOK - login</h1>
+            </div>
+        </header>
+        <nav>
+            <ul id="navbar">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="descrizione.html">Descrizione</a></li>
+                <li><a href="login.html">Login</a> </li>
+                <li><a href="bacheca.html">Bacheca</a></li>
+                <li><a href="profilo.html">Profilo</a></li>
+            </ul>
+        </nav>
         <div id="formLogin">
-            <form>
-                ID:<br><input type="text" name="idLogin"><br>
-                Passsword: <br><input type="text" name="passLogin"><br>
-                <input type="submit" value="Submit">
+            <form action="profilo.html" method="post">
+                <label for="user">Username</label><br>
+                <input type="text" name="user" id="user" required><br>
+                <label for="pass">Password</label><br>
+                <input type="password" name="pass" id="pass" required><br>
+                <button type="submit">Login</button>
             </form> 
         </div>
         
