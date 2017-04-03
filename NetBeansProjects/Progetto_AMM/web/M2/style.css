@@ -11,20 +11,18 @@ and open the template in the editor.
 body
 {
     background-color: #67FFA8;
-    font: 17px/25px "Open Sans", Arial, sans-serif;   
+    font: 17px/25px "Open Sans", Arial, sans-serif;
 }
 
 header
 {
     /*background-color: red; /**/
-    height: 90px;
 }
 
 h1
 {
     margin-top: 0px; /*Esaminato con inspector*/
     margin-bottom: 0;
-    
     color: #111111;
     font: 35px/40px "Open Sans", Arial, sans-serif;
     font-weight: bold;
@@ -71,7 +69,6 @@ a:hover
 
 nav
 {
-    width: 100%;  
     height: 50px;
     border: 2px solid green;
 }
@@ -82,6 +79,7 @@ nav ol, nav ul, nav li
     list-style-type: none;
     display: inline-block;
     font-size: 25px;
+    width:100%;
     
     /*background-color: red; /**/
 }
@@ -92,38 +90,59 @@ li
 {
     text-align: center;
 }
-li.indice, li#nerdbook
-{
-}
 li#nerdbook
 {
-    position:relative;
-    top: 12px;
     font-weight: bold;
     font-size:50px;
-    width: 400px;
+    width: 25%;
+    height: 38px;
+    padding-top: 13px;
+    border-right: 2px solid green;
     /*background-color: blue;/**/
 }
 li.indice
 {
-    background-color: red;/**/
+    /*background-color: red;/**/
     width: 200px;
+    padding-top: 13px;
+    height: 38px;
+    margin-left: -7px;
+    position: relative;
+    top: -8px;
     
 }
 li.indice:hover
 {
     background-color: #2D9C5B;
 }
-li>a
-{
-    background-color: blue;
-
-    
-}
 #divBody
 {
-    background-color: blue;/**/
-    border: 2px solid green;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4px;
+    background-color: red;/**/
+    
+}
+#leftSideBar
+{
+    /*background-color: blue; /**/
+    float: left;
+    width: 400px;
+    height: 500px;
+    border: 2px solid green; /**/
+    margin-right: 10px;
+}
+
+
+
+
+#divContent
+{
+    /*background-color: blue;/**/
+    border: 2px solid green; /**/
+    width: 70%;
+    float: left;
 }
 #fraseProfilo
 {
@@ -135,9 +154,19 @@ li>a
     border-bottom: 2px solid green;
     
 }
-
 #fraseProfilo::before
 {
     content: url(../img/userImgDefault.png);
+}
+.persona
+{
+    background-color: pink;
+    
+}
+.persona::before
+{
+    content: url(../img/userImgDefault.png);
+    position: relative;
+    top: 10px;
 }
 /* FINE BACHECA */
