@@ -7,7 +7,7 @@ and open the template in the editor.
     Created on : Mar 28, 2017, 11:02:09 AM
     Author     : davide
 */
-
+/* INIZIO CODICE PER TUTTE LE PAGINE */
 body
 {
     background-color: #67FFA8;
@@ -83,12 +83,13 @@ nav ol, nav ul, nav li
     
     /*background-color: red; /**/
 }
-
-
-/* INIZIO BACHECA */
 li
 {
     text-align: center;
+}
+li.active
+{
+    background-color: #2D9C5B;
 }
 li#nerdbook
 {
@@ -109,11 +110,40 @@ li.indice
     margin-left: -7px;
     position: relative;
     top: -8px;
-    
 }
 li.indice:hover
 {
-    background-color: #2D9C5B;
+    font-size: 28px;
+}
+li.indice:last-child
+{
+    float: right;
+    position: relative;
+    top: -34px;
+    font-size: 18px;
+}
+li.indice:last-child>a
+{
+    /*background-color: red;/**/
+    position: relative;
+    left: 20px;
+}
+li.indice:last-child>a:hover
+{
+    text-decoration: underline;
+}
+li.indice:last-child:hover
+{
+    background-color: transparent;
+    text-align: center;
+}
+li.indice:last-child>img
+{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 25px;
+    right: 8px;
 }
 #divBody
 {
@@ -124,6 +154,9 @@ li.indice:hover
     /*background-color: red;/**/
     
 }
+/* FINE CODICE PER TUTTE LE PAGINE */
+
+/* INIZIO CODICE BACHECA */
 #leftSideBar
 {
     /*background-color: blue; /**/
@@ -133,7 +166,6 @@ li.indice:hover
     margin-right: 10px;
     padding-bottom: 14px;
 }
-
 #searchText
 {
     display:none;
@@ -148,7 +180,6 @@ li.indice:hover
     font-weight: bold;
     
 }
-
 .persona, .gruppo
 {
     /* background-color: pink; /**/
@@ -169,7 +200,6 @@ li.indice:hover
     left: 8px;
 }
 #gruppoCucina::before
-
 {
     content: url(../img/groupCucina.png);
     position: relative;
@@ -181,10 +211,6 @@ li.indice:hover
     position: relative;
     top: 12px;  
 }
-
-
-
-
 #divContent
 {
     /*background-color: blue;/**/
@@ -223,6 +249,8 @@ li.indice:hover
     margin-right: auto;
     margin-top: 20px;
     margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid green; 
 }
 .userPost
 {
@@ -234,22 +262,63 @@ li.indice:hover
     height: 80px;
     width: 80px;
 }
-
 .contentPost
 {
     width: 100%;
-    background-color: red;
 }
-.contentPost>img
+.contentImage
 {
-    margin-left:auto;
+    width: 80%;
+    margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    /* background-color: red;/**/
+}
+.contentImage>img
+{
+    max-width: 100%;
+    height: 700px;
+    max-height: 400px;
+}
+/* FINE CODICE BACHECA */
+/* INIZIO CODICE PROFILO */
 
+
+
+
+/* FINE CODICE PROFILO */
+/* INIZIO CODICE LOGIN */
+#loginHeader, #formLogin
+{
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#loginHeader
+{
+    margin-top: 70px;
+    width: 500px;
+    height: 100px;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+#loginHeader>img
+{
+    width: 54px;
+    height: 44px;
+    position: relative;
+    top: 4px;
+}
+#formLogin
+{
+    padding: 40px;
+    width: 40%;
+    border: 2px solid green;
 }
 
 
-/* FINE BACHECA */
+
+/* FINE CODICE LOGIN */
 
 .red
 {
