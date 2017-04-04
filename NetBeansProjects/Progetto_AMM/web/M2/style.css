@@ -48,7 +48,10 @@ h3
     font: 24px/40px "Open Sans", Arial, sans-serif;
     font-weight: bold;
 }
-
+.buttonConfirm
+{
+    font-weight: bold;
+}
 a:link
 {
    
@@ -79,7 +82,7 @@ nav ol, nav ul, nav li
     list-style-type: none;
     display: inline-block;
     font-size: 25px;
-    width: 1825px;
+    width: 100%;
     
     /*background-color: red; /**/
 }
@@ -150,7 +153,7 @@ li.indice:last-child>img
     width: 1800px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 4px;
+    margin-top: 20px;
     /*background-color: red;/**/
     
 }
@@ -164,7 +167,7 @@ li.indice:last-child>img
     width: 400px;
     border: 2px solid green; /**/
     margin-right: 10px;
-    padding-bottom: 14px;
+    padding:10px;
 }
 #searchText
 {
@@ -281,9 +284,56 @@ li.indice:last-child>img
 }
 /* FINE CODICE BACHECA */
 /* INIZIO CODICE PROFILO */
-
-
-
+#datiFormProfilo
+{
+    float: left;
+    padding: 60px;
+    border: 2px solid green;
+    margin-left: 50px;
+}
+#imgFormProfilo
+{
+    max-width:  200px;
+    max-height: 200px;
+    
+    padding: 10px;
+    background-color: red;
+    border-radius: 5px;
+    border: 2px solid green;
+    float: left;
+}
+#imgFormProfilo img
+{
+    max-width:  100%;
+    max-height: 100%;
+}
+#formProfilo
+{
+    margin-left: 40px;
+    float: left;
+}
+#formProfilo label
+{
+    width: 10px;
+    background-color: red;
+}
+#formProfilo .buttonConfirm
+{
+    width: 100%;
+}
+.singoloCampo
+{   
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: bold;
+}
+.singoloCampo input
+{
+    float: right;
+    margin-left: 20px;
+}
 
 /* FINE CODICE PROFILO */
 /* INIZIO CODICE LOGIN */
@@ -312,11 +362,26 @@ li.indice:last-child>img
 #formLogin
 {
     padding: 40px;
-    width: 40%;
+    width: 400px;
     border: 2px solid green;
+    font-weight: bold;
 }
-
-
+.inputLogin
+{
+    margin-left:auto;
+    margin-right: auto;
+    width: 245px;
+}
+.inputLogin label::after
+{
+    content: '\A';
+    white-space: pre;
+}
+.inputLogin .buttonConfirm
+{
+    margin-top: 20px;
+    width: 245px;
+}
 
 /* FINE CODICE LOGIN */
 

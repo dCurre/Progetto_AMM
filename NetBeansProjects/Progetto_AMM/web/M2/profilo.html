@@ -17,31 +17,56 @@
                        <li id="nerdbook"> NerdBook </li>
                        <li class="indice active"><a href="profilo.html">Profilo</a></li>
                        <li class="indice"><a href="bacheca.html">Bacheca</a></li>
-                       <li class="indice"><a href="login.html"> Login </a></li>
                        <li class="indice"><img src="../img/fotoProfilo1.jpg" alt="Foto Profilo">Davide Spano <a href="login.html"> Logout</a></li>
                    </ol>
                 </nav>
             </div>
         </header>
         <div id="divBody">
-            <div id='datiFormProfilo'>
-                <h2>Modifica dei dati personali:</h2>    
-                <form action="bacheca.html" method="post">
-                    <label for="nome">Nome:</label><br>
-                    <input type="text" name="name" id="nome"><br>
-                    <label for="cognome">Cognome:</label><br>
-                    <input type="text" name="surname" id="cognome"><br>
-                    <label for="prImg">URL immagine del profilo:</label><br>
-                    <input type="url" name="profileImg" id="prImg"><br>
-                    <label for="frase">Frase di presentazione:</label><br>
-                    <input type="text" name="frase" id="frase"><br>
-                    <label for="data">Data di nascita:</label><br>
-                    <input type="date" name="date" id="data"><br>
-                    <label for="password">Password:</label><br>
-                    <input type="password" name="pass" id="password" required><br>
-                    <label for="confermaPassword">Conferma password:</label><br>
-                    <input type="password" name="confPass" id="confermaPassword" required><br>
-                    <button type="submit">Conferma modifiche!</button>
+            <div id="leftSideBar">
+                <div>
+                    <input type="text" name="search" id="searchText" placeholder="Search sumthin">
+                </div>
+                <div id="titlePersona" class="sezioneTitle"> Friend List</div>
+                <div class="persona"> Persona Cognome </div>
+                <div class="persona"> Persona Corto </div>
+                <div class="persona"> Persona CognomeLungo </div>
+                <div id="titleGruppo" class="sezioneTitle">Group List</div>
+                <div class="gruppo" id="gruppoAerei"> Viaggiatori </div>
+                <div class="gruppo" id="gruppoCucina"> Malati di cucina </div>
+            </div>
+            <div id='datiFormProfilo'>   
+                <div id="imgFormProfilo">
+                    <img src="../img/fotoLandscapePost.jpg" alt="Foto Profilo">
+                </div>
+                <form action="bacheca.html" method="post" id="formProfilo">
+                    <div class="singoloCampo">    
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="name" id="nome">
+                    </div>
+                    <div class="singoloCampo">
+                        <label for="cognome">Cognome:</label>
+                        <input type="text" name="surname" id="cognome">
+                    </div>
+                    <div class="singoloCampo">
+                        <label for="data">Data di nascita:</label>
+                        <input type="date" name="date" id="data">
+                    </div>
+                    <div class="singoloCampo">
+                        <label for="frase">Frase di presentazione:</label>
+                        <input type="text" name="frase" id="frase">
+                    </div>
+                    <div class="singoloCampo">
+                        <label for="password">Password:</label>
+                        <input type="password" name="pass" id="password" required>
+                    </div>
+                    <div class="singoloCampo">
+                        <label for="confermaPassword">Conferma password:</label>
+                        <input type="password" name="confPass" id="confermaPassword" required>
+                    </div>
+                    <div>
+                        <button type="submit" class="buttonConfirm">Aggiorna</button>
+                    </div>
                 </form>
             </div>
         </div>
