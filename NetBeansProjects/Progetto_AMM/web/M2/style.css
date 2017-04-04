@@ -79,7 +79,7 @@ nav ol, nav ul, nav li
     list-style-type: none;
     display: inline-block;
     font-size: 25px;
-    width:100%;
+    width: 1825px;
     
     /*background-color: red; /**/
 }
@@ -117,11 +117,11 @@ li.indice:hover
 }
 #divBody
 {
-    width: 96%;
+    width: 1800px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 4px;
-    background-color: red;/**/
+    /*background-color: red;/**/
     
 }
 #leftSideBar
@@ -129,9 +129,57 @@ li.indice:hover
     /*background-color: blue; /**/
     float: left;
     width: 400px;
-    height: 500px;
     border: 2px solid green; /**/
     margin-right: 10px;
+    padding-bottom: 14px;
+}
+
+#searchText
+{
+    display:none;
+}
+.sezioneTitle
+{
+    text-align: center;
+    margin-top: 0px; /*Esaminato con inspector*/
+    margin-bottom: 0;
+    color: #222222;
+    font: 25px/40px "Open Sans", Arial, sans-serif;
+    font-weight: bold;
+    
+}
+
+.persona, .gruppo
+{
+    /* background-color: pink; /**/
+    font-weight: bold;
+    
+}
+.persona::before
+{
+    content: url(../img/userImgDefault.png);
+    position: relative;
+    top: 10px;
+}
+#titleGruppo::after
+{
+    content: url(../img/groupImg.png);
+    position: relative;
+    top: 12px; 
+    left: 8px;
+}
+#gruppoCucina::before
+
+{
+    content: url(../img/groupCucina.png);
+    position: relative;
+    top: 12px;  
+}
+#gruppoAerei::before
+{
+    content: url(../img/groupAirplane.png);
+    position: relative;
+    top: 12px;  
 }
 
 
@@ -141,32 +189,73 @@ li.indice:hover
 {
     /*background-color: blue;/**/
     border: 2px solid green; /**/
-    width: 70%;
+    width: 1300px;
     float: left;
 }
-#fraseProfilo
+#divFrasePersonale
 {
+    margin:0;
     /*background-color: red;/**/
-    padding-top: 20px;
-    padding-left: 100px;
-    height: 40px;
-    font-weight: bold;
-    border-bottom: 2px solid green;
-    
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid green; 
 }
-#fraseProfilo::before
+
+#frasePersonale
 {
-    content: url(../img/userImgDefault.png);
+   margin:0;
+   margin-left: 60px;
+   font-weight: bold;
+   font-size: 18px;
 }
-.persona
-{
-    background-color: pink;
-    
-}
-.persona::before
+
+#frasePersonale::before
 {
     content: url(../img/userImgDefault.png);
     position: relative;
-    top: 10px;
+    top: 16px;
 }
+.post
+{
+    /*background-color: blue; /**/
+    width: 1200px;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.userPost
+{
+    font-weight: bold;
+    font-size: 20px;
+}
+.userPost>img
+{
+    height: 80px;
+    width: 80px;
+}
+
+.contentPost
+{
+    width: 100%;
+    background-color: red;
+}
+.contentPost>img
+{
+    margin-left:auto;
+    margin-right: auto;
+    width: 400px;
+
+}
+
+
 /* FINE BACHECA */
+
+.red
+{
+    background-color: red;
+}
+.blue
+{
+    background-color: blue;
+}
