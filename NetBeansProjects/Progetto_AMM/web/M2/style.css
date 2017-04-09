@@ -136,7 +136,7 @@ li.indice:last-child:hover
         height: 37px;
         margin-left: -7px;
         position: relative;
-        top: 13%;
+        top: -8px;
     }
     li.indice:hover
     {
@@ -360,6 +360,17 @@ li.indice:last-child:hover
         float: right;
         margin-left: 20px;
     }
+    .singoloCampo>input#data
+    {
+        width: 168px;
+    }
+    @-moz-document url-prefix() {
+    .singoloCampo>input#data
+    {
+       width: 229px;
+    
+    }
+}
     .buttonConfirm
     {
         margin-top: 10px;
@@ -682,6 +693,17 @@ li.indice:last-child:hover
     {
         float: right;
         margin-left: 20px;
+    }
+    .singoloCampo>input#data
+    {
+        width: 168px;
+    }
+    @-moz-document url-prefix() {
+        .singoloCampo>input#data
+        {
+           width: 229px;
+
+        }
     }
     .buttonConfirm
     {
