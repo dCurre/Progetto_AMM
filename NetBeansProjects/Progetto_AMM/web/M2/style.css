@@ -765,7 +765,8 @@ li.indice:last-child:hover
 {
     body
     {
-        max-width: 480px;
+        max-width: 450px;
+        width: 100%;
     }
 
     nav
@@ -773,8 +774,7 @@ li.indice:last-child:hover
         height: 50px;
         border: 2px solid green;
         box-shadow: 3px 3px 3px 1px #888888;
-        width: 100%;
-        min-width: 460px;
+        width: 460px;
         background-color: #98F6C0;
         border-radius: 30px;
     }
@@ -797,22 +797,19 @@ li.indice:last-child:hover
         padding-top: 13px;
         border-right: 2px solid green;
         margin-left: 10px;
+        padding-right: 6px;
         /*background-color: blue;/**/
     }
     li.indice
     {
         /*background-color: red;/**/
-        width: 20%;
+        width: 18%;
         padding-top: 13px;
         text-align:center;
         height: 37px;
         margin-left: -4px;
         position: relative;
         top: -2px;
-    }
-    li.indice:hover
-    {
-        font-size: 16px;
     }
     li.indice:last-child
     {
@@ -830,6 +827,7 @@ li.indice:last-child:hover
         /*background-color: red;/**/
         position: relative;
         left: 10px;
+        top: -2px;
     }
     li.indice:last-child>img
     {
@@ -856,8 +854,8 @@ li.indice:last-child:hover
     {
         /*background-color: blue;/**/
         border: 2px solid green; /**/
-        width: 100%;
-        min-width: 450px;
+        width: 80%;
+        min-width: 460px;
         box-shadow: 4px 4px 4px 2px #888888;
         background-color: #98F6C0;
         border-radius: 15px 15px 15px 15px;
@@ -936,7 +934,9 @@ li.indice:last-child:hover
     {
         padding: 10px;
         width: 80%;
-        min-width: 440px;
+        min-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
         padding-bottom: 30px;
         border: 2px solid green;
         border-radius: 15px 50px 50px 50px;
@@ -961,14 +961,17 @@ li.indice:last-child:hover
     }
     #formProfilo
     {
-        width: 100%;
+        width: 90%;
+        margin: auto;
     }
     .singoloCampo
     {   
         height: 30px;
-        width: 100%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
         margin-top: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 22px;
         font-size: 15px;
         font-weight: bold;
     }
@@ -979,21 +982,22 @@ li.indice:last-child:hover
     }
     .singoloCampo input
     {
-        width: 80%;
+        width: 90%;
     }
     #formProfilo .buttonConfirm
     {
         width: 50%;
         margin-left: 25%;
-        margin-top: 10px;
+        margin-top: 20px;
         font-weight: bold;
     }
     /** LOGIN **/
     #loginHeader
     {
         margin-top: 70px;
-        height: 40px;
-        font-size: 40px;
+        height: 35px;
+        width: 100%;
+        font-size: 30px;
         margin-bottom: 50px;
         font-weight: bold;
         text-align: center;
@@ -1007,7 +1011,8 @@ li.indice:last-child:hover
     #formLogin
     {
         padding: 40px;
-        width: 400px;
+        max-width: 200px;
+        width: 60%;
         border: 1px solid green;
         font-weight: bold;
         border-radius: 4px 50px 40px 50px;
@@ -1017,17 +1022,31 @@ li.indice:last-child:hover
     {
         margin-left:auto;
         margin-right: auto;
-        width: 245px;
+        width: 80%;
     }
     .inputLogin label::after
     {
         content: '\A';
         white-space: pre;
     }
+    .inputLogin input
+    {
+        margin:0;
+        padding:0;        
+        width: 97.5%;
+    }
+    @-moz-document url-prefix() 
+    {
+        .inputLogin input
+        {
+            max-width: 91.26%;
+            
+        }
+    }
     .inputLogin .buttonConfirm
     {
         margin-top: 20px;
-        width: 245px;
+        width: 100%;
     }
 }
 /* FINE RESPONSIVE MAX 480px */
