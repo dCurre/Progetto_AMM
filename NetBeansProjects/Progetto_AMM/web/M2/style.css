@@ -364,13 +364,6 @@ li.indice:last-child:hover
     {
         width: 168px;
     }
-    @-moz-document url-prefix() {
-    .singoloCampo>input#data
-    {
-       width: 229px;
-    
-    }
-}
     .buttonConfirm
     {
         margin-top: 10px;
@@ -697,13 +690,6 @@ li.indice:last-child:hover
     .singoloCampo>input#data
     {
         width: 168px;
-    }
-    @-moz-document url-prefix() {
-        .singoloCampo>input#data
-        {
-           width: 229px;
-
-        }
     }
     .buttonConfirm
     {
@@ -1034,14 +1020,6 @@ li.indice:last-child:hover
         margin:0;
         padding:0;        
         width: 97.5%;
-    }
-    @-moz-document url-prefix() 
-    {
-        .inputLogin input
-        {
-            max-width: 91.26%;
-            
-        }
     }
     .inputLogin .buttonConfirm
     {
