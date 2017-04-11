@@ -1,22 +1,12 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Mar 28, 2017, 11:02:09 AM
-    Author     : davide
-*/
-/* INIZIO CODICE PER TUTTE LE RISOLUZIONI */
+/* TUTTE LE PAGINE */
+
 body
 {
+	width: 100%;
     background-color: #5FEB9B;
     font: 17px/25px "Open Sans", Arial, sans-serif;
 }
-header
-{
-    /*background-color: red; /**/
-}
+
 h1
 {
     margin-top: 0px; /*Esaminato con inspector*/
@@ -53,8 +43,26 @@ a:visited
     text-decoration: none;
     color: #111111;
 }
-/* CODICE BACHECA PER TUTTE LE RISOLUZIONI */
-
+header
+{
+    /*background-color: red; /**/
+}
+nav
+{
+    height: 50px;
+    border: 2px solid green;
+    box-shadow: 3px 3px 3px 1px #888888;
+    background-color: #98F6C0;
+    border-radius: 30px;
+}
+nav ol, nav ul, nav li
+{   
+    margin: 0;
+    padding:0;
+    list-style-type: none;
+    display: inline-block;
+    /*background-color: red; /**/
+}
 li
 {
     text-align: center;
@@ -63,77 +71,281 @@ li.active
 {
     background-color: #52CC86;
 }
-li.indice:last-child>a:hover
+li#nerdbook
 {
-    text-decoration: underline;
+    font-weight: bold;
+    width: 25%;
+    height: 38px;
+    padding-top: 13px;
+    border-right: 2px solid green;
+    /*background-color: blue;/**/
+}
+li.indice
+{
+    /*background-color: red;/**/
+    padding-top: 13px;
+    height: 37px;
+}
+li.indice:last-child
+{
+    float: right;
 }
 li.indice:last-child:hover
 {
     background-color: transparent;
     text-align: center;
 }
+li.indice:last-child>a:hover
+{
+    text-decoration: underline;
+}
+/* SIDEBAR TUTTE LE PAGINE */
+#leftSideBar
+{
+    /*background-color: blue; /**/
+    float: left;
+    border: 2px solid green; /**/
+    padding-bottom: 20px;
+    box-shadow: 4px 4px 4px 2px #888888;
+    background-color: #98F6C0;
+    border-radius: 15px 15px 15px 15px;
+}
 #searchText
 {
     display:none;
 }
+.sezioneTitle
+{
+    text-align: center;
+    margin-top: 0px; /*Esaminato con inspector*/
+    margin-bottom: 0;
+    color: #222222;
+    font-weight: bold;
+    border-bottom: 2px solid green;
+    border-radius: 50px;
+}
+#titlePersona
+{
+    height: 44px;
+    padding-top: 12px;
+}
+.persona, .gruppo
+{
+    font-weight: bold;
+}
+.persona::before
+{
+    content: url(../img/userImgDefault.png);
+    position: relative;
+    top: 10px;
+}
+#titleGruppo
+{
+    height: 64px;
+}
+#titleGruppo::after
+{
+    content: url(../img/groupImg.png);
+    position: relative;
+    top: 12px; 
+    left: 8px;
+}
+#gruppoAerei::before
+{
+    content: url(../img/groupAirplane.png);
+    position: relative;
+    top: 12px;  
+}
+#gruppoCucina::before
+{
+    content: url(../img/groupCucina.png);
+    position: relative;
+    top: 12px;  
+}
+
+/* BACHECA */
+#divContent
+{
+    /*background-color: blue;/**/
+    border: 2px solid green; /**/
+    float: left;
+    box-shadow: 4px 4px 4px 2px #888888;
+    background-color: #98F6C0;
+    border-radius: 15px 15px 15px 15px;
+    padding-bottom: 20px;
+}
+#divFrasePersonale
+{
+    /*background-color: red;/**/
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    border-bottom: 2px solid green; 
+    border-radius: 50px;
+}
+#frasePersonale
+{
+   margin:0;
+   position: relative;
+   top: -10px;
+   text-align: center;
+   font-weight: bold;
+}
+#frasePersonale::before
+{
+    content: url(../img/userImgDefault.png);
+    position: relative;
+    top: 14px;
+}
+.post
+{
+    /*background-color: blue; /**/
+    width: 90%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 10px 30px 30px 30px;
+    box-shadow: 1px 1px 1px 1px #888888;
+}
+.userPost
+{
+    font-weight: bold;
+    font-size: 20px;
+}
+.userPost>img
+{
+    height: 80px;
+    width: 80px;
+}
+#frasePersonale
+{
+	font-size: 18px;
+}
+.contentPost
+{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.contentImage
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: red;/**/
+}
+.contentImage>img
+{
+    max-width: 100%;
+    height: 700px;
+    max-height: 400px;
+}
+
+/* PROFILO */
+#datiFormProfilo
+{
+    border: 2px solid green;
+    border-radius: 15px 50px 50px 50px;
+    box-shadow: 4px 4px 4px 2px #888888;
+    background-color: #98F6C0;
+}
+#imgFormProfilo img
+{
+    max-width:  100%;
+    max-height: 100%;
+    box-shadow: 2px 2px 2px 0px #888888;
+}
+#formProfilo
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+#formProfilo .buttonConfirm
+{
+    font-weight: bold;
+}
+.singoloCampo
+{   
+    height: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
 /*  LOGIN */
+#loginHeader
+{
+    margin-top: 70px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid green;
+    border-radius: 30px;
+}
 #loginHeader, #formLogin
 {
     max-width: 50%;
     margin-left: auto;
     margin-right: auto;
 }
-
-.persona, .gruppo
+#loginHeader>img
 {
-    font-weight: bold;
+    width: 54px;
+    height: 44px;
+    position: relative;
+    top: 4px;
 }
+#formLogin
+{
+    padding: 40px;
+    border: 1px solid green;
+    font-weight: bold;
+    border-radius: 4px 50px 40px 50px;
+    box-shadow: 2px 2px 2px 2px #888888;
+}
+.inputLogin
+{
+    margin-left:auto;
+    margin-right: auto;
 
-
-/* FINE CODICE LOGIN */
+}
+.inputLogin label::after
+{
+    content: '\A';
+    white-space: pre;
+}
+.inputLogin .buttonConfirm
+{
+    margin-top: 20px;
+    width: 100%;
+}
 
 /* INIZIO RESPONSIVE MIN 1024px */
 @media screen and (min-width: 1024px)
 {
+	/* TUTTE LE PAGINE */
     body
     {
         min-width: 1550px;
     }
     nav
     {
-        height: 50px;
-        border: 2px solid green;
-        box-shadow: 3px 3px 3px 1px #888888;
         min-width: 1520px;
-        background-color: #98F6C0;
-        border-radius: 30px;
     }
     nav ol, nav ul, nav li
     {   
-        margin: 0;
-        padding:0;
-        list-style-type: none;
-        display: inline-block;
         font-size: 25px;
         width: 100%;
-        /*background-color: red; /**/
     }
     li#nerdbook
     {
-        font-weight: bold;
         font-size: 50px;
-        width: 25%;
-        height: 38px;
-        padding-top: 13px;
-        border-right: 2px solid green;
-        /*background-color: blue;/**/
     }
     li.indice
     {
-        /*background-color: red;/**/
         width: 200px;
-        padding-top: 13px;
-        height: 37px;
         margin-left: -7px;
         position: relative;
         top: -8px;
@@ -144,14 +356,12 @@ li.indice:last-child:hover
     }
     li.indice:last-child
     {
-        float: right;
         position: relative;
         top: -34px;
         font-size: 18px;
     }
     li.indice:last-child>a
     {
-        /*background-color: red;/**/
         position: relative;
         left: 20px;
     }
@@ -172,155 +382,39 @@ li.indice:last-child:hover
         margin-top: 20px;
         /*background-color: red;/**/   
     }
+	/* SIDEBAR TUTTE LE PAGINE */
     #leftSideBar
     {
         /*background-color: blue; /**/
-        float: left;
         width: 400px;
-        border: 2px solid green; /**/
         margin-right: 5%;
         padding: 10px;
-        padding-bottom: 20px;
-        box-shadow: 4px 4px 4px 2px #888888;
-        background-color: #98F6C0;
-        border-radius: 15px 15px 15px 15px;
     }    
     .sezioneTitle
     {
-        text-align: center;
-        margin-top: 0px; /*Esaminato con inspector*/
-        margin-bottom: 0;
-        color: #222222;
         font: 25px/40px "Open Sans", Arial, sans-serif;
-        font-weight: bold;
-        border-bottom: 2px solid green;
-        border-radius: 50px;
-    }
-    .persona::before
-    {
-        content: url(../img/userImgDefault.png);
-        position: relative;
-        top: 10px;
-    }
-    #titlePersona
-    {
-        height: 44px;
-        padding-top: 12px;
     }
     #titleGruppo
     {
         margin-top: 30px;
-        height: 64px;
     }
-    #titleGruppo::after
-    {
-        content: url(../img/groupImg.png);
-        position: relative;
-        top: 12px; 
-        left: 8px;
-    }
-    #gruppoCucina::before
-    {
-        content: url(../img/groupCucina.png);
-        position: relative;
-        top: 12px;  
-    }
-    #gruppoAerei::before
-    {
-        content: url(../img/groupAirplane.png);
-        position: relative;
-        top: 12px;  
-    }
+    
+    /* BACHECA */
     #divContent
     {
-        /*background-color: blue;/**/
-        border: 2px solid green; /**/
         width: 1000px;
-        float: left;
-        box-shadow: 4px 4px 4px 2px #888888;
-        background-color: #98F6C0;
-        border-radius: 15px 15px 15px 15px;
-        padding-bottom: 20px;
     }
     #divFrasePersonale
     {
-        margin-top: 20px;
         width: 70%;
-        margin-left: auto;
-        margin-right: auto;
-        height: 50px;
-        /*background-color: red;/**/
-        border-bottom: 2px solid green; 
-        border-radius: 50px;
     }
-
-    #frasePersonale
-    {
-       margin:0;
-       position: relative;
-       top: -10px;
-       text-align: center;
-       font-weight: bold;
-       font-size: 18px;
-    }
-
-    #frasePersonale::before
-    {
-        content: url(../img/userImgDefault.png);
-        position: relative;
-        top: 14px;
-    }
-    .post
-    {
-        /*background-color: blue; /**/
-        width: 90%;
-        margin-left:auto;
-        margin-right: auto;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        padding: 10px;
-        border: 1px solid green;
-        border-radius: 10px 30px 30px 30px;
-        box-shadow: 1px 1px 1px 1px #888888;
-    }
-    .userPost
-    {
-        font-weight: bold;
-        font-size: 20px;
-    }
-    .userPost>img
-    {
-        height: 80px;
-        width: 80px;
-    }
-    .contentPost
-    {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .contentImage
-    {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        /* background-color: red;/**/
-    }
-    .contentImage>img
-    {
-        max-width: 100%;
-        height: 700px;
-        max-height: 400px;
-    }
+    
     /*PROFILO*/
     #datiFormProfilo
     {
         float: left;
         padding: 60px;
-        border: 2px solid green;
         margin-left: 50px;
-        border-radius: 15px 50px 50px 50px;
-        box-shadow: 4px 4px 4px 2px #888888;
-        background-color: #98F6C0;
     }
     #imgFormProfilo
     {
@@ -331,16 +425,8 @@ li.indice:last-child:hover
         border-radius: 5px;
         float: left;
     }
-    #imgFormProfilo img
-    {
-        max-width:  100%;
-        max-height: 100%;
-        box-shadow: 2px 2px 2px 0px #888888;
-    }
     #formProfilo
     {
-        margin-left: auto;
-        margin-right: auto;
         float: left;
     }
     #formProfilo .buttonConfirm
@@ -349,117 +435,60 @@ li.indice:last-child:hover
     }
     .singoloCampo
     {   
-        height: 30px;
-        margin-top: 10px;
         margin-bottom: 10px;
         font-size: 17px;
-        font-weight: bold;
     }
     .singoloCampo input
     {
         float: right;
         margin-left: 20px;
     }
-    .singoloCampo>input#data
-    {
-        width: 168px;
-    }
-    .buttonConfirm
-    {
-        margin-top: 10px;
-        font-weight: bold;
-    }
     /** LOGIN **/
     #loginHeader
     {
-        margin-top: 70px;
         width: 500px;
         height: 60px;
         font-size: 50px;
-        margin-bottom: 50px;
-        font-weight: bold;
-        text-align: center;
-        border-bottom: 2px solid green;
-        border-radius: 30px;
-    }
-    #loginHeader>img
-    {
-        width: 54px;
-        height: 44px;
-        position: relative;
-        top: 4px;
     }
     #formLogin
     {
-        padding: 40px;
         width: 400px;
-        border: 1px solid green;
-        font-weight: bold;
-        border-radius: 4px 50px 40px 50px;
-        box-shadow: 2px 2px 2px 2px #888888;
     }
     .inputLogin
     {
-        margin-left:auto;
-        margin-right: auto;
-        width: 245px;
+        width: 60%;
     }
-    .inputLogin label::after
+    .inputLogin input
     {
-        content: '\A';
-        white-space: pre;
+        width: 97.3%;
     }
-    .inputLogin .buttonConfirm
-    {
-        margin-top: 20px;
-        width: 245px;
-    }
-
 }
-/* FINE RESPONSIVE MIN 1024px */
 
 /* INIZIO RESPONSIVE RANGE 480px-1024px */
 @media screen and (min-width: 481px) and (max-width: 1023px)
 {
+	/* TUTTE LE PAGINE */
     body
-    {
-        min-width: 1010px;
+    {   
+        min-width: 600px;
     }
     nav
     {
-        height: 50px;
-        border: 2px solid green;
-        box-shadow: 3px 3px 3px 1px #888888;
         min-width: 1010px;
-        background-color: #98F6C0;
-        border-radius: 30px;
     }
     nav ol, nav ul, nav li
     {   
-        margin: 0;
-        padding:0;
-        list-style-type: none;
-        display: inline-block;
         font-size: 20px;
         width: 100%;
-        /*background-color: red; /**/
     }
     li#nerdbook
     {
-        font-weight: bold;
         font-size: 40px;
-        width: 25%;
-        height: 38px;
-        padding-top: 13px;
-        border-right: 2px solid green;
-        /*background-color: blue;/**/
     }
     li.indice
     {
         /*background-color: red;/**/
         width: 150px;
-        padding-top: 13px;
-        height: 37px;
         margin-left: -7px;
         position: relative;
         top: -7px;
@@ -470,7 +499,6 @@ li.indice:last-child:hover
     }
     li.indice:last-child
     {
-        float: right;
         width: 200px;
         position: relative;
         top: -34px;
@@ -478,7 +506,6 @@ li.indice:last-child:hover
     }
     li.indice:last-child>a
     {
-        /*background-color: red;/**/
         position: relative;
         left: 20px;
     }
@@ -499,12 +526,12 @@ li.indice:last-child:hover
         margin-top: 20px;
         /*background-color: red;/**/   
     }
+    
+	/* SIDEBAR TUTTE LE PAGINE */
     #leftSideBar
     {
         /*background-color: blue; /**/
-        float: left;
         width: 200px;
-        border: 2px solid green; /**/
         margin-right: 30px;
         padding: 8px;
         padding-bottom: 20px;
@@ -514,129 +541,24 @@ li.indice:last-child:hover
     }    
     .sezioneTitle
     {
-        text-align: center;
-        margin-top: 0px; /*Esaminato con inspector*/
-        margin-bottom: 0;
-        color: #222222;
         font: 20px/40px "Open Sans", Arial, sans-serif;
-        font-weight: bold;
-        border-bottom: 2px solid green;
-        border-radius: 50px;
-    }
-    .persona::before
-    {
-        content: url(../img/userImgDefault.png);
-        position: relative;
-        top: 10px;
-    }
-    #titlePersona
-    {
-        height: 44px;
-        padding-top: 12px;
     }
     #titleGruppo
     {
         margin-top: 20px;
-        height: 64px;
     }
-    #titleGruppo::after
-    {
-        content: url(../img/groupImg.png);
-        position: relative;
-        top: 12px; 
-        left: 8px;
-    }
-    #gruppoCucina::before
-    {
-        content: url(../img/groupCucina.png);
-        position: relative;
-        top: 12px;  
-    }
-    #gruppoAerei::before
-    {
-        content: url(../img/groupAirplane.png);
-        position: relative;
-        top: 12px;  
-    }
+    
+    /* BACHECA */
     #divContent
     {
-        /*background-color: blue;/**/
-        border: 2px solid green; /**/
         width: 70%;
         min-width: 700px;
-        float: left;
-        box-shadow: 4px 4px 4px 2px #888888;
-        background-color: #98F6C0;
-        border-radius: 15px 15px 15px 15px;
-        padding-bottom: 20px;
     }
     #divFrasePersonale
     {
-        margin-top: 20px;
         width: 70%;
-        margin-left: auto;
-        margin-right: auto;
-        height: 50px;
-        /*background-color: red;/**/
-        border-bottom: 2px solid green; 
-        border-radius: 50px;
     }
-    #frasePersonale
-    {
-       margin:0;
-       position: relative;
-       top: -10px;
-       text-align: center;
-       font-weight: bold;
-       font-size: 18px;
-    }
-    #frasePersonale::before
-    {
-        content: url(../img/userImgDefault.png);
-        position: relative;
-        top: 14px;
-    }
-    .post
-    {
-        /*background-color: blue; /**/
-        width: 90%;
-        margin-left:auto;
-        margin-right: auto;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        padding: 10px;
-        border: 1px solid green;
-        border-radius: 10px 30px 30px 30px;
-        box-shadow: 1px 1px 1px 1px #888888;
-    }
-    .userPost
-    {
-        font-weight: bold;
-        font-size: 20px;
-    }
-    .userPost>img
-    {
-        height: 80px;
-        width: 80px;
-    }
-    .contentPost
-    {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .contentImage
-    {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        /* background-color: red;/**/
-    }
-    .contentImage>img
-    {
-        max-width: 100%;
-        height: 700px;
-        max-height: 400px;
-    }
+    
     /*PROFILO*/
     #datiFormProfilo
     {
@@ -644,10 +566,6 @@ li.indice:last-child:hover
         width: 60%;
         padding: 20px;
         min-width: 650px;
-        border: 2px solid green;
-        border-radius: 15px 50px 50px 50px;
-        box-shadow: 4px 4px 4px 2px #888888;
-        background-color: #98F6C0;
     }
     #imgFormProfilo
     {
@@ -658,17 +576,9 @@ li.indice:last-child:hover
         padding: 10px;
         border-radius: 5px;
     }
-    #imgFormProfilo img
-    {
-        max-width:  100%;
-        max-height: 100%;
-        box-shadow: 2px 2px 2px 0px #888888;
-    }
     #formProfilo
     {
         width: 80%;
-        margin-left:auto;
-        margin-right: auto;
     }
     #formProfilo .buttonConfirm
     {
@@ -676,130 +586,72 @@ li.indice:last-child:hover
     }
     .singoloCampo
     {   
-        height: 30px;
-        margin-top: 10px;
         margin-bottom: 10px;
         font-size: 17px;
-        font-weight: bold;
     }
     .singoloCampo input
     {
         float: right;
         margin-left: 20px;
     }
-    .singoloCampo>input#data
-    {
-        width: 168px;
-    }
-    .buttonConfirm
-    {
-        margin-top: 10px;
-        font-weight: bold;
-    }
     /** LOGIN **/
     #loginHeader
     {
-        margin-top: 70px;
-        width: 500px;
+        width: 350px;
         height: 60px;
-        font-size: 50px;
-        margin-bottom: 50px;
-        font-weight: bold;
-        text-align: center;
-        border-bottom: 2px solid green;
-        border-radius: 30px;
-    }
-    #loginHeader>img
-    {
-        width: 54px;
-        height: 44px;
-        position: relative;
-        top: 4px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 45px;
     }
     #formLogin
     {
-        padding: 40px;
-        width: 400px;
-        border: 1px solid green;
-        font-weight: bold;
-        border-radius: 4px 50px 40px 50px;
-        box-shadow: 2px 2px 2px 2px #888888;
+        max-width: 350px;
     }
     .inputLogin
     {
-        margin-left:auto;
-        margin-right: auto;
-        width: 245px;
+        width: 65%;
     }
-    .inputLogin label::after
+    .inputLogin input
     {
-        content: '\A';
-        white-space: pre;
+        width: 98.37%;
     }
-    .inputLogin .buttonConfirm
-    {
-        margin-top: 20px;
-        width: 245px;
-    }
-
 }
-
-/* FINE RESPONSIVE RANGE 480px-1024px */
 
 /* INIZIO RESPONSIVE MAX 480px */
 @media screen and (max-width: 480px)
 {
+	/* TUTTE LE PAGINE */
     body
     {
         max-width: 450px;
-        width: 100%;
     }
-
     nav
     {
-        height: 50px;
-        border: 2px solid green;
-        box-shadow: 3px 3px 3px 1px #888888;
         width: 460px;
-        background-color: #98F6C0;
-        border-radius: 30px;
     }
     nav ol, nav ul, nav li
     {   
-        margin: 0;
-        padding:0;
-        list-style-type: none;
-        display: inline-block;
         font-size: 14px;
         width: 400px;
         /*background-color: red; /**/
     }
     li#nerdbook
     {
-        font-weight: bold;
         font-size: 20px;
-        width: 25%;
-        height: 38px;
-        padding-top: 13px;
-        border-right: 2px solid green;
         margin-left: 10px;
         padding-right: 6px;
-        /*background-color: blue;/**/
     }
     li.indice
     {
         /*background-color: red;/**/
         width: 18%;
-        padding-top: 13px;
         text-align:center;
-        height: 37px;
         margin-left: -4px;
         position: relative;
         top: -2px;
     }
     li.indice:last-child
     {
-        float: right;
         position: relative;
         left: 50px;
         padding:0;
@@ -810,7 +662,6 @@ li.indice:last-child:hover
     }
     li.indice:last-child>a
     {
-        /*background-color: red;/**/
         position: relative;
         left: 10px;
         top: -2px;
@@ -831,103 +682,35 @@ li.indice:last-child:hover
         margin-top: 14px;
         /*background-color: red;/**/
     }
+    
+	/* SIDEBAR TUTTE LE PAGINE */
     #leftSideBar
     {
         display: none;
     }
-    /** INIZIO BACHECA **/
+    
+    /* BACHECA */
     #divContent
     {
-        /*background-color: blue;/**/
-        border: 2px solid green; /**/
         width: 80%;
         min-width: 460px;
-        box-shadow: 4px 4px 4px 2px #888888;
-        background-color: #98F6C0;
-        border-radius: 15px 15px 15px 15px;
-        padding-bottom: 20px;
     }
     #divFrasePersonale
     {
-        margin-top: 20px;
         width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        height: 50px;
-        /*background-color: red;/**/
-        border-bottom: 2px solid green; 
-        border-radius: 50px;
     }
-
     #frasePersonale
     {
-       margin:0;
-       position: relative;
-       top: -10px;
-       text-align: center;
-       font-weight: bold;
        font-size: 15px;
     }
-    #frasePersonale::before
-    {
-        content: url(../img/userImgDefault.png);
-        position: relative;
-        top: 14px;
-    }
-    .post
-    {
-        /*background-color: blue; /**/
-        width: 90%;
-        margin-left:auto;
-        margin-right: auto;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        padding: 10px;
-        border: 1px solid green;
-        border-radius: 10px 30px 30px 30px;
-        box-shadow: 1px 1px 1px 1px #888888;
-    }
-    .userPost
-    {
-        font-weight: bold;
-        font-size: 20px;
-    }
-    .userPost>img
-    {
-        height: 80px;
-        width: 80px;
-    }
-    .contentPost
-    {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .contentImage
-    {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        /* background-color: red;/**/
-    }
-    .contentImage>img
-    {
-        max-width: 100%;
-        height: 700px;
-        max-height: 400px;
-    }
+    
     /*PROFILO*/
     #datiFormProfilo
     {
         padding: 10px;
         width: 80%;
         min-width: 320px;
-        margin-left: auto;
-        margin-right: auto;
         padding-bottom: 30px;
-        border: 2px solid green;
-        border-radius: 15px 50px 50px 50px;
-        box-shadow: 4px 4px 4px 2px #888888;
-        background-color: #98F6C0;
     }
     #imgFormProfilo
     {
@@ -939,27 +722,23 @@ li.indice:last-child:hover
         padding: 10px;
         border-radius: 5px;
     }
-    #imgFormProfilo img
-    {
-        max-width:  100%;
-        max-height: 100%;
-        box-shadow: 2px 2px 2px 0px #888888;
-    }
     #formProfilo
     {
         width: 90%;
-        margin: auto;
+    }
+    #formProfilo .buttonConfirm
+    {
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 20px;
     }
     .singoloCampo
     {   
-        height: 30px;
         width: 90%;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 10px;
         margin-bottom: 22px;
-        font-size: 15px;
-        font-weight: bold;
+        font-size: 15px;    
     }
     .singoloCampo label::after
     {
@@ -970,25 +749,13 @@ li.indice:last-child:hover
     {
         width: 90%;
     }
-    #formProfilo .buttonConfirm
-    {
-        width: 50%;
-        margin-left: 25%;
-        margin-top: 20px;
-        font-weight: bold;
-    }
+    
     /** LOGIN **/
     #loginHeader
     {
-        margin-top: 70px;
         height: 35px;
         width: 100%;
         font-size: 30px;
-        margin-bottom: 50px;
-        font-weight: bold;
-        text-align: center;
-        border-bottom: 2px solid green;
-        border-radius: 30px;
     }
     #loginHeader>img
     {
@@ -996,35 +763,18 @@ li.indice:last-child:hover
     }
     #formLogin
     {
-        padding: 40px;
         max-width: 200px;
         width: 60%;
-        border: 1px solid green;
-        font-weight: bold;
-        border-radius: 4px 50px 40px 50px;
-        box-shadow: 2px 2px 2px 2px #888888;
     }
     .inputLogin
     {
-        margin-left:auto;
-        margin-right: auto;
         width: 80%;
-    }
-    .inputLogin label::after
-    {
-        content: '\A';
-        white-space: pre;
     }
     .inputLogin input
     {
         margin:0;
         padding:0;        
         width: 97.5%;
-    }
-    .inputLogin .buttonConfirm
-    {
-        margin-top: 20px;
-        width: 100%;
     }
 }
 /* FINE RESPONSIVE MAX 480px */
