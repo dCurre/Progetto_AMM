@@ -470,7 +470,7 @@ li.indice:last-child>a:hover
 	/* TUTTE LE PAGINE */
     body
     {   
-        min-width: 600px;
+        min-width: 850px;
     }
     nav
     {
@@ -563,9 +563,8 @@ li.indice:last-child>a:hover
     #datiFormProfilo
     {
         float: left;
-        width: 60%;
-        padding: 20px;
-        min-width: 650px;
+        width: 70%;
+        padding-bottom: 20px;
     }
     #imgFormProfilo
     {
@@ -692,8 +691,7 @@ li.indice:last-child>a:hover
     /* BACHECA */
     #divContent
     {
-        width: 80%;
-        min-width: 460px;
+        min-width: 450px;
     }
     #divFrasePersonale
     {
@@ -707,6 +705,7 @@ li.indice:last-child>a:hover
     /*PROFILO*/
     #datiFormProfilo
     {
+        margin: auto;
         padding: 10px;
         width: 80%;
         min-width: 320px;
