@@ -1,6 +1,8 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
 <c:set var="page" value="bacheca" scope="request"/>
+<%@page import="amm.nerdbook.Classi.*"%>
+<%@page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 
 <html>
@@ -25,7 +27,13 @@
             </div>
             <div id="divContent">
                 <div id="divFrasePersonale">
-                    <p id="frasePersonale">Davide Curreli: Do or not to do e altre bolle.</p>
+                    <p id="frasePersonale">
+                        <c:set var="userList" value='<%= UtenteFactory.getInstance().getNomi() %>' />
+                            
+                        <c:forEach items="${userList}" var="var">
+                            ${var} <br>
+                        </c:forEach>
+                    </p>
                 </div>
                 
                 <div class="post">
