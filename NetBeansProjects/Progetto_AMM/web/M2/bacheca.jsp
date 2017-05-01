@@ -1,27 +1,15 @@
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
+<c:set var="page" value="bacheca" scope="request"/>
 <!DOCTYPE html>
 
 <html>
     <head>
-        <title>NERDBOOK bacheca</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Davide Curreli">
-        <meta name="keywords" content="social nerd nerdbook amici boh">
-        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+        <jsp:include page="ripetuti/head.jsp"/>
     </head>
     <body>
-        <header>   
-            <div id="divHeader">
-                <nav>
-                   <ol>
-                       <li id="nerdbook"> NerdBook </li>
-                       <li class="indice"><a href="profilo.html">Profilo</a></li>
-                       <li class="indice active"><a href="bacheca.html">Bacheca</a></li>
-                       <li class="indice"><img src="../img/fotoProfilo1.jpg" alt="Foto Profilo">Davide Spano <a href="login.html"> Logout</a></li>
-                   </ol>
-               </nav>
-            </div>
-        </header>
+        <!--Barra di navigazione tra le pagine del sito + logo + utente logout -->
+        <jsp:include page="ripetuti/header.jsp"/>
         <div id="divBody">
             <div id="leftSideBar">
                 <div>

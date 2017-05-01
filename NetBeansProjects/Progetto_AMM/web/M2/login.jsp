@@ -1,13 +1,11 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<c:set var="page" value="login" scope="request"/>
 <!DOCTYPE html>
 
 <html>
     <head>
-        <title>Login NERDBOOK</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Davide Curreli">
-        <meta name="keywords" content="social nerd nerdbook amici boh login">
-        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+        <jsp:include page="ripetuti/head.jsp"/>
     </head>
     <body>
         <header>   
@@ -17,14 +15,18 @@
         </header>
         <div id="divBody">
             <div id="formLogin">
-                <form action="profilo.html" method="post">
+                <c:if test="${invalidData == true}">
+                    <div id="invalidDataWarning">Errore: dati inseriti non corretti!</div>
+                </c:if>
+                
+                <form action="descrizione.jsp" method="post">
                     <div class="inputLogin">
                         <label for="user">Username</label>
-                        <input type="text" name="user" id="user" required>
+                        <input type="text" name="username" id="user" required>
                     </div>
                     <div class="inputLogin">
                         <label for="pass">Password</label>
-                        <input type="password" name="pass" id="pass" required>
+                        <input type="password" name="password" id="pass" required>
                     </div>
                     <div class="inputLogin">
                         <button type="submit" class="buttonConfirm">Login</button>
