@@ -4,33 +4,27 @@
     Author     : davide
 --%>
 
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.util.List"%>
-<%@page import="amm.nerdbook.Classi.*"%>
-<%@page import="java.util.ArrayList" %>
-<c:set var="groupNameList" value='<%= GruppoFactory.getInstance().getNomeGruppo() %>' />
-<c:set var="groupPhotoList" value='<%= GruppoFactory.getInstance().getFotoGruppo() %>' />
 
 <div id="leftSideBar">
     <div>
         <input type="text" name="search" id="searchText" placeholder="Search sumthin">
     </div>
     <div id="titlePersona" class="sezioneTitle"> Friend List</div>
-    
-    ${listaUtenti.getUserById(0).getNome()} asdijasodp
-    
-    <c:forEach items="${lista}" var="listaATM" varStatus="i">
-        
-    
-        <div class="persona"><img src='../${utente.urlFotoProfilo}'> ${listaATM.getUserById(i)} </div>
-    </c:forEach>
+    <c:forEach var="i" begin="0" end="${listaUtenti.getArrayListSize()-1}">
+        <c:if test="${i != userID}">
+            <div class="persona">
+                <img src='../${listaUtenti.getUserById(i).getUrlFotoProfilo()}'>${listaUtenti.getUserById(i).getNome()} ${listaUtenti.getUserById(i).getCognome()}
+            </div>
+        </c:if>
+    </c:forEach>   
     
     <div id="titleGruppo" class="sezioneTitle">Group List</div>
-    
-    <c:forEach items="${groupNameList}" var="group" varStatus="count">
-        <div class="gruppo"><img src='../${groupPhotoList[count.index]}'> ${group} </div>
+    <c:forEach var="i" begin="0" end="${listaGruppi.getArrayListSize()-1}">
+        <div class="gruppo"><img src='../${listaGruppi.getGroupById(i).getUrlFotoGruppo()}'> ${listaGruppi.getGroupById(i).getNome()} </div>
     </c:forEach>
-    
-    
+        
+        USER ID: ${userID}
+        
 </div>

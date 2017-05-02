@@ -17,7 +17,7 @@ public class Utente
     private String email;
     private String password;
     private String urlFotoProfilo;
-    public String ciao = "ciao";
+    private String frasePersonale;
     
     public Utente()//costruttore che setta tutto a vuoto o 0
     {
@@ -27,8 +27,9 @@ public class Utente
         email = "";
         password = "";
         urlFotoProfilo = "";
+        frasePersonale = "";
     }
-    public Utente(int id, String nome, String cognome, String email, String password, String urlFotoProfilo)
+    public Utente(int id, String nome, String cognome, String email, String password, String urlFotoProfilo, String fraseP)
     {
         this.id = id;
         this.nome = nome;
@@ -36,6 +37,7 @@ public class Utente
         this.email = email;
         this.password = password;
         this.urlFotoProfilo = urlFotoProfilo;
+        this.frasePersonale = fraseP;
     }
     
     /**
@@ -120,5 +122,19 @@ public class Utente
      */
     public void setUrlFotoProfilo(String urlFotoProfilo) {
         this.urlFotoProfilo = urlFotoProfilo;
+    }
+
+    /**
+     * @return the frasePersonale
+     */
+    public String getFrasePersonale() {
+        return frasePersonale;
+    }
+
+    /**
+     * @param frasePersonale the frasePersonale to set
+     */
+    public void setFrasePersonale(String frasePersonale) {
+        this.frasePersonale = frasePersonale;
     }
 }

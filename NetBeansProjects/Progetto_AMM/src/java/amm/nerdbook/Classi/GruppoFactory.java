@@ -43,12 +43,12 @@ public class GruppoFactory
          
     }
     
-    public String getNameGroupById(int id)
+    public Gruppo getGroupById(int id)
     {
         for (Gruppo groupTemp : this.groupList) 
         {
             if (groupTemp.getId() == id)
-                return groupTemp.getNome();
+                return groupTemp;
         }
         return null;
     }
@@ -76,5 +76,14 @@ public class GruppoFactory
             arrayFoto.add(temp.getUrlFotoGruppo());
         
         return arrayFoto;
+    }
+    public int getArrayListSize()
+    {
+        int count = 0;
+        
+        for(Gruppo groupTemp : this.groupList)
+            count++;
+        
+        return count;
     }
 }

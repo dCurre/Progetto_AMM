@@ -24,7 +24,8 @@
                     </c:choose> 
                     <a href="bacheca.jsp">Bacheca</a>
                 </li>
-                <li class="indice"><img src="../img/fotoProfilo1.jpg" alt="Foto Profilo">Davide Curreli <a href="login.jsp"> Logout</a></li>
+                
+                <li class="indice"><img src="../${listaUtenti.getUserById(userID).getUrlFotoProfilo()}" alt="Foto Profilo">Ciao, ${listaUtenti.getUserById(userID).getNome()} <a href="login.jsp"> Logout</a></li>
             </ol>
         </nav>
     </div>

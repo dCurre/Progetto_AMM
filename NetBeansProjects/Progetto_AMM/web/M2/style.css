@@ -137,7 +137,7 @@ li.indice:last-child>a:hover
 .persona>img , .gruppo>img
 {
     margin-top: 1px;
-    margin-left: 10px;
+    margin-left: 20px;
     width: 50px;
     height: 50px;
 }
@@ -183,17 +183,10 @@ li.indice:last-child>a:hover
 }
 #frasePersonale
 {
-   margin:0;
    position: relative;
-   top: -10px;
-   text-align: center;
+   top: 18px;
+   left: 30px;
    font-weight: bold;
-}
-#frasePersonale::before
-{
-    content: url(../img/userImgDefault.png);
-    position: relative;
-    top: 14px;
 }
 .post
 {
@@ -318,7 +311,13 @@ li.indice:last-child>a:hover
     margin-top: 20px;
     width: 100%;
 }
-
+#invalidDataWarning
+{
+    color: red;
+    font-weight: bold;
+    width: 300px;
+    margin: auto;
+}
 /* INIZIO RESPONSIVE MIN 1024px */
 @media screen and (min-width: 1024px)
 {

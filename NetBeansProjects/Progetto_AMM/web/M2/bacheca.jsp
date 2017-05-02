@@ -16,6 +16,7 @@
             
             <div id="divContent">
                 <div id="divFrasePersonale">
+                    <p id="frasePersonale">${listaUtenti.getUserById(userID).getNome()}: ${listaUtenti.getUserById(3).getFrasePersonale()} </p>
                 </div>
                 <div class="post">
                     <div class="userPost">

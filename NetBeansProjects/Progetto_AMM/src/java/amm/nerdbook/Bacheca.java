@@ -7,6 +7,7 @@ package amm.nerdbook;
 
 import amm.nerdbook.Classi.*;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -46,18 +47,19 @@ public class Bacheca extends HttpServlet
                 Integer loggedUserID = (Integer)session.getAttribute("logID");
                 userID = loggedUserID;
             }
-
+            
             Utente utente = UtenteFactory.getInstance().getUserById(userID); //singolo user
-            UtenteFactory lista = UtenteFactory.getInstance();
+            UtenteFactory listaUtenti = UtenteFactory.getInstance(); //lista di utenti
+            GruppoFactory listaGruppi = GruppoFactory.getInstance();
             
             if(utente != null)
             {
-                request.setAttribute("utente", utente); 
-
-                List<Post> posts = PostFactory.getInstance().getPostListByUser(utente);
-                request.setAttribute("posts", posts);
-                request.setAttribute("listaUtenti", lista);
+                request.setAttribute("userID", (Integer)session.getAttribute("logID"));
+                request.setAttribute("listaUtenti", listaUtenti); //lista degli utenti
+                request.setAttribute("listaGruppi", listaGruppi);
+                
                 request.getRequestDispatcher("/M2/bacheca.jsp").forward(request, response);
+                
             } else {
                 response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             }

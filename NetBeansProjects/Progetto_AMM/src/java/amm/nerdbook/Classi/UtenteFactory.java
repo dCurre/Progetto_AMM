@@ -29,19 +29,19 @@ public class UtenteFactory {
         //creo degli utenti e li aggiungo in lista
         
         //utente1
-        Utente user0 = new Utente(0,"Davide","Curreli","davidecurreli@mail.com","123","img/fotoProfilo1.jpg");
+        Utente user0 = new Utente(0,"Davide","Curreli","davidecurreli@mail.com","123","img/fotoProfilo1.jpg","We picciò");
         userList.add(user0);
         
         //utente2
-        Utente user1 = new Utente(1,"Gigi","Serreli","ggserreli@mail.com","abcd","img/fotoProfilo2.jpg");
+        Utente user1 = new Utente(1,"Gigi","Serreli","ggserreli@mail.com","abcd","img/fotoProfilo2.jpg","Ciaoo");
         userList.add(user1);
         
         //utente3
-        Utente user2 = new Utente(2,"Gesù","Cristo","camminosullacqua@mail.com","abcd","img/fotoProfilo3.jpg");
+        Utente user2 = new Utente(2,"Gesù","Cristo","camminosullacqua@mail.com","abcd","img/fotoProfilo3.jpg","Che Papa' sia con te!");
         userList.add(user2);
         
         //utente3
-        Utente user3 = new Utente(3,"Andrea","Mutolo","andreamutolo@mail.com","abcd","img/fotoLandscapePost.jpg");
+        Utente user3 = new Utente(3,"Andrea","Mutolo","andreamutolo@mail.com","abcd","img/fotoLandscapePost.jpg","We");
         userList.add(user3);
     }
     
