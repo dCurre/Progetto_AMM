@@ -16,16 +16,16 @@
                         <c:when test="${page=='profilo'}"> class="indice active" </c:when>
                         <c:otherwise> class="indice"> </c:otherwise>
                     </c:choose> 
-                    <a href="profilo.jsp">Profilo</a>
+                    <a href="Profilo">Profilo</a>
                 </li>
                 <li <c:choose>
                         <c:when test="${page=='bacheca'}"> class="indice active" </c:when>
                         <c:otherwise> class="indice"> </c:otherwise>
                     </c:choose> 
-                    <a href="bacheca.jsp">Bacheca</a>
+                    <a href="Bacheca">Bacheca</a>
                 </li>
                 
-                <li class="indice"><img src="../${listaUtenti.getUserById(userID).getUrlFotoProfilo()}" alt="Foto Profilo">Ciao, ${listaUtenti.getUserById(userID).getNome()} <a href="login.jsp"> Logout</a></li>
+                <li class="indice"><img src="../${listaUtenti.getUserById(userID).getUrlFotoProfilo()}" alt="Foto Profilo">Ciao, ${listaUtenti.getUserById(userID).getNome()}<div class="aCapo"> <a href="login.jsp">Logout</a></div></li>
             </ol>
         </nav>
     </div>

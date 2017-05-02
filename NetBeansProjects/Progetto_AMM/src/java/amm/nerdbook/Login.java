@@ -26,13 +26,13 @@ public class Login extends HttpServlet {
         //Apero la sessione
         HttpSession session = request.getSession();
         
-        //Se è impostato il parametro GET logout, distrugge la sessione
-        /*if(request.getParameter("logout")!=null)
+        //Se è impostato, distrugge la sessione
+        if(request.getParameter("logout")!=null)
         {
             session.invalidate();
-            request.getRequestDispatcher("loginForm.jsp").forward(request, response);
+            request.getRequestDispatcher("/M2/login.jsp").forward(request, response);
             return;
-        }*/
+        }
         
         //Se esiste un attributo di sessione loggedIn e questo vale true
         //(Utente già loggato)
@@ -45,7 +45,6 @@ public class Login extends HttpServlet {
         {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
-            
             
             if (username != null && password != null) 
             {
@@ -67,7 +66,6 @@ public class Login extends HttpServlet {
                     request.getRequestDispatcher("/M2/login.jsp").forward(request, response);
                     return;
                 }
-                
             }
         }
         

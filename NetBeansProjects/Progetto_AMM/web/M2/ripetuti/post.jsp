@@ -5,5 +5,17 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
+<div class="post">
+    <div class="userPost">
+        <img src="../img/fotoProfilo1.jpg" alt="Foto Profilo">
+        Persona Prova Molto Brutta
+    </div>
+    <div class="contentPost">
+        <p>Chebbello questo sfondo</p>
+        <div class="contentImage">
+            <img src="../img/fotoLandscapePost.jpg" alt="Foto">
+        </div>
+    </div>
+</div>
 

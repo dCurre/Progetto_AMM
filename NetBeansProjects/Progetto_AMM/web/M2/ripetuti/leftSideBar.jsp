@@ -15,7 +15,7 @@
     <c:forEach var="i" begin="0" end="${listaUtenti.getArrayListSize()-1}">
         <c:if test="${i != userID}">
             <div class="persona">
-                <img src='../${listaUtenti.getUserById(i).getUrlFotoProfilo()}'>${listaUtenti.getUserById(i).getNome()} ${listaUtenti.getUserById(i).getCognome()}
+                <img src='../${listaUtenti.getUserById(i).getUrlFotoProfilo()}'> ${listaUtenti.getUserById(i).getNome()} ${listaUtenti.getUserById(i).getCognome()}
             </div>
         </c:if>
     </c:forEach>   
@@ -25,6 +25,5 @@
         <div class="gruppo"><img src='../${listaGruppi.getGroupById(i).getUrlFotoGruppo()}'> ${listaGruppi.getGroupById(i).getNome()} </div>
     </c:forEach>
         
-        USER ID: ${userID}
         
 </div>

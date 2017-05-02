@@ -33,15 +33,15 @@ public class UtenteFactory {
         userList.add(user0);
         
         //utente2
-        Utente user1 = new Utente(1,"Gigi","Serreli","ggserreli@mail.com","abcd","img/fotoProfilo2.jpg","Ciaoo");
+        Utente user1 = new Utente(1,"Gigi","Serreli","ggserreli@mail.com","123","img/fotoProfilo2.jpg","Ciaoo");
         userList.add(user1);
         
         //utente3
-        Utente user2 = new Utente(2,"Gesù","Cristo","camminosullacqua@mail.com","abcd","img/fotoProfilo3.jpg","Che Papa' sia con te!");
+        Utente user2 = new Utente(2,"Gesu","Cristo","camminosullacqua@mail.com","123","img/fotoProfilo3.jpg","Che Papa' sia con te!");
         userList.add(user2);
         
         //utente3
-        Utente user3 = new Utente(3,"Andrea","Mutolo","andreamutolo@mail.com","abcd","img/fotoLandscapePost.jpg","We");
+        Utente user3 = new Utente(3,"Andrea","Mutolo","andreamutolo@mail.com","123","img/fotoLandscapePost.jpg","We");
         userList.add(user3);
     }
     

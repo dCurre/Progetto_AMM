@@ -16,42 +16,9 @@
             
             <div id="divContent">
                 <div id="divFrasePersonale">
-                    <p id="frasePersonale">${listaUtenti.getUserById(userID).getNome()}: ${listaUtenti.getUserById(3).getFrasePersonale()} </p>
+                    <p id="frasePersonale">${listaUtenti.getUserById(userID).getNome()}: ${listaUtenti.getUserById(userID).getFrasePersonale()} </p>
                 </div>
-                <div class="post">
-                    <div class="userPost">
-                        <img src="../img/fotoProfilo1.jpg" alt="Foto Profilo">
-                        Persona Prova Molto Brutta
-                    </div>
-                    <div class="contentPost">
-                        <p>Chebbello questo sfondo</p>
-                        <div class="contentImage">
-                            <img src="../img/fotoLandscapePost.jpg" alt="Foto">
-                        </div>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="userPost">
-                        <img src="../img/fotoProfilo2.jpg" alt="Foto Profilo">
-                        Persona Prova Molto Seschi
-                    </div>
-                    <div class="contentPost">
-                        <p>Chebbello che sono</p>
-                        <div class="contentImage">
-                            <img src="../img/fotoProfilo2.jpg" alt="Foto">
-                        </div>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="userPost">
-                        <img src="../img/fotoProfilo3.jpg" alt="Foto Profilo">
-                        Persona Prova Molto Bella
-                    </div>
-                    <div class="contentPost">
-                        <p>Chebbello questo stato!</p>
-                       
-                    </div>
-                </div>
+                    <jsp:include page="ripetuti/post.jsp"/>
             </div>
         </div>
     </body>
