@@ -13,16 +13,19 @@ public class Gruppo
 { 
     private int id;
     private String nome;
+    private String urlFotoGruppo;
     
     public Gruppo()
     {
         id = 0;
         nome = "";
+        urlFotoGruppo = "";
     }
-    public Gruppo(int id, String nome)
+    public Gruppo(int id, String nome, String fotoGruppo)
     {
         this.id = id;
         this.nome = nome;
+        this.urlFotoGruppo = fotoGruppo;
     }
 
     /**
@@ -51,6 +54,20 @@ public class Gruppo
      */
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    /**
+     * @return the urlFotoGruppo
+     */
+    public String getUrlFotoGruppo() {
+        return urlFotoGruppo;
+    }
+
+    /**
+     * @param urlFotoGruppo the urlFotoGruppo to set
+     */
+    public void setUrlFotoGruppo(String urlFotoGruppo) {
+        this.urlFotoGruppo = urlFotoGruppo;
     }
     
 }

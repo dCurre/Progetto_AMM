@@ -19,7 +19,7 @@
                     <div id="invalidDataWarning">Errore: dati inseriti non corretti!</div>
                 </c:if>
                 
-                <form action="descrizione.jsp" method="post">
+                <form action="Login" method="post">
                     <div class="inputLogin">
                         <label for="user">Username</label>
                         <input type="text" name="username" id="user" required>

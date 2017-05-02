@@ -26,7 +26,7 @@ public class PostFactory {
 
     private ArrayList<Post> postList = new ArrayList<Post>();
 
-    private PostFactory()
+    public PostFactory()
     {    
         UtenteFactory userFactory = UtenteFactory.getInstance();
 
@@ -50,7 +50,7 @@ public class PostFactory {
         return null;
     }
 
-    public List getPostList(Utente user)
+    public List getPostListByUser(Utente user)
     {
         List<Post> postListTemp = new ArrayList<Post>();
 

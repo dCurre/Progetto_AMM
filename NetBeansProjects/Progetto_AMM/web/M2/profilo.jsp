@@ -13,18 +13,9 @@
         <jsp:include page="ripetuti/header.jsp"/>
         
         <div id="divBody">
-            <div id="leftSideBar">
-                <div>
-                    <input type="text" name="search" id="searchText" placeholder="Search sumthin">
-                </div>
-                <div id="titlePersona" class="sezioneTitle"> Friend List</div>
-                <div class="persona"> Persona Cognome </div>
-                <div class="persona"> Persona Corto </div>
-                <div class="persona"> Persona CognomeLungo </div>
-                <div id="titleGruppo" class="sezioneTitle">Group List</div>
-                <div class="gruppo" id="gruppoAerei"> Viaggiatori </div>
-                <div class="gruppo" id="gruppoCucina"> Malati di cucina </div>
-            </div>
+            
+            <jsp:include page="ripetuti/leftSideBar.jsp"/>
+            
             <div id='datiFormProfilo'>   
                 <div id="imgFormProfilo">
                     <img src="../img/fotoLandscapePost.jpg" alt="Foto Profilo">

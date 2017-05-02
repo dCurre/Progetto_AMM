@@ -17,6 +17,7 @@ public class Utente
     private String email;
     private String password;
     private String urlFotoProfilo;
+    public String ciao = "ciao";
     
     public Utente()//costruttore che setta tutto a vuoto o 0
     {

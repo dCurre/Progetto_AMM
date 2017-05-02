@@ -118,7 +118,7 @@ li.indice:last-child>a:hover
 {
     text-align: center;
     margin-top: 0px; /*Esaminato con inspector*/
-    margin-bottom: 0;
+    margin-bottom: 10px;
     color: #222222;
     font-weight: bold;
     border-bottom: 2px solid green;
@@ -132,13 +132,22 @@ li.indice:last-child>a:hover
 .persona, .gruppo
 {
     font-weight: bold;
+    font-size: 20px;
 }
+.persona>img , .gruppo>img
+{
+    margin-top: 1px;
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+}
+/*
 .persona::before
 {
     content: url(../img/userImgDefault.png);
     position: relative;
     top: 10px;
-}
+}*/
 #titleGruppo
 {
     height: 64px;
@@ -149,18 +158,6 @@ li.indice:last-child>a:hover
     position: relative;
     top: 12px; 
     left: 8px;
-}
-#gruppoAerei::before
-{
-    content: url(../img/groupAirplane.png);
-    position: relative;
-    top: 12px;  
-}
-#gruppoCucina::before
-{
-    content: url(../img/groupCucina.png);
-    position: relative;
-    top: 12px;  
 }
 
 /* BACHECA */

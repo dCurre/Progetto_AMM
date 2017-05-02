@@ -25,20 +25,20 @@ public class GruppoFactory
     
     private ArrayList<Gruppo> groupList = new ArrayList<>();
     
-    private GruppoFactory()//costruttore
+    public GruppoFactory()//costruttore
     {
         //creo degli utenti e li aggiungo in lista
         
         //utente1
-        Gruppo group0 = new Gruppo(0,"Pillone");
+        Gruppo group0 = new Gruppo(0,"Gruppo A","img/fotoProfilo1.jpg");
         groupList.add(group0);
         
         //utente2
-        Gruppo group1 = new Gruppo(1,"Pillinche");
+        Gruppo group1 = new Gruppo(1,"Gruppo B","img/fotoProfilo1.jpg");
         groupList.add(group1);
         
         //utente3
-        Gruppo group2 = new Gruppo(2,"Pilledde");
+        Gruppo group2 = new Gruppo(2,"Gruppo C","img/fotoProfilo1.jpg");
         groupList.add(group2);
          
     }
@@ -60,5 +60,21 @@ public class GruppoFactory
                 return groupTemp.getId();
         }
         return -1;
+    }
+    public ArrayList<String> getNomeGruppo() //restituisce un array con tutti i nomi
+    {
+        ArrayList<String> arrayTempNomi = new ArrayList<>();
+        for(Gruppo temp : this.groupList)
+            arrayTempNomi.add(temp.getNome());
+        
+        return arrayTempNomi;
+    }
+    public ArrayList<String> getFotoGruppo() //restituisce un array con tutti i nomi
+    {
+        ArrayList<String> arrayFoto = new ArrayList<>();
+        for(Gruppo temp : this.groupList)
+            arrayFoto.add(temp.getUrlFotoGruppo());
+        
+        return arrayFoto;
     }
 }

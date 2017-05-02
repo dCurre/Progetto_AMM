@@ -1,8 +1,6 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
 <c:set var="page" value="bacheca" scope="request"/>
-<%@page import="amm.nerdbook.Classi.*"%>
-<%@page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 
 <html>
@@ -13,29 +11,12 @@
         <!--Barra di navigazione tra le pagine del sito + logo + utente logout -->
         <jsp:include page="ripetuti/header.jsp"/>
         <div id="divBody">
-            <div id="leftSideBar">
-                <div>
-                    <input type="text" name="search" id="searchText" placeholder="Search sumthin">
-                </div>
-                <div id="titlePersona" class="sezioneTitle"> Friend List</div>
-                <div class="persona"> Persona Cognome </div>
-                <div class="persona"> Persona Corto </div>
-                <div class="persona"> Persona CognomeLungo </div>
-                <div id="titleGruppo" class="sezioneTitle">Group List</div>
-                <div class="gruppo" id="gruppoAerei"> Viaggiatori </div>
-                <div class="gruppo" id="gruppoCucina"> Malati di cucina </div>
-            </div>
+            
+            <jsp:include page="ripetuti/leftSideBar.jsp"/>
+            
             <div id="divContent">
                 <div id="divFrasePersonale">
-                    <p id="frasePersonale">
-                        <c:set var="userList" value='<%= UtenteFactory.getInstance().getNomi() %>' />
-                            
-                        <c:forEach items="${userList}" var="var">
-                            ${var} <br>
-                        </c:forEach>
-                    </p>
                 </div>
-                
                 <div class="post">
                     <div class="userPost">
                         <img src="../img/fotoProfilo1.jpg" alt="Foto Profilo">
