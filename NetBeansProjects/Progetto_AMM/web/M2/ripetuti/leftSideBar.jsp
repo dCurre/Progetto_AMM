@@ -15,10 +15,10 @@
     <c:forEach var="i" begin="0" end="${listaUtenti.getArrayListSize()-1}">
         <c:if test="${i != userID}">
             <div class="persona">
-                <img src='../${listaUtenti.getUserById(i).getUrlFotoProfilo()}'> ${listaUtenti.getUserById(i).getNome()} ${listaUtenti.getUserById(i).getCognome()}
+                <a href="Bacheca?user${i}"><img src='${listaUtenti.getUserById(i).getUrlFotoProfilo()}'> ${listaUtenti.getUserById(i).getNome()} ${listaUtenti.getUserById(i).getCognome()}</a>
             </div>
         </c:if>
-    </c:forEach>   
+    </c:forEach>  
     
     <div id="titleGruppo" class="sezioneTitle">Group List</div>
     <c:forEach var="i" begin="0" end="${listaGruppi.getArrayListSize()-1}">

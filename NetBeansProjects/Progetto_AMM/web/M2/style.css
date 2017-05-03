@@ -126,20 +126,25 @@ li.indice:last-child>a:hover
 }
 #titlePersona
 {
+    font-weight: bold;
     height: 44px;
     padding-top: 12px;
 }
 .persona, .gruppo
 {
-    font-weight: bold;
+    
     font-size: 20px;
 }
-.persona>img , .gruppo>img
+.persona img , .gruppo img
 {
     margin-top: 1px;
     margin-left: 20px;
     width: 50px;
     height: 50px;
+}
+.persona a.active
+{
+    font-weight: bold;
 }
 /*
 .persona::before
@@ -151,6 +156,7 @@ li.indice:last-child>a:hover
 #titleGruppo
 {
     height: 64px;
+    font-weight: bold;
 }
 #titleGruppo::after
 {
@@ -311,12 +317,16 @@ li.indice:last-child>a:hover
     margin-top: 20px;
     width: 100%;
 }
-#invalidDataWarning
+.invalidDataWarning
 {
     color: red;
     font-weight: bold;
-    width: 300px;
+    width: 500px;
     margin: auto;
+}
+#loginError
+{
+    width: 300px;
 }
 /* INIZIO RESPONSIVE MIN 1024px */
 @media screen and (min-width: 1024px)

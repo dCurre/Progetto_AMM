@@ -39,6 +39,15 @@ public class PostFactory {
         
         Post post2 = new Post(2,userFactory.getUserById(2),null,"Sempre sia lodato",Post.Type.TEXT);
         postList.add(post2);
+        
+        Post post3 = new Post(0,userFactory.getUserById(0),null,"Frase a caaaaaaso1",Post.Type.TEXT);
+        postList.add(post0);
+        
+        Post post4 = new Post(1,userFactory.getUserById(1),"Viaggiatori","Frase a cassssso2",Post.Type.IMAGE);
+        postList.add(post1);
+        
+        Post post5 = new Post(2,userFactory.getUserById(2),null,"Sempre sia lodatoooo",Post.Type.TEXT);
+        postList.add(post2);
     }
 
     public Post getPostById(int id)

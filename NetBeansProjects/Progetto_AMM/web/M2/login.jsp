@@ -16,7 +16,7 @@
         <div id="divBody">
             <div id="formLogin">
                 <c:if test="${invalidData == true}">
-                    <div id="invalidDataWarning">ERRORE: dati inseriti non corretti!</div>
+                    <div class="invalidDataWarning" id="loginError">ERRORE: dati inseriti non corretti!</div>
                 </c:if>
                 
                 <form action="Login" method="post">

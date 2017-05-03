@@ -29,20 +29,24 @@ public class UtenteFactory {
         //creo degli utenti e li aggiungo in lista
         
         //utente1
-        Utente user0 = new Utente(0,"Davide","Curreli","davidecurreli@mail.com","123","img/fotoProfilo1.jpg","We picciò");
+        Utente user0 = new Utente(0,"Davide","Curreli","davidecurreli@mail.com","123","../img/fotoProfilo1.jpg","We picciò");
         userList.add(user0);
         
         //utente2
-        Utente user1 = new Utente(1,"Gigi","Serreli","ggserreli@mail.com","123","img/fotoProfilo2.jpg","Ciaoo");
+        Utente user1 = new Utente(1,"Gigi","Serreli","ggserreli@mail.com","123","../img/fotoProfilo2.jpg","Ciaoo");
         userList.add(user1);
         
         //utente3
-        Utente user2 = new Utente(2,"Gesu","Cristo","camminosullacqua@mail.com","123","img/fotoProfilo3.jpg","Che Papa' sia con te!");
+        Utente user2 = new Utente(2,"Gesu","Cristo","camminosullacqua@mail.com","123","../img/fotoProfilo3.jpg","Che Papa' sia con te!");
         userList.add(user2);
         
-        //utente3
-        Utente user3 = new Utente(3,"Andrea","Mutolo","andreamutolo@mail.com","123","img/fotoLandscapePost.jpg","We");
+        //utente4
+        Utente user3 = new Utente(3,"Andrea","Mutolo","andreamutolo@mail.com","123","../img/fotoLandscapePost.jpg","We");
         userList.add(user3);
+        
+        //utente5
+        Utente user4 = new Utente(4,"Incompleto","Prova",null,"123","../img/fotoLandscapePost.jpg",null);
+        userList.add(user4);
     }
     
     public ArrayList<String> getNominativo() //restituisce un array con tutti i nomi

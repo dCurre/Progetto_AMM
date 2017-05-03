@@ -25,7 +25,7 @@
                     <a href="Bacheca">Bacheca</a>
                 </li>
                 
-                <li class="indice"><img src="../${listaUtenti.getUserById(userID).getUrlFotoProfilo()}" alt="Foto Profilo">Ciao, ${listaUtenti.getUserById(userID).getNome()}<div class="aCapo"> <a href="login.jsp">Logout</a></div></li>
+                <li class="indice"><img src="${listaUtenti.getUserById(userID).getUrlFotoProfilo()}" alt="Foto Profilo">Ciao, ${listaUtenti.getUserById(userID).getNome()}<div class="aCapo"> <a href="Login?logout=1">Logout</a></div></li>
             </ol>
         </nav>
     </div>

@@ -15,31 +15,40 @@
         <div id="divBody">
             
             <jsp:include page="ripetuti/leftSideBar.jsp"/>
-            
-            <div id='datiFormProfilo'>   
+             
+            <div id='datiFormProfilo'>
+                
+                <c:if test="${nullData == true}">
+                    <div class="invalidDataWarning">ERRORE: alcuni campi dell'utente non sono stati impostati!</div>
+                </c:if>
+                
                 <div id="imgFormProfilo">
                     <img src="../img/fotoLandscapePost.jpg" alt="Foto Profilo">
                 </div>
-                <form action="bacheca.html" method="post" id="formProfilo">
+                <form action="Profilo" method="post" id="formProfilo">
                     <div class="singoloCampo">    
                         <label for="nome">Nome:</label>
-                        <input type="text" name="name" id="nome">
+                        <input type="text" name="name" id="nome" value="${listaUtenti.getUserById(userID).getNome()}">
                     </div>
                     <div class="singoloCampo">
                         <label for="cognome">Cognome:</label>
-                        <input type="text" name="surname" id="cognome">
+                        <input type="text" name="surname" id="cognome" value="${listaUtenti.getUserById(userID).getCognome()}" >
                     </div>
                     <div class="singoloCampo">
                         <label for="data">Data di nascita:</label>
-                        <input type="date" name="date" id="data">
+                        <input type="date" name="date" id="data" >
+                    </div>
+                    <div class="singoloCampo">
+                        <label for="urlfotoprofilo">Url Foto Profilo: </label>
+                        <input type="text" name="pass" id="urlfotoprofilo" required value="${listaUtenti.getUserById(userID).getUrlFotoProfilo()}" >
                     </div>
                     <div class="singoloCampo">
                         <label for="frase">Frase di presentazione:</label>
-                        <input type="text" name="frase" id="frase">
+                        <input type="text" name="frase" id="frase" value="${listaUtenti.getUserById(userID).getFrasePersonale()}" >
                     </div>
                     <div class="singoloCampo">
                         <label for="password">Password:</label>
-                        <input type="password" name="pass" id="password" required>
+                        <input type="password" name="pass" id="password" required value="${listaUtenti.getUserById(userID).getPassword()}" >
                     </div>
                     <div class="singoloCampo">
                         <label for="confermaPassword">Conferma password:</label>

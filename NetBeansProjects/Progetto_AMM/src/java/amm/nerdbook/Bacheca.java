@@ -7,6 +7,7 @@ package amm.nerdbook;
 
 import amm.nerdbook.Classi.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -47,13 +48,13 @@ public class Bacheca extends HttpServlet
                 Integer loggedUserID = (Integer)session.getAttribute("logID");
                 userID = loggedUserID;
             }
-            
             Utente utente = UtenteFactory.getInstance().getUserById(userID); //singolo user
             UtenteFactory listaUtenti = UtenteFactory.getInstance(); //lista di utenti
-            GruppoFactory listaGruppi = GruppoFactory.getInstance();
+            GruppoFactory listaGruppi = GruppoFactory.getInstance(); //lista dei gruppi
             
             if(utente != null)
             {
+                
                 request.setAttribute("userID", (Integer)session.getAttribute("logID"));
                 request.setAttribute("listaUtenti", listaUtenti); //lista degli utenti
                 request.setAttribute("listaGruppi", listaGruppi);
@@ -65,7 +66,18 @@ public class Bacheca extends HttpServlet
             }
         }
         else{
-            request.getRequestDispatcher("Login").forward(request, response);
+            try (PrintWriter out = response.getWriter())
+            {
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<title>Servlet Profilo</title>");            
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<h1> Non hai effettuato l'accesso!! <a href='Login'>Login</a> </h1>");
+                out.println("</body>");
+                out.println("</html>");
+            }
         }
     
         

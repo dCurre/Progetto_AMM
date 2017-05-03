@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.jboss.weld.servlet.SessionHolder;
 
 public class Login extends HttpServlet {
 
@@ -56,7 +57,16 @@ public class Login extends HttpServlet {
                     session.setAttribute("loggedIn", true);
                     session.setAttribute("logID", logID);
                     
-                    request.getRequestDispatcher("Bacheca").forward(request, response);
+                    Utente userTemp = UtenteFactory.getInstance().getUserById(logID);
+                    
+                    if(userTemp.getNome() == null || userTemp.getCognome() == null || userTemp.getEmail() == null || userTemp.getFrasePersonale() == null || userTemp.getUrlFotoProfilo() == null)
+                    {// se l'utente è incompleto
+                        session.setAttribute("nullID", logID); //gli passo il log id
+                        request.getRequestDispatcher("Profilo").forward(request, response); //manda al profilo
+                    }
+                    else
+                        request.getRequestDispatcher("Bacheca").forward(request, response);//manda alla bacheca
+                    
                     return;
                 }
                 else //altrimenti se la coppia user/pass non è valida (id==-1)
