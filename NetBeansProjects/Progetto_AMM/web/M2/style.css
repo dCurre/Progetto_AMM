@@ -2,7 +2,7 @@
 
 body
 {
-	width: 100%;
+	
     background-color: #5FEB9B;
     font: 17px/25px "Open Sans", Arial, sans-serif;
 }
@@ -132,7 +132,6 @@ li.indice:last-child>a:hover
 }
 .persona, .gruppo
 {
-    
     font-size: 20px;
 }
 .persona img , .gruppo img
@@ -142,17 +141,6 @@ li.indice:last-child>a:hover
     width: 50px;
     height: 50px;
 }
-.persona a.active
-{
-    font-weight: bold;
-}
-/*
-.persona::before
-{
-    content: url(../img/userImgDefault.png);
-    position: relative;
-    top: 10px;
-}*/
 #titleGruppo
 {
     height: 64px;
@@ -181,6 +169,7 @@ li.indice:last-child>a:hover
 {
     /*background-color: red;/**/
     margin-top: 20px;
+    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
     height: 50px;
@@ -191,9 +180,78 @@ li.indice:last-child>a:hover
 {
    position: relative;
    top: 18px;
-   left: 30px;
+   
+    text-align: center;
    font-weight: bold;
 }
+#formNewPost
+{
+    width: 60%;
+    padding: 30px;
+    border: 2px solid green; 
+    border-radius: 50px;
+    margin: auto;
+}
+#formNewPost .invalidDataWarning, #formNewPost .validDataWarning
+{
+    
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#formLogin label{
+    display: inline-block;
+    width: 100px;
+}
+
+#formLogin input{
+    width: 244px;
+}
+
+#formNewPost label{
+    font: 20px/25px "Open Sans", Arial, sans-serif;
+}
+#postType{
+    padding-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    width: 400px;
+    margin: auto;
+}
+
+#postType div{
+    display: inline-block;
+    padding-right: 5%
+}
+
+#postContent{
+    padding-top: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#postContent label:after{
+    content: '\A';
+    white-space: pre;
+}
+
+#postContent textarea{
+    height: 60px;
+    width: 98.5%;
+}
+
+#postContent textarea:focus{
+   outline: none;
+   border-color: #22bb22;
+   box-shadow: 0 0 10px #22bb22;
+}
+
+form button{
+    width: 100%;
+}
+
 .post
 {
     /*background-color: blue; /**/
@@ -219,7 +277,7 @@ li.indice:last-child>a:hover
 }
 #frasePersonale
 {
-	font-size: 18px;
+    font-size: 18px;
 }
 .contentPost
 {
@@ -228,6 +286,7 @@ li.indice:last-child>a:hover
 }
 .contentImage
 {
+    padding-top: 20px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -317,12 +376,19 @@ li.indice:last-child>a:hover
     margin-top: 20px;
     width: 100%;
 }
-.invalidDataWarning
+.invalidDataWarning, .validDataWarning
 {
-    color: red;
     font-weight: bold;
     width: 500px;
     margin: auto;
+}
+.invalidDataWarning
+{
+    color: red;
+}
+.validDataWarning
+{
+    color: green;
 }
 #loginError
 {
@@ -554,9 +620,18 @@ li.indice:last-child>a:hover
     }
     #titleGruppo
     {
+        font-size: 18px;
         margin-top: 20px;
     }
-    
+    .persona img, .gruppo img
+    {
+        width: 30px;
+        height: 30px;
+    }
+    .persona
+    {
+        font-size: 16px;
+    }
     /* BACHECA */
     #divContent
     {

@@ -16,25 +16,25 @@ public class Post
         TEXT, IMAGE
     };
     
-    private int id;
-    private Utente owner;
-    private String gruppoDiRiferimento; //identifica in quale gruppo si trova il post nel caso sia postato in un gruppo
+    private int id; //id univoco del post
+    private Utente user;
+    private Gruppo gruppo; //identifica in quale gruppo si trova il post nel caso sia postato in un gruppo
     private String content;
     private Type postType;
     
     public Post()
     {
         id = 0;
-        owner = null;
-        gruppoDiRiferimento = "";
+        user = null;
+        gruppo = null;
         content = "";
         postType = Type.TEXT;
     }
-    public Post(int id, Utente owner,String gruppo, String content, Type postType)
+    public Post(int id, Utente user,Gruppo gruppo, String content, Type postType)
     {
         this.id = id;
-        this.owner = owner;
-        this.gruppoDiRiferimento = gruppo;
+        this.user = user;
+        this.gruppo = gruppo;
         this.content = content;
         this.postType = postType;
     }
@@ -53,32 +53,35 @@ public class Post
     }
 
     /**
-     * @return the owner
+     * @return the user
      */
-    public Utente getOwner() {
-        return owner;
+    public Utente getUser() {
+        return user;
     }
 
     /**
-     * @param owner the owner to set
+     * @param user the user to set
      */
-    public void setOwner(Utente owner) {
-        this.owner = owner;
+    public void setUser(Utente user) {
+        this.user = user;
     }
 
+    /**
+     * @return the gruppo
+     */
+    public Gruppo getGruppo() {
+        return gruppo;
+    }
+
+    /**
+     * @param gruppo the gruppo to set
+     */
+    public void setGruppo(Gruppo gruppo) {
+        this.gruppo = gruppo;
+    }
     /**
      * @return the group
      */
-    public String getGruppoDiRiferimento() {
-        return this.gruppoDiRiferimento;
-    }
-
-    /**
-     * @param owner the group to set
-     */
-    public void setGruppoDiRiferimento(String group) {
-        this.gruppoDiRiferimento = group;
-    }
     
     /**
      * @return the content

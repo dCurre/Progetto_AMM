@@ -37,11 +37,11 @@ public class UtenteFactory {
         userList.add(user1);
         
         //utente3
-        Utente user2 = new Utente(2,"Gesu","Cristo","camminosullacqua@mail.com","123","../img/fotoProfilo3.jpg","Che Papa' sia con te!");
+        Utente user2 = new Utente(2,"Gesu","Cristo","camminosullacqua@mail.com","123","../img/gesuFoto.jpg","Che Papa' sia con te!");
         userList.add(user2);
         
         //utente4
-        Utente user3 = new Utente(3,"Andrea","Mutolo","andreamutolo@mail.com","123","../img/fotoLandscapePost.jpg","We");
+        Utente user3 = new Utente(3,"Andrea","Mutolo","andreamutolo@mail.com","123","../img/fotoProfilo3.jpg","We");
         userList.add(user3);
         
         //utente5

@@ -137,4 +137,11 @@ public class Utente
     public void setFrasePersonale(String frasePersonale) {
         this.frasePersonale = frasePersonale;
     }
+    
+    @Override
+    public boolean equals(Object anotherUser) {
+        if (anotherUser instanceof Utente)
+            if (this.getId() == ((Utente)anotherUser).getId()) return true;
+        return false;
+    }
 }

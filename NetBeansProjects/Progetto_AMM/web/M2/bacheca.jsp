@@ -11,14 +11,10 @@
         <!--Barra di navigazione tra le pagine del sito + logo + utente logout -->
         <jsp:include page="ripetuti/header.jsp"/>
         <div id="divBody">
-            
             <jsp:include page="ripetuti/leftSideBar.jsp"/>
             
             <div id="divContent">
-                <div id="divFrasePersonale">
-                    <p id="frasePersonale">${listaUtenti.getUserById(userID).getNome()}: ${listaUtenti.getUserById(userID).getFrasePersonale()} </p>
-                </div>
-                    <jsp:include page="ripetuti/post.jsp"/>
+                <jsp:include page="ripetuti/post.jsp"/>
             </div>
         </div>
     </body>

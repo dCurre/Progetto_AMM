@@ -37,7 +37,7 @@ public class Bacheca extends HttpServlet
         HttpSession session = request.getSession(false);
         
         if(session!=null && session.getAttribute("loggedIn")!=null && session.getAttribute("loggedIn").equals(true))
-        {    
+        {
             String user = request.getParameter("user");
             int userID;
             
@@ -52,9 +52,29 @@ public class Bacheca extends HttpServlet
             UtenteFactory listaUtenti = UtenteFactory.getInstance(); //lista di utenti
             GruppoFactory listaGruppi = GruppoFactory.getInstance(); //lista dei gruppi
             
+            
+            
             if(utente != null)
             {
+                if(request.getParameter("inviato") != null)
+                {
+                    if(request.getParameter("inviato").equals("1") && request.getParameter("postType") != null)
+                    {
+                        request.setAttribute("ok", 1);
+                        request.setAttribute("resultTextPost","Post inviato Correttamente!");
+                    }
+                     else
+                     {
+                        request.setAttribute("ok", 0);
+                        request.setAttribute("resultTextPost","Impossibile inviare post!! Ricontrollare i campi.");
+                     }
+                }
                 
+                
+                request.setAttribute("utente", utente);
+                List<Post> listaPost = PostFactory.getInstance().getPostListByUser(utente);
+                request.setAttribute("listaPost", listaPost);
+                request.setAttribute("userBacheca", userID);
                 request.setAttribute("userID", (Integer)session.getAttribute("logID"));
                 request.setAttribute("listaUtenti", listaUtenti); //lista degli utenti
                 request.setAttribute("listaGruppi", listaGruppi);
