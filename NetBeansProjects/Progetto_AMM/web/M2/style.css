@@ -1,0 +1,870 @@
+/* TUTTE LE PAGINE */
+
+body
+{
+	
+    background-color: #5FEB9B;
+    font: 17px/25px "Open Sans", Arial, sans-serif;
+}
+
+h1
+{
+    margin-top: 0px; /*Esaminato con inspector*/
+    margin-bottom: 0;
+    color: #111111;
+    font: 35px/40px "Open Sans", Arial, sans-serif;
+    font-weight: bold;
+    /*background-color: red;/**/
+}
+h2
+{
+    margin-top: 0px; /*Esaminato con inspector*/
+    margin-bottom: 0;
+    
+    color: #222222;
+    font: 25px/40px "Open Sans", Arial, sans-serif;
+    font-weight: bold;
+}
+h3
+{
+    margin-top: 0px; /*Esaminato con inspector*/
+    margin-bottom: 0;
+    color: #111111;
+    font: 24px/40px "Open Sans", Arial, sans-serif;
+    font-weight: bold;
+}
+a:link
+{
+    text-decoration: none;
+    color: #111111;
+}
+a:visited
+{
+    text-decoration: none;
+    color: #111111;
+}
+header
+{
+    /*background-color: red; /**/
+}
+nav
+{
+    height: 50px;
+    border: 2px solid green;
+    box-shadow: 3px 3px 3px 1px #888888;
+    background-color: #98F6C0;
+    border-radius: 30px;
+}
+nav ol, nav ul, nav li
+{   
+    margin: 0;
+    padding:0;
+    list-style-type: none;
+    display: inline-block;
+    /*background-color: red; /**/
+}
+li
+{
+    text-align: center;
+}
+li.active
+{
+    background-color: #52CC86;
+}
+li#nerdbook
+{
+    font-weight: bold;
+    width: 25%;
+    height: 38px;
+    padding-top: 13px;
+    border-right: 2px solid green;
+    /*background-color: blue;/**/
+}
+li.indice
+{
+    /*background-color: red;/**/
+    padding-top: 13px;
+    height: 37px;
+}
+li.indice:last-child
+{
+    float: right;
+}
+li.indice:last-child:hover
+{
+    background-color: transparent;
+    text-align: center;
+}
+li.indice:last-child>a:hover
+{
+    text-decoration: underline;
+}
+/* SIDEBAR TUTTE LE PAGINE */
+#leftSideBar
+{
+    /*background-color: blue; /**/
+    float: left;
+    border: 2px solid green; /**/
+    padding-bottom: 20px;
+    box-shadow: 4px 4px 4px 2px #888888;
+    background-color: #98F6C0;
+    border-radius: 15px 15px 15px 15px;
+}
+#searchText
+{
+    display:none;
+}
+.sezioneTitle
+{
+    text-align: center;
+    margin-top: 0px; /*Esaminato con inspector*/
+    margin-bottom: 10px;
+    color: #222222;
+    font-weight: bold;
+    border-bottom: 2px solid green;
+    border-radius: 50px;
+}
+#titlePersona
+{
+    font-weight: bold;
+    height: 44px;
+    padding-top: 12px;
+}
+.persona, .gruppo
+{
+    font-size: 20px;
+}
+.persona img , .gruppo img
+{
+    margin-top: 1px;
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+}
+#titleGruppo
+{
+    height: 64px;
+    font-weight: bold;
+}
+#titleGruppo::after
+{
+    content: url(../img/groupImg.png);
+    position: relative;
+    top: 12px; 
+    left: 8px;
+}
+
+/* BACHECA */
+#divContent
+{
+    /*background-color: blue;/**/
+    border: 2px solid green; /**/
+    float: left;
+    box-shadow: 4px 4px 4px 2px #888888;
+    background-color: #98F6C0;
+    border-radius: 15px 15px 15px 15px;
+    padding-bottom: 20px;
+}
+#divFrasePersonale
+{
+    /*background-color: red;/**/
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    border-bottom: 2px solid green; 
+    border-radius: 50px;
+}
+#frasePersonale
+{
+   position: relative;
+   top: 18px;
+   
+    text-align: center;
+   font-weight: bold;
+}
+#formNewPost
+{
+    width: 60%;
+    padding: 30px;
+    border: 2px solid green; 
+    border-radius: 50px;
+    margin: auto;
+}
+#formNewPost .invalidDataWarning, #formNewPost .validDataWarning
+{
+    
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#formLogin label{
+    display: inline-block;
+    width: 100px;
+}
+
+#formLogin input{
+    width: 244px;
+}
+
+#formNewPost label{
+    font: 20px/25px "Open Sans", Arial, sans-serif;
+}
+#postType{
+    padding-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    width: 400px;
+    margin: auto;
+}
+
+#postType div{
+    display: inline-block;
+    padding-right: 5%
+}
+
+#postContent{
+    padding-top: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#postContent label:after{
+    content: '\A';
+    white-space: pre;
+}
+
+#postContent textarea{
+    height: 60px;
+    width: 98.5%;
+}
+
+#postContent textarea:focus{
+   outline: none;
+   border-color: #22bb22;
+   box-shadow: 0 0 10px #22bb22;
+}
+
+form button{
+    width: 100%;
+}
+
+.post
+{
+    /*background-color: blue; /**/
+    width: 90%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 10px 30px 30px 30px;
+    box-shadow: 1px 1px 1px 1px #888888;
+}
+.userPost
+{
+    font-weight: bold;
+    font-size: 20px;
+}
+.userPost>img
+{
+    height: 80px;
+    width: 80px;
+}
+#frasePersonale
+{
+    font-size: 18px;
+}
+.contentPost
+{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.contentImage
+{
+    padding-top: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: red;/**/
+}
+.contentImage>img
+{
+    max-width: 100%;
+    height: 700px;
+    max-height: 400px;
+}
+
+/* PROFILO */
+#datiFormProfilo
+{
+    border: 2px solid green;
+    border-radius: 15px 50px 50px 50px;
+    box-shadow: 4px 4px 4px 2px #888888;
+    background-color: #98F6C0;
+}
+#imgFormProfilo img
+{
+    max-width:  100%;
+    max-height: 100%;
+    box-shadow: 2px 2px 2px 0px #888888;
+}
+#formProfilo
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+#formProfilo .buttonConfirm
+{
+    font-weight: bold;
+}
+.singoloCampo
+{   
+    height: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/*  LOGIN */
+#loginHeader
+{
+    margin-top: 70px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid green;
+    border-radius: 30px;
+}
+#loginHeader, #formLogin
+{
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#loginHeader>img
+{
+    width: 54px;
+    height: 44px;
+    position: relative;
+    top: 4px;
+}
+#formLogin
+{
+    padding: 40px;
+    border: 1px solid green;
+    font-weight: bold;
+    border-radius: 4px 50px 40px 50px;
+    box-shadow: 2px 2px 2px 2px #888888;
+}
+.inputLogin
+{
+    margin-left:auto;
+    margin-right: auto;
+
+}
+.inputLogin label::after
+{
+    content: '\A';
+    white-space: pre;
+}
+.inputLogin .buttonConfirm
+{
+    margin-top: 20px;
+    width: 100%;
+}
+.invalidDataWarning, .validDataWarning
+{
+    font-weight: bold;
+    width: 500px;
+    margin: auto;
+}
+.invalidDataWarning
+{
+    color: red;
+}
+.validDataWarning
+{
+    color: green;
+}
+#loginError
+{
+    width: 300px;
+}
+/* INIZIO RESPONSIVE MIN 1024px */
+@media screen and (min-width: 1024px)
+{
+	/* TUTTE LE PAGINE */
+    body
+    {
+        min-width: 1550px;
+    }
+    nav
+    {
+        min-width: 1520px;
+    }
+    nav ol, nav ul, nav li
+    {   
+        font-size: 25px;
+        width: 100%;
+    }
+    li#nerdbook
+    {
+        font-size: 50px;
+    }
+    li.indice
+    {
+        width: 200px;
+        margin-left: -7px;
+        position: relative;
+        top: -8px;
+    }
+    li.indice:hover
+    {
+        font-size: 28px;
+    }
+    li.indice:last-child
+    {
+        position: relative;
+        top: -34px;
+        font-size: 18px;
+    }
+    li.indice:last-child>a
+    {
+        position: relative;
+        left: 20px;
+    }
+    li.indice:last-child>img
+    {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        top: 25px;
+        right: 8px;
+    }
+    #divBody
+    {
+        max-width: 1550px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        /*background-color: red;/**/   
+    }
+	/* SIDEBAR TUTTE LE PAGINE */
+    #leftSideBar
+    {
+        /*background-color: blue; /**/
+        width: 300px;
+        margin-right: 30px;
+        padding: 10px;
+    }    
+    .sezioneTitle
+    {
+        font: 25px/40px "Open Sans", Arial, sans-serif;
+    }
+    #titleGruppo
+    {
+        margin-top: 30px;
+    }
+    
+    /* BACHECA */
+    #divContent
+    {
+        width: 1000px;
+    }
+    #divFrasePersonale
+    {
+        width: 70%;
+    }
+    
+    /*PROFILO*/
+    #datiFormProfilo
+    {
+        float: left;
+        padding: 60px;
+        margin-left: 50px;
+    }
+    #imgFormProfilo
+    {
+        max-width:  300px;
+        max-height: 300px;
+        margin-right: 50px;
+        padding: 10px;
+        border-radius: 5px;
+        float: left;
+    }
+    #formProfilo
+    {
+        float: left;
+    }
+    #formProfilo .buttonConfirm
+    {
+        width: 100%;
+    }
+    .singoloCampo
+    {   
+        margin-bottom: 10px;
+        font-size: 17px;
+    }
+    .singoloCampo input
+    {
+        float: right;
+        margin-left: 20px;
+    }
+    /** LOGIN **/
+    #loginHeader
+    {
+        width: 500px;
+        height: 60px;
+        font-size: 50px;
+    }
+    #formLogin
+    {
+        width: 400px;
+    }
+    .inputLogin
+    {
+        width: 60%;
+    }
+    .inputLogin input
+    {
+        width: 97.3%;
+    }
+}
+
+/* INIZIO RESPONSIVE RANGE 480px-1024px */
+@media screen and (min-width: 481px) and (max-width: 1023px)
+{
+	/* TUTTE LE PAGINE */
+    body
+    {   
+        min-width: 1000px;
+    }
+    nav
+    {   
+        width: 1000px;
+    }
+    nav ol, nav ul, nav li
+    {   
+        font-size: 20px;
+        width: 100%;
+    }
+    li#nerdbook
+    {
+        font-size: 40px;
+    }
+    li.indice
+    {
+        /*background-color: red;/**/
+        width: 150px;
+        margin-left: -6px;
+        position: relative;
+        top: -7px;
+    }
+    li.indice:hover
+    {
+        font-size: 22px;
+        position: relative;
+        top: -6px;
+    }
+    li.indice:last-child
+    {
+        width: 200px;
+        position: relative;
+        top: -34px;
+        font-size: 18px;
+    }
+    li.indice:last-child>a
+    {
+        position: relative;
+        left: 20px;
+    }
+    li.indice:last-child>img
+    {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        top: 25px;
+        right: 8px;
+    }
+    #divBody
+    {
+        max-width: 1550px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        /*background-color: red;/**/   
+    }
+    
+	/* SIDEBAR TUTTE LE PAGINE */
+    #leftSideBar
+    {
+        /*background-color: blue; /**/
+        width: 200px;
+        margin-left: 15px;
+        margin-right: 30px;
+        padding: 8px;
+        padding-bottom: 20px;
+        box-shadow: 4px 4px 4px 2px #888888;
+        background-color: #98F6C0;
+        border-radius: 15px 15px 15px 15px;
+    }    
+    .sezioneTitle
+    {
+        font: 20px/40px "Open Sans", Arial, sans-serif;
+    }
+    #titleGruppo
+    {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .persona img, .gruppo img
+    {
+        width: 30px;
+        height: 30px;
+    }
+    .persona
+    {
+        font-size: 16px;
+    }
+    /* BACHECA */
+    #divContent
+    {
+        width: 70%;
+        min-width: 700px;
+    }
+    #divFrasePersonale
+    {
+        width: 70%;
+    }
+    
+    /*PROFILO*/
+    #datiFormProfilo
+    {   
+        width: 70%;
+        float: left;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    #imgFormProfilo
+    {
+        max-width:  250px;
+        max-height: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    #formProfilo
+    {
+        width: 80%;
+    }
+    #formProfilo .buttonConfirm
+    {
+        width: 100%;
+    }
+    .singoloCampo
+    {   
+        margin-bottom: 10px;
+        font-size: 17px;
+    }
+    .singoloCampo input
+    {
+        float: right;
+        margin-left: 20px;
+        width: 200px;
+    }
+    
+    /** LOGIN **/
+    #loginHeader
+    {
+        width: 350px;
+        height: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 45px;
+    }
+    #formLogin
+    {
+        max-width: 350px;
+    }
+    .inputLogin
+    {
+        width: 65%;
+    }
+    .inputLogin input
+    {
+        width: 98.37%;
+    }
+}
+
+/* INIZIO RESPONSIVE MAX 480px */
+@media screen and (max-width: 480px)
+{
+	/* TUTTE LE PAGINE */
+    body
+    {
+        max-width: 450px;
+    }
+    nav
+    {
+        width: 100%;
+        min-width: 440px;
+    }
+    nav ol, nav ul, nav li
+    {   
+        font-size: 14px;
+        width: 88%;
+        
+        /*background-color: red; /**/
+    }
+    li#nerdbook
+    {
+        font-size: 20px;
+        margin-left: 10px;
+        padding-right: 6px;
+    }
+    li.indice
+    {
+        /*background-color: red;/**/
+        width: 60px;
+        text-align:center;
+        margin-left: -4px;
+        position: relative;
+        top: -2px;
+    }
+    li.indice:last-child
+    {
+        position: relative;
+        left: 48px;
+        padding:0;
+        height: 50px;
+        width: 28%;
+        top: 1px;
+        font-size: 14px;
+    }
+    li.indice:last-child>a
+    {
+        position: relative;
+        left: 10px;
+        top: -2px;
+    }
+    li.indice:last-child>img
+    {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: 5px;
+        right: 8px;
+    }
+    #divBody
+    {
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 14px;
+        /*background-color: red;/**/
+    }
+    
+	/* SIDEBAR TUTTE LE PAGINE */
+    #leftSideBar
+    {
+        display: none;
+    }
+    
+    /* BACHECA */
+    #divContent
+    {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #divFrasePersonale
+    {
+        width: 90%;
+    }
+    #frasePersonale
+    {
+       font-size: 15px;
+    }
+    
+    /*PROFILO*/
+    #datiFormProfilo
+    {
+        margin: auto;
+        padding: 10px;
+        width: 80%;
+        min-width: 400px;
+        padding-bottom: 30px;
+    }
+    #imgFormProfilo
+    {
+        max-width:  200px;
+        max-height: 200px;
+        width: 100%;
+        margin-left:auto;
+        margin-right: auto;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    #formProfilo
+    {
+        width: 90%;
+    }
+    #formProfilo .buttonConfirm
+    {
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 20px;
+    }
+    .singoloCampo
+    {   
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 22px;
+        font-size: 15px;    
+    }
+    .singoloCampo label::after
+    {
+        content: '\A';
+        white-space: pre;
+    }
+    .singoloCampo input
+    {
+        width: 90%;
+    }
+    
+    /** LOGIN **/
+    #loginHeader
+    {
+        height: 35px;
+        width: 100%;
+        font-size: 30px;
+    }
+    #loginHeader>img
+    {
+        display: none;
+    }
+    #formLogin
+    {
+        max-width: 200px;
+        width: 60%;
+    }
+    .inputLogin
+    {
+        width: 80%;
+    }
+    .inputLogin input
+    {
+        margin:0;
+        padding:0;        
+        width: 97.5%;
+    }
+}
+/* FINE RESPONSIVE MAX 480px */
