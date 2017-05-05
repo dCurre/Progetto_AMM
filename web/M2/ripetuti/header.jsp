@@ -11,7 +11,7 @@
     <div id="divHeader">
         <nav>
             <ol>
-                <li id="nerdbookd"> NerdBook </li>
+                <li id="nerdbook"> NerdBook </li>
                 
                 <c:choose>
                     <c:when test="${page=='profilo'}"><li class="indice active"><a href="Profilo">Profilo</a></li></c:when>
