@@ -12,20 +12,26 @@
         <nav>
             <ol>
                 <li id="nerdbook"> NerdBook </li>
-                <li <c:choose>
-                        <c:when test="${page=='profilo'}"> class="indice active" </c:when>
-                        <c:otherwise> class="indice"> </c:otherwise>
-                    </c:choose> 
-                    <a href="Profilo">Profilo</a>
-                </li>
-                <li <c:choose>
-                        <c:when test="${page=='bacheca'}"> class="indice active" </c:when>
-                        <c:otherwise> class="indice"> </c:otherwise>
-                    </c:choose> 
-                    <a href="Bacheca">Bacheca</a>
-                </li>
                 
-                <li class="indice"><img src="${listaUtenti.getUserById(userID).getUrlFotoProfilo()}" alt="Foto Profilo">Ciao, ${listaUtenti.getUserById(userID).getNome()}<div class="aCapo"> <a href="Login?logout=1">Logout</a></div></li>
+                <c:choose>
+                    <c:when test="${page=='profilo'}"><li class="indice active"><a href="Profilo">Profilo</a></li></c:when>
+                    <c:when test="${page=='descrizione'}"><li class="indice"><a href="M2/Profilo">Profilo</a></li></c:when>
+                    <c:otherwise><li class="indice"><a href="Profilo">Profilo</a></li></c:otherwise>
+                </c:choose> 
+                <c:choose>
+                    <c:when test="${page=='bacheca'}"><li class="indice active"><a href="Bacheca">Bacheca</a></li></c:when>
+                    <c:when test="${page=='descrizione'}"><li class="indice"><a href="M2/Bacheca">Bacheca</a></li></c:when>
+                    <c:otherwise><li class="indice"><a href="Bacheca">Bacheca</a></c:otherwise>
+                </c:choose> 
+                
+                <li class="indice">
+                    <c:choose>
+                        <c:when test="${page=='descrizione'}">
+                            <div class="loginDescrizione"><a href="M2/Login">Login</a></div>
+                        </c:when>
+                            <c:otherwise> <img src="${listaUtenti.getUserById(userID).getUrlFotoProfilo()}" alt="Foto Profilo">Ciao, ${listaUtenti.getUserById(userID).getNome()}<div> <a href="Login?logout=1">Logout</a></div> </c:otherwise>
+                    </c:choose>
+                </li>
             </ol>
         </nav>
     </div>
