@@ -29,7 +29,7 @@
                         </li>
                         <li >
                             <h2>
-                                <a class=faqDispari" href="#modPagamento">Gratis o Pagamentoo?</a>
+                                <a class=faqDispari" href="#modPagamento">Gratis o Pagamento?</a>
                             </h2>
                         </li>
                     </ul>
