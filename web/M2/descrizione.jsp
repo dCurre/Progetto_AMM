@@ -16,38 +16,38 @@
             <div id="faq">
                 <div id="sezioneDomande">
                     <h1> F.A.Q. </h1>
-                    <ul id="ciao">
-                        <li class="faqDispari">
+                    <ul>
+                        <li>
                             <h2>
-                                <a href="#aChiRivolto">A chi è rivolto?</a>
+                                <a href="#aChiRivolto">A chi Ã¨ rivolto?</a>
                             </h2>
                         </li>
-                        <li class="faqPari">
+                        <li>
                             <h2>
                                 <a href="#comeIscriversi">Come iscriversi?</a>
                             </h2>
                         </li>
-                        <li >
+                        <li>
                             <h2>
-                                <a class=faqDispari" href="#modPagamento">Gratis o Pagamento?</a>
+                                <a href="#modPagamento">Gratis o Pagamento?</a>
                             </h2>
                         </li>
                     </ul>
                 </div>
                 <div id="sezioneRisposte">
-                    <div class="rispostaFaq" id="aChiRivolto">
+                    <div id="aChiRivolto">
                         <h3>E' rivolto a:</h3>
-                        <h4>
+                            <h4>
                             Tutti quelli che vogliono iscriversi!
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel dolor mattis, ullamcorper justo at, dapibus elit. Nullam pharetra lobortis tortor sit amet dapibus. Quisque nisi nisl, interdum at bibendum eu, luctus in eros. Integer quis nisl et risus faucibus varius. Quisque fringilla mattis volutpat. Suspendisse potenti. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam pellentesque euismod volutpat. Integer quis odio dictum, pharetra est quis, consequat ipsum. Aliquam pharetra nibh quis velit dapibus, eget sodales erat mollis. Curabitur eget cursus est. Maecenas tempus faucibus nunc. Etiam ut iaculis dolor. Quisque sed aliquam ex.
                             Curabitur porta lorem id odio egestas, a lobortis lacus suscipit. Cras tincidunt cursus ligula et venenatis. Mauris quis leo turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus in pharetra sapien. Aenean pulvinar nisi sapien, in tempus turpis tempus sit amet. Mauris aliquam mauris nulla, eget eleifend sem maximus sed. Sed suscipit commodo gravida. Vivamus urna tellus, malesuada id feugiat at, sollicitudin eu lorem. Praesent volutpat non tortor in convallis. Mauris eleifend nulla sit amet nisi vehicula consectetur in at leo. Quisque in dolor eu tellus feugiat mollis laoreet eget neque.
                             Praesent efficitur lobortis orci, vel sodales lacus tincidunt nec. Quisque vitae gravida orci, vitae fermentum magna. Curabitur condimentum turpis ac malesuada fringilla. Nam posuere, arcu nec vehicula finibus, orci nisl pellentesque magna, sit amet sollicitudin orci velit et velit. Curabitur at magna convallis, convallis orci et, commodo justo. In rhoncus odio sit amet sem ultricies iaculis. Suspendisse finibus metus lectus, varius tristique neque elementum nec. Aenean ultricies eleifend orci sed scelerisque. Aenean gravida vel nunc non lobortis. Sed id vehicula felis, in auctor lacus.
                             Nam erat ante, aliquet vitae scelerisque in, commodo eget felis. Aliquam eros sem, placerat sed diam varius, viverra porta massa. Etiam aliquam, neque luctus pretium malesuada, mauris ex suscipit odio, vel ultrices lorem sem eget sapien. Sed nisi diam, hendrerit eu tellus at, rhoncus ultricies ipsum. Cras et diam quis massa sollicitudin hendrerit ac sit amet dui. Maecenas ac nisl at velit faucibus tempus. Pellentesque a ex erat. Ut vehicula erat at gravida dignissim. Proin pharetra, orci vitae consequat egestas, lacus eros bibendum nisi, ut molestie elit justo sit amet nunc. Pellentesque et justo vel dolor sodales pellentesque.
                             Suspendisse ac neque eget orci accumsan aliquam. Aenean id dapibus augue, ultrices porta mauris. Cras blandit sem non orci egestas tristique sed at nibh. In vitae lacinia dui, ac sagittis ex. Integer rutrum fringilla nulla, ac sagittis dolor vehicula ac. Nullam feugiat nisl felis, condimentum malesuada quam elementum non. Nunc scelerisque vitae justo eget ultricies. Sed id tortor vulputate, porta elit ac, convallis sem. Sed convallis fermentum justo at semper. Mauris malesuada imperdiet diam, non congue tellus dignissim placerat. In elementum sit amet massa sed sagittis. Suspendisse sed aliquet tellus, a suscipit dui. Etiam commodo enim eu vestibulum condimentum. 
-                            <a class="tornaSu" href="#sezioneDomande">^ torna su</a>
                         </h4>
+                        <h2><a href="#sezioneDomande">^ torna su</a></h2>
                     </div>
-                    <div class="rispostaFaq" id="comeIscriversi">
+                    <div id="comeIscriversi">
                         <h3>Facilissimo!</h3>
                         <h4>
                             Vai sul tasto iscriviti...
@@ -56,10 +56,10 @@
                             Praesent efficitur lobortis orci, vel sodales lacus tincidunt nec. Quisque vitae gravida orci, vitae fermentum magna. Curabitur condimentum turpis ac malesuada fringilla. Nam posuere, arcu nec vehicula finibus, orci nisl pellentesque magna, sit amet sollicitudin orci velit et velit. Curabitur at magna convallis, convallis orci et, commodo justo. In rhoncus odio sit amet sem ultricies iaculis. Suspendisse finibus metus lectus, varius tristique neque elementum nec. Aenean ultricies eleifend orci sed scelerisque. Aenean gravida vel nunc non lobortis. Sed id vehicula felis, in auctor lacus.
                             Nam erat ante, aliquet vitae scelerisque in, commodo eget felis. Aliquam eros sem, placerat sed diam varius, viverra porta massa. Etiam aliquam, neque luctus pretium malesuada, mauris ex suscipit odio, vel ultrices lorem sem eget sapien. Sed nisi diam, hendrerit eu tellus at, rhoncus ultricies ipsum. Cras et diam quis massa sollicitudin hendrerit ac sit amet dui. Maecenas ac nisl at velit faucibus tempus. Pellentesque a ex erat. Ut vehicula erat at gravida dignissim. Proin pharetra, orci vitae consequat egestas, lacus eros bibendum nisi, ut molestie elit justo sit amet nunc. Pellentesque et justo vel dolor sodales pellentesque.
                             Suspendisse ac neque eget orci accumsan aliquam. Aenean id dapibus augue, ultrices porta mauris. Cras blandit sem non orci egestas tristique sed at nibh. In vitae lacinia dui, ac sagittis ex. Integer rutrum fringilla nulla, ac sagittis dolor vehicula ac. Nullam feugiat nisl felis, condimentum malesuada quam elementum non. Nunc scelerisque vitae justo eget ultricies. Sed id tortor vulputate, porta elit ac, convallis sem. Sed convallis fermentum justo at semper. Mauris malesuada imperdiet diam, non congue tellus dignissim placerat. In elementum sit amet massa sed sagittis. Suspendisse sed aliquet tellus, a suscipit dui. Etiam commodo enim eu vestibulum condimentum. 
-                            <a class="tornaSu" href="#sezioneDomande">^ torna su</a>
                         </h4>
+                        <h2><a href="#sezioneDomande">^ torna su</a></h2>
                     </div>
-                    <div class="rispostaFaq" id="modPagamento">
+                    <div id="modPagamento">
                         <h3>Non paghi NIENTE!</h3>
                         <h4>
                             Gratis per tutti!
@@ -77,8 +77,8 @@
                             Curabitur porta lorem id odio egestas, a lobortis lacus suscipit. Cras tincidunt cursus ligula et venenatis. Mauris quis leo turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus in pharetra sapien. Aenean pulvinar nisi sapien, in tempus turpis tempus sit amet. Mauris aliquam mauris nulla, eget eleifend sem maximus sed. Sed suscipit commodo gravida. Vivamus urna tellus, malesuada id feugiat at, sollicitudin eu lorem. Praesent volutpat non tortor in convallis. Mauris eleifend nulla sit amet nisi vehicula consectetur in at leo. Quisque in dolor eu tellus feugiat mollis laoreet eget neque.
                             Praesent efficitur lobortis orci, vel sodales lacus tincidunt nec. Quisque vitae gravida orci, vitae fermentum magna. Curabitur condimentum turpis ac malesuada fringilla. Nam posuere, arcu nec vehicula finibus, orci nisl pellentesque magna, sit amet sollicitudin orci velit et velit. Curabitur at magna convallis, convallis orci et, commodo justo. In rhoncus odio sit amet sem ultricies iaculis. Suspendisse finibus metus lectus, varius tristique neque elementum nec. Aenean ultricies eleifend orci sed scelerisque. Aenean gravida vel nunc non lobortis. Sed id vehicula felis, in auctor lacus.
                             Nam erat ante, aliquet vitae scelerisque in, commodo eget felis. Aliquam eros sem, placerat sed diam varius, viverra porta massa. Etiam aliquam, neque luctus pretium malesuada, mauris ex suscipit odio, vel ultrices lorem sem eget sapien. Sed nisi diam, hendrerit eu tellus at, rhoncus ultricies ipsum. Cras et diam quis massa sollicitudin hendrerit ac sit amet dui. Maecenas ac nisl at velit faucibus tempus. Pellentesque a ex erat.
-                            <a class="tornaSu" href="#sezioneDomande">^ torna su</a>
                         </h4>
+                        <h2><a href="#sezioneDomande">^ torna su</a></h2>
                     </div>
                 </div>
             </div>

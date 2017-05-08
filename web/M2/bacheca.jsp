@@ -1,7 +1,6 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
 <c:set var="page" value="bacheca" scope="request"/>
-<c:set var="log" value="${userID}" scope="request"/>
 <!DOCTYPE html>
 
 <html>

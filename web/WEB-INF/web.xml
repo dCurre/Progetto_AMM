@@ -18,6 +18,10 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
+        <url-pattern>/index.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
         <url-pattern>/M2/Login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -26,10 +30,10 @@
     </servlet-mapping>
     <session-config>
         <session-timeout>
-            30
+            4
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>/M2/descrizione.jsp</welcome-file>
+        <welcome-file>/M2/Login</welcome-file>
     </welcome-file-list>
 </web-app>
