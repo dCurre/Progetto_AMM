@@ -8,7 +8,6 @@ package amm.nerdbook;
 import amm.nerdbook.Classi.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashSet;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

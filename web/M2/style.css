@@ -351,8 +351,8 @@ form button{
 }
 #imgFormProfilo img
 {
-    max-width:  100%;
-    max-height: 100%;
+    max-width:  300px;
+    max-height: 300px;
     box-shadow: 2px 2px 2px 0px #888888;
 }
 #formProfilo
