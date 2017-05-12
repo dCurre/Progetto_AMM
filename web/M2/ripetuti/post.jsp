@@ -12,15 +12,15 @@
 </div>
     
 <div id="formNewPost">
-    <form action="Bacheca?user=${userBacheca}&inviato=1" method="post">
+    <form action="RiepilogoPost?user=${userBacheca}" method="post">
         <div id="postType">
             <div>
                 <input type="radio" name="postType" value="textType" id="textType">
-                <label for="textType">Post di Testo</label>
+                <label for="textType">Testo</label>
             </div>
             <div>
                 <input type="radio" name="postType" value="imgType" id="imgType">
-                <label for="imgType">Post con Foto</label>
+                <label for="imgType">Foto</label>
             </div>
         </div>
         <div id="postContent">

@@ -8,6 +8,7 @@ package amm.nerdbook;
 import amm.nerdbook.Classi.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author davide
  */
-public class Profilo extends HttpServlet {
+public class RiepilogoPost extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,7 +37,7 @@ public class Profilo extends HttpServlet {
         HttpSession session = request.getSession(false);
         
         if(session!=null && session.getAttribute("loggedIn")!=null && session.getAttribute("loggedIn").equals(true))
-        {            
+        {
             String user = request.getParameter("user");
             int userID;
             
@@ -47,45 +48,27 @@ public class Profilo extends HttpServlet {
                 Integer loggedUserID = (Integer)session.getAttribute("logID");
                 userID = loggedUserID;
             }
-                        
-            Utente userTemp = UtenteFactory.getInstance().getUserById(userID);            
+            Utente utente = UtenteFactory.getInstance().getUserById(userID); //singolo user
             UtenteFactory listaUtenti = UtenteFactory.getInstance(); //lista di utenti
             GruppoFactory listaGruppi = GruppoFactory.getInstance(); //lista dei gruppi
-            
-            if(userTemp != null)
-            {   
-                if(request.getParameter("confPass") != null && request.getParameter("pass").equals(request.getParameter("confPass")))
-                {
-                    userTemp.setNome(request.getParameter("name"));
-                    userTemp.setCognome(request.getParameter("surname"));
-                    userTemp.setUrlFotoProfilo(request.getParameter("url"));
-                    userTemp.setEmail(request.getParameter("email"));
-                    userTemp.setFrasePersonale(request.getParameter("frase"));
-                    userTemp.setPassword(request.getParameter("pass"));
-                    request.setAttribute("wrongPass", false);
-                    request.setAttribute("nullData", false);
-                }
-                else
-                {
-                    if(request.getParameter("confPass") != null)
-                        request.setAttribute("wrongPass", true);  
-                }
-                if(userTemp.getNome() == null || userTemp.getCognome() == null || userTemp.getEmail() == null || userTemp.getFrasePersonale() == null || userTemp.getUrlFotoProfilo() == null)
-                    request.setAttribute("nullData", true);
-                
-                request.setAttribute("userID", (Integer)session.getAttribute("logID"));
+
+            if(utente != null)
+            {
+                request.setAttribute("testo", request.getParameter("textPost")); //contenuto testo
+                request.setAttribute("immagine", request.getParameter("imgPost")); //contenuto immagine
+                request.setAttribute("radio", request.getParameter("postType")); //result del radio button
+
+                request.setAttribute("utente", utente);
                 request.setAttribute("listaUtenti", listaUtenti); //lista degli utenti
-                request.setAttribute("userTemp", userTemp);
-                request.setAttribute("listaGruppi", listaGruppi);
+                request.setAttribute("listaGruppi", listaGruppi); //lista gruppi
                 
-                request.getRequestDispatcher("/M2/profilo.jsp").forward(request, response);
+                request.getRequestDispatcher("/M2/riepilogoPost.jsp").forward(request, response);
                 
             } else {
                 response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             }
-            
-            
-        }else{
+        }
+        else{
             try (PrintWriter out = response.getWriter())
             {
                 out.println("<!DOCTYPE html>");
@@ -98,8 +81,10 @@ public class Profilo extends HttpServlet {
                 out.println("</body>");
                 out.println("</html>");
             }
-        }
+        }    
+        
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -138,4 +123,5 @@ public class Profilo extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
 }

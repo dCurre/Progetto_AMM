@@ -50,9 +50,7 @@ public class Bacheca extends HttpServlet
             Utente utente = UtenteFactory.getInstance().getUserById(userID); //singolo user
             UtenteFactory listaUtenti = UtenteFactory.getInstance(); //lista di utenti
             GruppoFactory listaGruppi = GruppoFactory.getInstance(); //lista dei gruppi
-            
-            
-            
+
             if(utente != null)
             {
                 if(request.getParameter("inviato") != null)
@@ -68,8 +66,6 @@ public class Bacheca extends HttpServlet
                         request.setAttribute("resultTextPost","Impossibile inviare post!! Ricontrollare i campi.");
                      }
                 }
-                
-                
                 request.setAttribute("utente", utente);
                 List<Post> listaPost = PostFactory.getInstance().getPostListByUser(utente);
                 request.setAttribute("listaPost", listaPost);
@@ -97,11 +93,8 @@ public class Bacheca extends HttpServlet
                 out.println("</body>");
                 out.println("</html>");
             }
-        }
-    
-        
+        }    
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -140,5 +133,4 @@ public class Bacheca extends HttpServlet
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }
