@@ -46,6 +46,10 @@
                         <input type="text" name="url" id="urlfotoprofilo" value="${userTemp.getUrlFotoProfilo()}" >
                     </div>
                     <div class="singoloCampo">
+                        <label for="mail">e-mail: </label>
+                        <input type="text" name="email" id="mail" value="${userTemp.getEmail()}" >
+                    </div>
+                    <div class="singoloCampo">
                         <label for="frase">Frase di presentazione:</label>
                         <input type="text" name="frase" id="frase" value="${userTemp.getFrasePersonale()}" >
                     </div>

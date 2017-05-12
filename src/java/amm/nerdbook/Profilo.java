@@ -56,23 +56,26 @@ public class Profilo extends HttpServlet {
             
             if(userTemp != null)
             {
-                if(userTemp.getNome() == null || userTemp.getCognome() == null || userTemp.getEmail() == null || userTemp.getFrasePersonale() == null || userTemp.getUrlFotoProfilo() == null)
-                    request.setAttribute("nullData", true);
+                
+                if(request.getParameter("confPass") != null && request.getParameter("pass").equals(request.getParameter("confPass")))
+                {
+                    userTemp.setNome(request.getParameter("name"));
+                    userTemp.setCognome(request.getParameter("surname"));
+                    userTemp.setUrlFotoProfilo(request.getParameter("url"));
+                    userTemp.setEmail(request.getParameter("email"));
+                    userTemp.setFrasePersonale(request.getParameter("frase"));
+                    userTemp.setPassword(request.getParameter("pass"));
+                    request.setAttribute("wrongPass", false);
+                    request.setAttribute("nullData", false);
+                }
                 else
                 {
-                    if(request.getParameter("confPass") != null && request.getParameter("pass").equals(request.getParameter("confPass")))
-                    {
-                        userTemp.setNome(request.getParameter("name"));
-                        userTemp.setCognome(request.getParameter("surname"));
-                        userTemp.setUrlFotoProfilo(request.getParameter("url"));
-                        userTemp.setFrasePersonale(request.getParameter("frase"));
-                        userTemp.setPassword(request.getParameter("pass"));
-                        request.setAttribute("wrongPass", false);
-                        request.setAttribute("nullData", false);
-                    }
-                    else
+                    if(request.getParameter("confPass") != null)
                         request.setAttribute("wrongPass", true);  
                 }
+                if(userTemp.getNome() == null || userTemp.getCognome() == null || userTemp.getEmail() == null || userTemp.getFrasePersonale() == null || userTemp.getUrlFotoProfilo() == null)
+                    request.setAttribute("nullData", true);
+                
                 request.setAttribute("userID", (Integer)session.getAttribute("logID"));
                 request.setAttribute("listaUtenti", listaUtenti); //lista degli utenti
                 request.setAttribute("userTemp", userTemp);
