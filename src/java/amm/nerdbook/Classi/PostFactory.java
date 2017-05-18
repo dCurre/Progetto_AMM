@@ -5,6 +5,12 @@
  */
 package amm.nerdbook.Classi;
 
+import amm.nerdbook.Classi.Post.Type;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -23,14 +29,27 @@ public class PostFactory {
         
         return singleton;
     }
-
+    
+    //Gestione DB
+    private String connectionString;
+    
+    public void setConnectionString(String s){
+	this.connectionString = s;
+    }
+    
+    public String getConnectionString(){
+            return this.connectionString;
+    }
+    //Fine gestione DB
+    
+    
     private ArrayList<Post> postList = new ArrayList<Post>();
 
     public PostFactory()
     {    
         UtenteFactory userFactory = UtenteFactory.getInstance();
-        GruppoFactory gruppoFactory = GruppoFactory.getInstance();
-
+        //GruppoFactory gruppoFactory = GruppoFactory.getInstance();
+        /**
         //Creazione Post
         Post post0 = new Post(0,userFactory.getUserById(0),gruppoFactory.getGroupById(0),"Frase a caso1",Post.Type.TEXT);
         postList.add(post0);
@@ -60,43 +79,45 @@ public class PostFactory {
         postList.add(post8);
         
         Post post9 = new Post(9,userFactory.getUserById(3),gruppoFactory.getGroupById(0),"../img/allegatoProfilo2.jpg",Post.Type.IMAGE);
-        postList.add(post9);
+        postList.add(post9);*/
     }
-
-    public List getPostListById(int id) //trova un post tramite l'id univoco di tutti i post creati ( da sempre)
+    public ArrayList<Post> getPostListByUserId(int id)
     {
-
-        List<Post> listaPost = new ArrayList<Post>();
-
-        for (Post post : this.postList) {
-            if (post.getId() == id) {
-                listaPost.add(post);
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "dCurre", "1234");
+            
+            String query = "select * from posts " + "where author = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, id);
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+            ArrayList<Post> arrayPost = new ArrayList<>();
+            // ciclo sulle righe restituite
+            if(res.next())
+            {
+                Post current = new Post();
+                current.setId(res.getInt("id"));
+                current.setUser(res.getInt("author"));
+                current.setContent(res.getString("content"));
+                current.setImg(res.getString("img"));
+                
+                arrayPost.add(current);
+                stmt.close();
+                conn.close();
             }
+            stmt.close();
+            conn.close();
+            return arrayPost;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return listaPost;
-    }
-    public List getPostListByUser(Utente user) {
-
-        List<Post> listaPost = new ArrayList<Post>();
-
-        for (Post post : this.postList) {
-            if (post.getUser().equals(user)) {
-                listaPost.add(post);
-            }
-        }
-        return listaPost;
-    }
-    public List getPostListByGroupName(Gruppo group)
-    {
-
-        List<Post> postListTemp = new ArrayList<Post>();
-
-        for(Post post : this.postList )
-        {
-            if (post.getGruppo().equals(group))
-                postListTemp.add(post);
-        }
-        return postListTemp;
-    }
+        return null;
+    }    
     
 }

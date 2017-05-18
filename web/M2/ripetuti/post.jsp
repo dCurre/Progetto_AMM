@@ -8,11 +8,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <div id="divFrasePersonale">
-    <p id="frasePersonale">${utente.getNome()}: ${utente.getFrasePersonale()} </p>
+    <p id="frasePersonale">${listaUtenti.getUserById(utenteBacheca).getNome()}: ${listaUtenti.getUserById(utenteBacheca).getFrasePersonale()} </p>
 </div>
     
 <div id="formNewPost">
-    <form action="RiepilogoPost?user=${userBacheca}" method="post">
+    <form action="Bacheca?user=${userBacheca}" method="post"> <!-- RiepilogoPost?... -->
         <div id="postType">
             <div>
                 <input type="radio" name="postType" value="textType" id="textType">
@@ -43,16 +43,18 @@
         <div class="invalidDataWarning">${resultTextPost} </div>
     </c:if>  
 </div>
-<c:forEach var="temp" items="${listaPost}">
+<c:forEach var="temp" items="">
     <div class="post">
         <div class="userPost">
-            <img src="${utente.getUrlFotoProfilo()}" alt="Foto Profilo"> ${utente.getNome()} ${utente.getCognome()}
+            <img src="${listaUtenti.getUserById(utenteBacheca).getUrlFotoProfilo()}" alt="Foto Profilo"> ${listaUtenti.getUserById(utenteBacheca).getNome()} ${listaUtenti.getUserById(utenteBacheca).getCognome()}
         </div>
-        <c:if test="${temp.postType == 'TEXT'}">
+        <c:if test="">
             <p> ${temp.getContent()} </p>
         </c:if>    
-        <c:if test="${temp.postType == 'IMAGE'}">
+        <c:if test="true">
+            <p> ${temp.getContent()} </p>
             <div class="contentImage">
+                
                 <img src="${temp.getContent()}" alt="Foto">
             </div>
         </c:if>    

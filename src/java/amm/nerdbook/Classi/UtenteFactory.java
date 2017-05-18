@@ -5,6 +5,7 @@
  */
 package amm.nerdbook.Classi;
 
+import java.sql.*;
 import java.util.ArrayList;
 /**
  *
@@ -13,7 +14,6 @@ import java.util.ArrayList;
 public class UtenteFactory {
 
     private static UtenteFactory singleton;
-
     public static UtenteFactory getInstance()
     {
         if (singleton == null)
@@ -22,76 +22,126 @@ public class UtenteFactory {
         return singleton;
     }
     
-    private ArrayList<Utente> userList = new ArrayList<>();
+    //private ArrayList<Utente> userList = new ArrayList<>();
     
-    public UtenteFactory()//costruttore
-    {
-        //creo degli utenti e li aggiungo in lista
-        
-        //utente1
-        Utente user0 = new Utente(0,"Davide","Curreli","davidecurreli@mail.com","123","../img/fotoProfilo1.jpg","We picciò");
-        userList.add(user0);
-        
-        //utente2
-        Utente user1 = new Utente(1,"Gigi","Serreli","ggserreli@mail.com","123","../img/fotoProfilo2.jpg","Ciaoo");
-        userList.add(user1);
-        
-        //utente3
-        Utente user2 = new Utente(2,"Gesu","Cristo","camminosullacqua@mail.com","123","../img/gesuFoto.jpg","Che Papa' sia con te!");
-        userList.add(user2);
-        
-        //utente4
-        Utente user3 = new Utente(3,"Andrea","Mutolo","andreamutolo@mail.com","123","../img/fotoProfilo3.jpg","We");
-        userList.add(user3);
-        
-        //utente5
-        Utente user4 = new Utente(4,"Incompleto","Prova",null,"123","../img/fotoLandscapePost.jpg",null);
-        userList.add(user4);
+    //Gestione DB
+    private String connectionString;
+    
+    public void setConnectionString(String s){
+	this.connectionString = s;
     }
     
-    public ArrayList<String> getNominativo() //restituisce un array con tutti i nomi
-    {
-        ArrayList<String> arrayTempNomi = new ArrayList<>();
-        for(Utente temp : this.userList)
-            arrayTempNomi.add(temp.getNome() + " " + temp.getCognome());
-        
-        return arrayTempNomi;
+    public String getConnectionString(){
+            return this.connectionString;
     }
-    
-    public ArrayList<String> getFotoProfilo() //restituisce un array con tutti i nomi
-    {
-        ArrayList<String> arrayFoto = new ArrayList<>();
-        for(Utente temp : this.userList)
-            arrayFoto.add(temp.getUrlFotoProfilo());
-        
-        return arrayFoto;
+    //Fine gestione DB
+
+    private UtenteFactory(){
     }
-    
-    public int getArrayListSize()
+   
+    public int getNumUtenti()
     {
-        int count = 0;
-        
-        for(Utente userTemp : this.userList)
-            count++;
-        
-        return count;
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "dCurre", "1234");
+            
+            String query = "select * from utenti";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+            
+            int count = 0;
+            while(res.next())
+                count++;
+            
+
+            stmt.close();
+            conn.close();
+            
+            return count;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
     
     public Utente getUserById(int id)
     {
-        for (Utente userTemp : this.userList) 
-        {
-            if (userTemp.getId() == id)
-                return userTemp;
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "dCurre", "1234");
+            
+            String query = "select * from utenti " + "where id = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, id);
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            while(res.next())
+            {
+                Utente current = new Utente();
+                current.setId(res.getInt("id"));
+                current.setNome(res.getString("nome"));
+                current.setCognome(res.getString("cognome"));
+                current.setEmail(res.getString("email"));
+                current.setPassword(res.getString("password"));
+                current.setUrlFotoProfilo(res.getString("urlfotoprofilo"));
+                current.setFrasePersonale(res.getString("frasepersonale"));
+                
+                stmt.close();
+                conn.close();
+                return current;
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return null;
     }
     public int getIdByUserAndPassword(String user, String password)
     {
-        for(Utente userTemp : this.userList)
-        {
-            if(userTemp.getNome().equals(user) && userTemp.getPassword().equals(password))
-                return userTemp.getId();
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "dCurre", "1234");
+            
+            String query = "select id from utenti " + "where nome = ? and password = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setString(1, user);
+            stmt.setString(2, password);
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            if (res.next())
+            {
+                int id = res.getInt("id");
+
+                stmt.close();
+                conn.close();
+                return id;
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            
         }
         return -1;
     }

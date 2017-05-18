@@ -17,24 +17,23 @@ public class Post
     };
     
     private int id; //id univoco del post
-    private Utente user;
+    private int user;
     private Gruppo gruppo; //identifica in quale gruppo si trova il post nel caso sia postato in un gruppo
-    private String content;
-    private Type postType;
+    private String content;//stringa di testo
+    private String img; //stringa immagine
+    private Type postType;// tipologia di post
     
     public Post()
     {
         id = 0;
-        user = null;
-        gruppo = null;
+        user = 0;
         content = "";
         postType = Type.TEXT;
     }
-    public Post(int id, Utente user,Gruppo gruppo, String content, Type postType)
+    public Post(int id, int user, String content, Type postType)
     {
         this.id = id;
         this.user = user;
-        this.gruppo = gruppo;
         this.content = content;
         this.postType = postType;
     }
@@ -55,34 +54,17 @@ public class Post
     /**
      * @return the user
      */
-    public Utente getUser() {
+    public int getUser() {
         return user;
     }
 
     /**
      * @param user the user to set
      */
-    public void setUser(Utente user) {
+    public void setUser(int user) {
         this.user = user;
     }
 
-    /**
-     * @return the gruppo
-     */
-    public Gruppo getGruppo() {
-        return gruppo;
-    }
-
-    /**
-     * @param gruppo the gruppo to set
-     */
-    public void setGruppo(Gruppo gruppo) {
-        this.gruppo = gruppo;
-    }
-    /**
-     * @return the group
-     */
-    
     /**
      * @return the content
      */
@@ -95,6 +77,20 @@ public class Post
      */
     public void setContent(String content) {
         this.content = content;
+    }
+
+    /**
+     * @return the img
+     */
+    public String getImg() {
+        return img;
+    }
+
+    /**
+     * @param img the img to set
+     */
+    public void setImg(String img) {
+        this.img = img;
     }
 
     /**

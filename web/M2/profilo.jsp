@@ -26,16 +26,16 @@
                 </c:if>
                 
                 <div id="imgFormProfilo">
-                    <img src="${userTemp.getUrlFotoProfilo()}" alt="Foto Profilo">
+                    <img src="${utenteLoggato.getUrlFotoProfilo()}" alt="Foto Profilo">
                 </div>
                 <form action="Profilo" method="post" id="formProfilo">
                     <div class="singoloCampo">    
                         <label for="nome">Nome:</label>
-                        <input type="text" name="name" id="nome" required value="${userTemp.getNome()}">
+                        <input type="text" name="name" id="nome" required value="${utenteLoggato.getNome()}">
                     </div>
                     <div class="singoloCampo">
                         <label for="cognome">Cognome:</label>
-                        <input type="text" name="surname" id="cognome" value="${userTemp.getCognome()}" >
+                        <input type="text" name="surname" id="cognome" value="${utenteLoggato.getCognome()}" >
                     </div>
                     <!-- <div class="singoloCampo">
                         <label for="data">Data di nascita:</label>
@@ -43,19 +43,19 @@
                     </div> -->
                     <div class="singoloCampo">
                         <label for="urlfotoprofilo">Url Foto Profilo: </label>
-                        <input type="text" name="url" id="urlfotoprofilo" value="${userTemp.getUrlFotoProfilo()}" >
+                        <input type="text" name="url" id="urlfotoprofilo" value="${utenteLoggato.getUrlFotoProfilo()}" >
                     </div>
                     <div class="singoloCampo">
                         <label for="mail">e-mail: </label>
-                        <input type="text" name="email" id="mail" value="${userTemp.getEmail()}" >
+                        <input type="text" name="email" id="mail" value="${utenteLoggato.getEmail()}" >
                     </div>
                     <div class="singoloCampo">
                         <label for="frase">Frase di presentazione:</label>
-                        <input type="text" name="frase" id="frase" value="${userTemp.getFrasePersonale()}" >
+                        <input type="text" name="frase" id="frase" value="${utenteLoggato.getFrasePersonale()}" >
                     </div>
                     <div class="singoloCampo">
                         <label for="password">Password:</label>
-                        <input type="password" name="pass" id="password" required value="${userTemp.getPassword()}" >
+                        <input type="password" name="pass" id="password" required value="${utenteLoggato.getPassword()}" >
                     </div>
                     <div class="singoloCampo">
                         <label for="confermaPassword">Conferma password:</label>

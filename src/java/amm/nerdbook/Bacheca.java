@@ -8,6 +8,7 @@ package amm.nerdbook;
 import amm.nerdbook.Classi.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -38,7 +39,7 @@ public class Bacheca extends HttpServlet
         if(session!=null && session.getAttribute("loggedIn")!=null && session.getAttribute("loggedIn").equals(true))
         {
             String user = request.getParameter("user");
-            int userID;
+            int userID; //id dell'utente loggato
             
             if(user != null)
             {
@@ -47,11 +48,15 @@ public class Bacheca extends HttpServlet
                 Integer loggedUserID = (Integer)session.getAttribute("logID");
                 userID = loggedUserID;
             }
-            Utente utente = UtenteFactory.getInstance().getUserById(userID); //singolo user
-            UtenteFactory listaUtenti = UtenteFactory.getInstance(); //lista di utenti
+            
+            Utente utenteLoggato = UtenteFactory.getInstance().getUserById(userID); //restituisce l'utente loggato
             GruppoFactory listaGruppi = GruppoFactory.getInstance(); //lista dei gruppi
-
-            if(utente != null)
+            UtenteFactory listaUtenti = UtenteFactory.getInstance();
+            PostFactory listaPost = PostFactory.getInstance();     
+            int utenteBacheca = Integer.parseInt(request.getParameter("utenteBacheca"));//id utente bacheca cast da String a int
+            
+            
+            if(utenteLoggato != null)
             {
                 if(request.getParameter("inviato") != null)
                 {
@@ -66,13 +71,16 @@ public class Bacheca extends HttpServlet
                         request.setAttribute("resultTextPost","Impossibile inviare post!! Ricontrollare i campi.");
                      }
                 }
-                request.setAttribute("utente", utente);
-                List<Post> listaPost = PostFactory.getInstance().getPostListByUser(utente);
+                
+                
+                request.setAttribute("utenteBacheca", utenteBacheca);// id dell'utente cliccato nella sidebar
                 request.setAttribute("listaPost", listaPost);
-                request.setAttribute("userBacheca", userID);
-                request.setAttribute("userID", (Integer)session.getAttribute("logID"));
-                request.setAttribute("listaUtenti", listaUtenti); //lista degli utenti
+                request.setAttribute("userID", (Integer)session.getAttribute("logID")); // id dell'utente loggato
+                request.setAttribute("nUtenti", UtenteFactory.getInstance().getNumUtenti()); //lista degli utenti
+                request.setAttribute("utenteLoggato", utenteLoggato);
                 request.setAttribute("listaGruppi", listaGruppi);
+                request.setAttribute("listaUtenti", listaUtenti);
+                request.setAttribute("listaPost", listaPost.getPostListByUserId(1).size());
                 
                 request.getRequestDispatcher("/M2/bacheca.jsp").forward(request, response);
                 

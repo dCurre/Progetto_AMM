@@ -12,15 +12,15 @@ CREATE TABLE UTENTI (ID INTEGER DEFAULT GENERATED_BY_DEFAULT  NOT NULL GENERATED
 
 /* -Creazione degli utenti statici */
 INSERT INTO DCURRE.UTENTI (NOME, COGNOME, EMAIL, PASSWORD, URLFOTOPROFILO, FRASEPERSONALE) 
-	VALUES ('Davide', 'Curreli', 'davidecurreli@mail.com', '123', 'img/fotoProfilo1.jpg', 'Welà');
+	VALUES ('Davide', 'Curreli', 'davidecurreli@mail.com', '123', '../img/fotoProfilo1.jpg', 'Welà');
 INSERT INTO DCURRE.UTENTI (NOME, COGNOME, EMAIL, PASSWORD, URLFOTOPROFILO, FRASEPERSONALE) 
-	VALUES ('Gigi', 'Serreli', 'ggserreli@mail.com', '123', 'img/fotoProfilo2.jpg', 'Ciaoo');
+	VALUES ('Gigi', 'Serreli', 'ggserreli@mail.com', '123', '../img/fotoProfilo2.jpg', 'Ciaoo');
 INSERT INTO DCURRE.UTENTI (NOME, COGNOME, EMAIL, PASSWORD, URLFOTOPROFILO, FRASEPERSONALE) 
-	VALUES ('Gesu', 'Cristo', 'camminosullacqua@mail.com', '123', 'img/gesuFoto.jpg', 'Che Papà sia con te!');
+	VALUES ('Gesu', 'Cristo', 'camminosullacqua@mail.com', '123', '../img/gesuFoto.jpg', 'Che Papà sia con te!');
 INSERT INTO DCURRE.UTENTI (NOME, COGNOME, EMAIL, PASSWORD, URLFOTOPROFILO, FRASEPERSONALE) 
-	VALUES ('Andrea', 'Mutolo', 'andreamutolo@mail.com', '123', 'img/fotoProfilo3.jpg', 'We');
+	VALUES ('Andrea', 'Mutolo', 'andreamutolo@mail.com', '123', '../img/fotoProfilo3.jpg', 'We');
 INSERT INTO DCURRE.UTENTI (NOME, COGNOME, EMAIL, PASSWORD, URLFOTOPROFILO, FRASEPERSONALE) 
-	VALUES ('Incompleto', 'Prova', 'prova@mail.com', '123', 'img/fotoLandscapePost.jpg', NULL);
+	VALUES ('Incompleto', 'Prova', 'prova@mail.com', '123', '../img/fotoLandscapePost.jpg', NULL);
 
 
 /* CREAZIONE DELLA TABELLA POSTTYPE */

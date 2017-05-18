@@ -47,21 +47,21 @@ public class Profilo extends HttpServlet {
                 Integer loggedUserID = (Integer)session.getAttribute("logID");
                 userID = loggedUserID;
             }
-                        
-            Utente userTemp = UtenteFactory.getInstance().getUserById(userID);            
+               
+            Utente utenteLoggato = UtenteFactory.getInstance().getUserById(userID);            
             UtenteFactory listaUtenti = UtenteFactory.getInstance(); //lista di utenti
             GruppoFactory listaGruppi = GruppoFactory.getInstance(); //lista dei gruppi
             
-            if(userTemp != null)
+            if(utenteLoggato != null)
             {   
                 if(request.getParameter("confPass") != null && request.getParameter("pass").equals(request.getParameter("confPass")))
                 {
-                    userTemp.setNome(request.getParameter("name"));
-                    userTemp.setCognome(request.getParameter("surname"));
-                    userTemp.setUrlFotoProfilo(request.getParameter("url"));
-                    userTemp.setEmail(request.getParameter("email"));
-                    userTemp.setFrasePersonale(request.getParameter("frase"));
-                    userTemp.setPassword(request.getParameter("pass"));
+                    utenteLoggato.setNome(request.getParameter("name"));
+                    utenteLoggato.setCognome(request.getParameter("surname"));
+                    utenteLoggato.setUrlFotoProfilo(request.getParameter("url"));
+                    utenteLoggato.setEmail(request.getParameter("email"));
+                    utenteLoggato.setFrasePersonale(request.getParameter("frase"));
+                    utenteLoggato.setPassword(request.getParameter("pass"));
                     request.setAttribute("wrongPass", false);
                     request.setAttribute("nullData", false);
                 }
@@ -70,12 +70,13 @@ public class Profilo extends HttpServlet {
                     if(request.getParameter("confPass") != null)
                         request.setAttribute("wrongPass", true);  
                 }
-                if(userTemp.getNome() == null || userTemp.getCognome() == null || userTemp.getEmail() == null || userTemp.getFrasePersonale() == null || userTemp.getUrlFotoProfilo() == null)
+                if(utenteLoggato.getNome() == null || utenteLoggato.getCognome() == null || utenteLoggato.getEmail() == null || utenteLoggato.getFrasePersonale() == null || utenteLoggato.getUrlFotoProfilo() == null)
                     request.setAttribute("nullData", true);
                 
+                request.setAttribute("nUtenti", UtenteFactory.getInstance().getNumUtenti()); //numero degli utenti nel database
+                request.setAttribute("utenteLoggato", utenteLoggato);
                 request.setAttribute("userID", (Integer)session.getAttribute("logID"));
                 request.setAttribute("listaUtenti", listaUtenti); //lista degli utenti
-                request.setAttribute("userTemp", userTemp);
                 request.setAttribute("listaGruppi", listaGruppi);
                 
                 request.getRequestDispatcher("/M2/profilo.jsp").forward(request, response);
