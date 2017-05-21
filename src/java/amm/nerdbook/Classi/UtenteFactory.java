@@ -38,35 +38,6 @@ public class UtenteFactory {
 
     private UtenteFactory(){
     }
-   
-    public int getNumUtenti()
-    {
-        try {
-            // path, username, password
-            Connection conn = DriverManager.getConnection(connectionString, "dCurre", "1234");
-            
-            String query = "select * from utenti";
-            
-            // Prepared Statement
-            PreparedStatement stmt = conn.prepareStatement(query);
-
-            // Esecuzione query
-            ResultSet res = stmt.executeQuery();
-            
-            int count = 0;
-            while(res.next())
-                count++;
-            
-
-            stmt.close();
-            conn.close();
-            
-            return count;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
     
     public Utente getUserById(int id)
     {
@@ -144,5 +115,39 @@ public class UtenteFactory {
             
         }
         return -1;
+    }
+    public ArrayList<Integer> getListaAmiciByUserId(int id)
+    {
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "dCurre", "1234");
+            
+            String query = "select followed from amicizie " + "where follower = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, id);
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+            ArrayList<Integer> arrayList = new ArrayList<>();
+            
+            // ciclo sulle righe restituite
+            while(res.next())
+            {
+                Integer current = res.getInt("followed");
+                arrayList.add(current);
+            }
+            
+            stmt.close();
+            conn.close();
+            return arrayList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            
+        }
+        return null;
     }
 }

@@ -73,10 +73,10 @@ public class Profilo extends HttpServlet {
                 if(utenteLoggato.getNome() == null || utenteLoggato.getCognome() == null || utenteLoggato.getEmail() == null || utenteLoggato.getFrasePersonale() == null || utenteLoggato.getUrlFotoProfilo() == null)
                     request.setAttribute("nullData", true);
                 
-                request.setAttribute("nUtenti", UtenteFactory.getInstance().getNumUtenti()); //numero degli utenti nel database
                 request.setAttribute("utenteLoggato", utenteLoggato);
                 request.setAttribute("userID", (Integer)session.getAttribute("logID"));
                 request.setAttribute("listaUtenti", listaUtenti); //lista degli utenti
+                request.setAttribute("amicizie", listaUtenti.getListaAmiciByUserId((Integer)session.getAttribute("logID")));
                 request.setAttribute("listaGruppi", listaGruppi);
                 
                 request.getRequestDispatcher("/M2/profilo.jsp").forward(request, response);

@@ -15,7 +15,6 @@
             <jsp:include page="ripetuti/leftSideBar.jsp"/>
             
             <div id="divContent">
-                ${listaPost}
                 <jsp:include page="ripetuti/post.jsp"/>
             </div>
         </div>

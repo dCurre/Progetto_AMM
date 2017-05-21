@@ -6,7 +6,7 @@
 
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
-<c:set var="page" value="bacheca" scope="request"/>
+<c:set var="page" value="riepilogoPost" scope="request"/>
 <c:set var="log" value="${userID}" scope="request"/>
 <!DOCTYPE html>
 
@@ -21,19 +21,31 @@
             <div id="divContent">
                 <div id="riepilogoPost">
                     <div id="fromTo">
-                        <img src="${listaUtenti.getUserById(userID).getUrlFotoProfilo()}" alt="Foto Profilo"> ${listaUtenti.getUserById(userID).getNome()}
-                        > <img src="${utente.getUrlFotoProfilo()}" alt="Foto Profilo"> ${utente.nome}
-                    </div>
-                    <div id="msgRiepilogato">
-                        <c:if test="${radio == 'textType'}">
-                              ${testo}
+                        <c:if test="${userID == utenteBacheca}">
+                            <img src="${listaUtenti.getUserById(userID).getUrlFotoProfilo()}" alt="Foto Profilo"> ${listaUtenti.getUserById(userID).getNome()} 
                         </c:if>
-                        <c:if test="${radio == 'imgType'}">
-                              ${immagine}
+                        <c:if test="${userID != utenteBacheca}">
+                            <img src="${listaUtenti.getUserById(userID).getUrlFotoProfilo()}" alt="Foto Profilo"> ${listaUtenti.getUserById(userID).getNome()} 
+                            >
+                            <img src="${listaUtenti.getUserById(utenteBacheca).getUrlFotoProfilo()}" alt="Foto Profilo"> ${listaUtenti.getUserById(utenteBacheca).getNome()}                            
                         </c:if>
                     </div>
-                    
                 </div>
+                <form action="Bacheca?utenteBacheca=${utenteBacheca}" method="post">
+                    
+                    <div id="postContent">
+                        <div>
+                            ${testo}
+                        </div>
+                        <div>
+                            ${immagine}
+                        </div>
+                    </div>
+                    <button type="submit">Invia</button>
+                </form>
+                    
+                    
+                    
             </div>
             
         </div>

@@ -14,6 +14,7 @@
             </div>
         </header>
         <div id="divBody">
+            ${boh}
             <div id="formLogin">
                 <c:if test="${invalidData == true}">
                     <div class="invalidDataWarning" id="loginError">ERRORE: dati inseriti non corretti!</div>

@@ -71,16 +71,14 @@ public class Bacheca extends HttpServlet
                         request.setAttribute("resultTextPost","Impossibile inviare post!! Ricontrollare i campi.");
                      }
                 }
-                
-                
                 request.setAttribute("utenteBacheca", utenteBacheca);// id dell'utente cliccato nella sidebar
                 request.setAttribute("listaPost", listaPost);
                 request.setAttribute("userID", (Integer)session.getAttribute("logID")); // id dell'utente loggato
-                request.setAttribute("nUtenti", UtenteFactory.getInstance().getNumUtenti()); //lista degli utenti
                 request.setAttribute("utenteLoggato", utenteLoggato);
                 request.setAttribute("listaGruppi", listaGruppi);
                 request.setAttribute("listaUtenti", listaUtenti);
-                request.setAttribute("listaPost", listaPost.getPostListByUserId(1).size());
+                request.setAttribute("amicizie", listaUtenti.getListaAmiciByUserId((Integer)session.getAttribute("logID")));
+                request.setAttribute("listaPost", listaPost.getPostListByUserId(utenteBacheca));
                 
                 request.getRequestDispatcher("/M2/bacheca.jsp").forward(request, response);
                 

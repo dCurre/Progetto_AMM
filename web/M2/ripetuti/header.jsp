@@ -29,7 +29,7 @@
                         <c:when test="${page=='descrizione'}">
                             <div class="loginDescrizione"><a href="M2/Login">Login</a></div>
                         </c:when>
-                            <c:otherwise> <img src="${utenteLoggato.getUrlFotoProfilo()}" alt="Foto Profilo">Ciao, ${utenteLoggato.getNome()}<div> <a href="Login?logout=1">Logout</a></div> </c:otherwise>
+                            <c:otherwise> <img src="${listaUtenti.getUserById(userID).getUrlFotoProfilo()}" alt="Foto Profilo">Ciao, ${listaUtenti.getUserById(userID).getNome()}<div> <a href="Login?logout=1">Logout</a></div> </c:otherwise>
                     </c:choose>
                 </li>
             </ol>

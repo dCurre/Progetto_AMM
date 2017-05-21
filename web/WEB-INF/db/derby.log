@@ -1,7 +1,7 @@
-Thu May 18 13:55:13 CEST 2017 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
+Sun May 21 17:00:40 CEST 2017 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Thu May 18 13:55:23 CEST 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-015c-1b69-6e09-00004d8d9f77 
+Sun May 21 17:01:13 CEST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-015c-2b86-4c1d-00004d8d9f77 
 on database directory /home/davide/NetBeansProjects/Progetto_AMM/web/WEB-INF/db/ammdb with class loader sun.misc.Launcher$AppClassLoader@6f94fa3e 
 Loaded from file:/usr/local/jdk1.8.0_121/db/lib/derby.jar
 java.vendor=Oracle Corporation

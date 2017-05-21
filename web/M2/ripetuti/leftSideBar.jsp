@@ -12,12 +12,10 @@
         <input type="text" name="search" id="searchText" placeholder="Search sumthin">
     </div>
     <div id="titlePersona" class="sezioneTitle"> Friend List</div>
-    <c:forEach var="i" begin="0" end="${nUtenti-1}">
-        <c:if test="${i != userID}">
-            <div class="persona">
-                <a href="Bacheca?utenteBacheca=${i}"><img src='${listaUtenti.getUserById(i).getUrlFotoProfilo()}'> ${listaUtenti.getUserById(i).getNome()} ${listaUtenti.getUserById(i).getCognome()}</a>
-            </div>
-        </c:if>
+    <c:forEach items="${amicizie}" var="i">
+        <div class="persona">
+            <a href="Bacheca?utenteBacheca=${i}"><img src='${listaUtenti.getUserById(i).getUrlFotoProfilo()}'> ${listaUtenti.getUserById(i).getNome()} ${listaUtenti.getUserById(i).getCognome()}</a>
+        </div>
     </c:forEach>  
     
     <div id="titleGruppo" class="sezioneTitle">Group List</div>

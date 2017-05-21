@@ -12,16 +12,14 @@
 </div>
     
 <div id="formNewPost">
-    <form action="Bacheca?user=${userBacheca}" method="post"> <!-- RiepilogoPost?... -->
+    <form action="RiepilogoPost?utenteBacheca=${utenteBacheca}" method="post">
         <div id="postType">
-            <div>
-                <input type="radio" name="postType" value="textType" id="textType">
-                <label for="textType">Testo</label>
-            </div>
-            <div>
-                <input type="radio" name="postType" value="imgType" id="imgType">
-                <label for="imgType">Foto</label>
-            </div>
+            <c:if test="${utenteBacheca == userID}">
+                Pubblica un pensiero o un'immagine.
+            </c:if>
+            <c:if test="${utenteBacheca != userID}">
+                Scrivi nella bacheca di ${listaUtenti.getUserById(utenteBacheca).getNome()} ${listaUtenti.getUserById(utenteBacheca).getCognome()}
+            </c:if>
         </div>
         <div id="postContent">
             <div>
@@ -43,21 +41,19 @@
         <div class="invalidDataWarning">${resultTextPost} </div>
     </c:if>  
 </div>
-<c:forEach var="temp" items="">
+    
+            
+<c:forEach var="temp" items="${listaPost}">
     <div class="post">
         <div class="userPost">
             <img src="${listaUtenti.getUserById(utenteBacheca).getUrlFotoProfilo()}" alt="Foto Profilo"> ${listaUtenti.getUserById(utenteBacheca).getNome()} ${listaUtenti.getUserById(utenteBacheca).getCognome()}
         </div>
-        <c:if test="">
-            <p> ${temp.getContent()} </p>
-        </c:if>    
-        <c:if test="true">
-            <p> ${temp.getContent()} </p>
-            <div class="contentImage">
-                
-                <img src="${temp.getContent()}" alt="Foto">
-            </div>
-        </c:if>    
+        <div class="contentImage">
+        <p>${temp.content}</p>
+         <c:if test="${temp.img != null}">
+             <img src="${temp.img}" alt="Immagine post">
+         </c:if>
+        </div>
     </div>
 </c:forEach>
     

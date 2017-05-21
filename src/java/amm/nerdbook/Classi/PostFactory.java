@@ -5,7 +5,6 @@
  */
 package amm.nerdbook.Classi;
 
-import amm.nerdbook.Classi.Post.Type;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -97,9 +96,10 @@ public class PostFactory {
             
             // Esecuzione query
             ResultSet res = stmt.executeQuery();
+            
             ArrayList<Post> arrayPost = new ArrayList<>();
             // ciclo sulle righe restituite
-            if(res.next())
+            while(res.next())
             {
                 Post current = new Post();
                 current.setId(res.getInt("id"));
@@ -108,8 +108,6 @@ public class PostFactory {
                 current.setImg(res.getString("img"));
                 
                 arrayPost.add(current);
-                stmt.close();
-                conn.close();
             }
             stmt.close();
             conn.close();

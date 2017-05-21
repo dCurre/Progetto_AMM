@@ -50,16 +50,19 @@ public class RiepilogoPost extends HttpServlet {
             Utente utente = UtenteFactory.getInstance().getUserById(userID); //singolo user
             UtenteFactory listaUtenti = UtenteFactory.getInstance(); //lista di utenti
             GruppoFactory listaGruppi = GruppoFactory.getInstance(); //lista dei gruppi
-
+            int utenteBacheca = Integer.parseInt(request.getParameter("utenteBacheca"));//id utente bacheca cast da String a int
+            
             if(utente != null)
             {
                 request.setAttribute("testo", request.getParameter("textPost")); //contenuto testo
                 request.setAttribute("immagine", request.getParameter("imgPost")); //contenuto immagine
-                request.setAttribute("radio", request.getParameter("postType")); //result del radio button
-
-                request.setAttribute("utente", utente);
+                request.setAttribute("utenteBacheca", utenteBacheca);// id dell'utente cliccato nella sidebar
+                
                 request.setAttribute("listaUtenti", listaUtenti); //lista degli utenti
                 request.setAttribute("listaGruppi", listaGruppi); //lista gruppi
+                request.setAttribute("userID", (Integer)session.getAttribute("logID")); // id dell'utente loggato
+                request.setAttribute("amicizie", listaUtenti.getListaAmiciByUserId((Integer)session.getAttribute("logID")));
+                
                 
                 request.getRequestDispatcher("/M2/riepilogoPost.jsp").forward(request, response);
                 
