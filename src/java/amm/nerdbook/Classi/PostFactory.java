@@ -44,41 +44,7 @@ public class PostFactory {
     
     private ArrayList<Post> postList = new ArrayList<Post>();
 
-    public PostFactory()
-    {    
-        UtenteFactory userFactory = UtenteFactory.getInstance();
-        //GruppoFactory gruppoFactory = GruppoFactory.getInstance();
-        /**
-        //Creazione Post
-        Post post0 = new Post(0,userFactory.getUserById(0),gruppoFactory.getGroupById(0),"Frase a caso1",Post.Type.TEXT);
-        postList.add(post0);
-        
-        Post post1 = new Post(1,userFactory.getUserById(1),gruppoFactory.getGroupById(0),"../img/fotoLandscapePost.jpg",Post.Type.IMAGE);
-        postList.add(post1);
-        
-        Post post2 = new Post(2,userFactory.getUserById(2),gruppoFactory.getGroupById(0),"Sempre sia lodato",Post.Type.TEXT);
-        postList.add(post2);
-        
-        Post post3 = new Post(3,userFactory.getUserById(0),gruppoFactory.getGroupById(0),"Frase a caaaaaaso1",Post.Type.TEXT);
-        postList.add(post3);
-        
-        Post post4 = new Post(4,userFactory.getUserById(2),gruppoFactory.getGroupById(0),"Alzati e cammina",Post.Type.TEXT);
-        postList.add(post4);
-        
-        Post post5 = new Post(5,userFactory.getUserById(2),gruppoFactory.getGroupById(0),"http://static.qnm.it/www/fotogallery/1200X0/195073/selfie-sosia-di-gesu.jpg",Post.Type.IMAGE);
-        postList.add(post5);
-        
-        Post post6 = new Post(6,userFactory.getUserById(3),gruppoFactory.getGroupById(0),"../img/fotoLandscapePost.jpg",Post.Type.IMAGE);
-        postList.add(post6);
-        
-        Post post7 = new Post(7,userFactory.getUserById(1),gruppoFactory.getGroupById(0),"Frase a caaaaaaso1",Post.Type.TEXT);
-        postList.add(post7);
-        
-        Post post8 = new Post(8,userFactory.getUserById(0),gruppoFactory.getGroupById(0),"../img/fotoLandscapePost.jpg",Post.Type.IMAGE);
-        postList.add(post8);
-        
-        Post post9 = new Post(9,userFactory.getUserById(3),gruppoFactory.getGroupById(0),"../img/allegatoProfilo2.jpg",Post.Type.IMAGE);
-        postList.add(post9);*/
+    public PostFactory(){
     }
     public ArrayList<Post> getPostListByUserId(int id)
     {
@@ -86,7 +52,7 @@ public class PostFactory {
             // path, username, password
             Connection conn = DriverManager.getConnection(connectionString, "dCurre", "1234");
             
-            String query = "select * from posts " + "where author = ?";
+            String query = "select * from posts " + "where ricevente = ?";
             
             // Prepared Statement
             PreparedStatement stmt = conn.prepareStatement(query);
@@ -117,5 +83,34 @@ public class PostFactory {
         }
         return null;
     }    
-    
+    public int addPostIntoDatabase(Post post)
+    {
+        try{
+            Connection conn = DriverManager.getConnection(connectionString,"dCurre","1234");
+           
+            String query = "INSERT INTO posts (id, author, content, img, ricevente) "
+                    + "values (default, ? , ? , ? , ?)";
+            
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            //inserisco nello statement i valori
+            stmt.setInt(1, post.getUser());
+            stmt.setString(2, post.getContent());
+            stmt.setString(3, post.getImg());
+            stmt.setInt(4, post.getRicevente());
+            
+            //update della table
+            stmt.executeUpdate();
+            
+            //chiudo
+            stmt.close();
+            conn.close();
+            
+            return 1;
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 2;
+    } 
 }

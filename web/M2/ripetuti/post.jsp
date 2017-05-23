@@ -46,7 +46,7 @@
 <c:forEach var="temp" items="${listaPost}">
     <div class="post">
         <div class="userPost">
-            <img src="${listaUtenti.getUserById(utenteBacheca).getUrlFotoProfilo()}" alt="Foto Profilo"> ${listaUtenti.getUserById(utenteBacheca).getNome()} ${listaUtenti.getUserById(utenteBacheca).getCognome()}
+            <img src="${listaUtenti.getUserById(temp.user).getUrlFotoProfilo()}" alt="Foto Profilo"> ${listaUtenti.getUserById(temp.user).getNome()} ${listaUtenti.getUserById(temp.user).getCognome()}
         </div>
         <div class="contentImage">
         <p>${temp.content}</p>
@@ -54,6 +54,11 @@
              <img src="${temp.img}" alt="Immagine post">
          </c:if>
         </div>
+        <!-- 
+            <div class="eliminaPost">
+                Elimina post
+            </div>
+        -->
     </div>
 </c:forEach>
     

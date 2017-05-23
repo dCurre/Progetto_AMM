@@ -57,20 +57,7 @@ public class Bacheca extends HttpServlet
             
             
             if(utenteLoggato != null)
-            {
-                if(request.getParameter("inviato") != null)
-                {
-                    if(request.getParameter("inviato").equals("1") && request.getParameter("postType") != null)
-                    {
-                        request.setAttribute("ok", 1);
-                        request.setAttribute("resultTextPost","Post inviato Correttamente!");
-                    }
-                     else
-                     {
-                        request.setAttribute("ok", 0);
-                        request.setAttribute("resultTextPost","Impossibile inviare post!! Ricontrollare i campi.");
-                     }
-                }
+            {                
                 request.setAttribute("utenteBacheca", utenteBacheca);// id dell'utente cliccato nella sidebar
                 request.setAttribute("listaPost", listaPost);
                 request.setAttribute("userID", (Integer)session.getAttribute("logID")); // id dell'utente loggato

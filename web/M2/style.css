@@ -285,6 +285,7 @@ li.indice:last-child>a:hover
    border-color: #22bb22;
    box-shadow: 0 0 10px #22bb22;
 }
+
 form button{
     width: 100%;
 }
@@ -347,19 +348,26 @@ form button{
     margin-top: 20px;
     border-bottom: 2px solid green;
 }
-#msgRiepilogato
+#confermaPost
 {
-    margin-top: 20px;
-    height: 400px;
-    border: 1.5px solid green;
-    border-top: none;
-    border-radius: 0px 0px 50px 50px;
-    box-shadow: 1px 1px 1px 1px #888888;
+    width: 500px;
+    margin: auto;
+}
+#confermaPost button
+{
+    margin-top: 40px;
 }
 #riepilogoPost img
 {
     height: 40px;
     width: 40px;
+}
+.eliminaPost
+{
+    font-style: oblique;
+    color: grey;
+    position: relative;
+    left: 85%;
 }
 /* PROFILO */
 #datiFormProfilo

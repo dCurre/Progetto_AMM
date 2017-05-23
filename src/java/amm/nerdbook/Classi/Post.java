@@ -10,59 +10,14 @@ package amm.nerdbook.Classi;
  * @author davide
  */
 public class Post
-{
-    public enum Type
-    {
-        TEXT, IMAGE
-    };
-    
+{    
     private int id; //id univoco del post
-    private int user;
-    private Gruppo gruppo; //identifica in quale gruppo si trova il post nel caso sia postato in un gruppo
+    private int user;//id dello user
     private String content;//stringa di testo
-    private String img; //stringa immagine
-    private Type postType;// tipologia di post
+    private String img; //stringa immagine, null se non è presente un'immagine
+    private int ricevente;//id del ricevente del post 
     
-    public Post()
-    {
-        id = 0;
-        user = 0;
-        content = "";
-        postType = Type.TEXT;
-    }
-    public Post(int id, int user, String content, Type postType)
-    {
-        this.id = id;
-        this.user = user;
-        this.content = content;
-        this.postType = postType;
-    }
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the user
-     */
-    public int getUser() {
-        return user;
-    }
-
-    /**
-     * @param user the user to set
-     */
-    public void setUser(int user) {
-        this.user = user;
+    public Post(){
     }
 
     /**
@@ -73,10 +28,10 @@ public class Post
     }
 
     /**
-     * @param content the content to set
+     * @return the id
      */
-    public void setContent(String content) {
-        this.content = content;
+    public int getId() {
+        return id;
     }
 
     /**
@@ -87,6 +42,34 @@ public class Post
     }
 
     /**
+     * @return the ricevente
+     */
+    public int getRicevente() {
+        return ricevente;
+    }
+
+    /**
+     * @return the user
+     */
+    public int getUser() {
+        return user;
+    }
+
+    /**
+     * @param content the content to set
+     */
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
      * @param img the img to set
      */
     public void setImg(String img) {
@@ -94,17 +77,17 @@ public class Post
     }
 
     /**
-     * @return the postType
+     * @param ricevente the ricevente to set
      */
-    public Type getPostType() {
-        return postType;
+    public void setRicevente(int ricevente) {
+        this.ricevente = ricevente;
     }
 
     /**
-     * @param postType the postType to set
+     * @param user the user to set
      */
-    public void setPostType(Type postType) {
-        this.postType = postType;
+    public void setUser(int user) {
+        this.user = user;
     }
     
 }

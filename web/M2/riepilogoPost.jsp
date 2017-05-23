@@ -31,18 +31,24 @@
                         </c:if>
                     </div>
                 </div>
-                <form action="Bacheca?utenteBacheca=${utenteBacheca}" method="post">
-                    
-                    <div id="postContent">
-                        <div>
-                            ${testo}
+                <c:if test="${ok == 1}">
+                    Messaggio inviato!
+                    ${prova}
+                    <a href="Bacheca?utenteBacheca=${userID}">Torna alla bacheca</a>
+                </c:if>
+                <c:if test="${ok == null}">
+                    <form action="RiepilogoPost?utenteBacheca=${utenteBacheca}&addPost=1&text=${testo}&img=${immagine}" method="post">
+                        <div id="confermaPost">
+                            <div>
+                                ${testo}
+                            </div>
+                            <div>
+                                <img src="${immagine}" alt="Immagine Post"> ${immagine}
+                            </div>
+                            <button type="submit">Conferma invio</button>
                         </div>
-                        <div>
-                            ${immagine}
-                        </div>
-                    </div>
-                    <button type="submit">Invia</button>
-                </form>
+                    </form>
+                </c:if>
                     
                     
                     
