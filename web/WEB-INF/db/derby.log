@@ -12,3 +12,5 @@ os.arch=amd64
 os.version=4.8.0-49-generic
 derby.system.home=/home/davide/NetBeansProjects/Progetto_AMM/web/WEB-INF/db
 Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Wed May 24 18:43:52 CEST 2017: Shutting down Derby engine

@@ -244,6 +244,7 @@ li.indice:last-child>a:hover
     border: 2px solid green; 
     border-radius: 50px;
     margin: auto;
+    margin-top: 20px;
 }
 #formNewPost .invalidDataWarning, #formNewPost .validDataWarning
 {
@@ -285,9 +286,12 @@ li.indice:last-child>a:hover
    border-color: #22bb22;
    box-shadow: 0 0 10px #22bb22;
 }
-
+#imgPost{
+    height: 30px;
+    width: 98.5%;
+}
 form button{
-    width: 100%;
+    width: 99%;
 }
 .post
 {
@@ -352,6 +356,7 @@ form button{
 {
     width: 500px;
     margin: auto;
+    margin-top: 50px;
 }
 #confermaPost button
 {
@@ -369,9 +374,9 @@ form button{
     position: relative;
     left: 85%;
 }
-.cancellaUtente
+.deleteUser
 {
-    float: left;
+    
 }
 /* PROFILO */
 #datiFormProfilo

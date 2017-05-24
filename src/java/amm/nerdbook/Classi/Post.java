@@ -15,7 +15,8 @@ public class Post
     private int user;//id dello user
     private String content;//stringa di testo
     private String img; //stringa immagine, null se non è presente un'immagine
-    private int ricevente;//id del ricevente del post 
+    private Integer ricevente;//id del ricevente del post 
+    private Integer appartenenza_gruppo;
     
     public Post(){
     }
@@ -44,7 +45,7 @@ public class Post
     /**
      * @return the ricevente
      */
-    public int getRicevente() {
+    public Integer getRicevente() {
         return ricevente;
     }
 
@@ -79,7 +80,7 @@ public class Post
     /**
      * @param ricevente the ricevente to set
      */
-    public void setRicevente(int ricevente) {
+    public void setRicevente(Integer ricevente) {
         this.ricevente = ricevente;
     }
 
@@ -88,6 +89,20 @@ public class Post
      */
     public void setUser(int user) {
         this.user = user;
+    }
+
+    /**
+     * @return the appartenenza_gruppo
+     */
+    public Integer getAppartenenza_gruppo() {
+        return appartenenza_gruppo;
+    }
+
+    /**
+     * @param appartenenza_gruppo the appartenenza_gruppo to set
+     */
+    public void setAppartenenza_gruppo(Integer appartenenza_gruppo) {
+        this.appartenenza_gruppo = appartenenza_gruppo;
     }
     
 }

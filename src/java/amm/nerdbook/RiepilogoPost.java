@@ -50,8 +50,13 @@ public class RiepilogoPost extends HttpServlet {
             Utente utente = UtenteFactory.getInstance().getUserById(userID); //singolo user
             UtenteFactory listaUtenti = UtenteFactory.getInstance(); //lista di utenti
             GruppoFactory listaGruppi = GruppoFactory.getInstance(); //lista dei gruppi
-            int utenteBacheca = Integer.parseInt(request.getParameter("utenteBacheca"));//id utente bacheca cast da String a int
             PostFactory listaPost = PostFactory.getInstance();
+            int bachecaPost = Integer.parseInt(request.getParameter("idBacheca"));
+            boolean listaPostChecker ;
+            if(request.getParameter("groupOrUser").equals("true"))
+                listaPostChecker = true;
+            else
+                listaPostChecker = false;
             
             if(utente != null)
             {
@@ -65,22 +70,32 @@ public class RiepilogoPost extends HttpServlet {
                     else
                         newPost.setImg(request.getParameter("img"));
                     
-                    newPost.setRicevente(utenteBacheca);
-                    
-                    listaPost.addPostIntoDatabase(newPost);
-                    request.setAttribute("ok", 1);
+                    if(listaPostChecker)//se true è un post per gruppo altrimenti per utente
+                    {
+                        newPost.setRicevente(null);
+                        newPost.setAppartenenza_gruppo(bachecaPost);
+                    }
+                    else{
+                        newPost.setRicevente(bachecaPost);
+                        newPost.setAppartenenza_gruppo(null);
+                    }
+                    if(listaPost.addPostIntoDatabase(newPost))
+                        request.setAttribute("ok", 1);
+                    else
+                        request.setAttribute("ok", 0);
                 }
                 
                 request.setAttribute("testo", request.getParameter("textPost")); //contenuto testo
                 request.setAttribute("immagine", request.getParameter("imgPost")); //contenuto immagine
-                request.setAttribute("utenteBacheca", utenteBacheca);// id dell'utente cliccato nella sidebar
+                request.setAttribute("utenteBacheca", bachecaPost);// id dell'utente cliccato nella sidebar
                 
                 request.setAttribute("listaUtenti", listaUtenti); //lista degli utenti
                 request.setAttribute("listaGruppi", listaGruppi); //lista gruppi
                 request.setAttribute("userID", (Integer)session.getAttribute("logID")); // id dell'utente loggato
                 request.setAttribute("amicizie", listaUtenti.getListaAmiciByUserId((Integer)session.getAttribute("logID")));
-                
-                
+                request.setAttribute("appartenenza", listaGruppi.getListaGruppiByUserId(userID));
+                request.setAttribute("groupOrUser", listaPostChecker);//true se è un post per gruppi, false se post per utenti
+
                 request.getRequestDispatcher("/M2/riepilogoPost.jsp").forward(request, response);
                 
             } else {

@@ -83,6 +83,7 @@ public class Profilo extends HttpServlet {
                 request.setAttribute("userID", (Integer)session.getAttribute("logID"));
                 request.setAttribute("listaUtenti", listaUtenti); //lista degli utenti
                 request.setAttribute("amicizie", listaUtenti.getListaAmiciByUserId((Integer)session.getAttribute("logID")));
+                 request.setAttribute("appartenenza", listaGruppi.getListaGruppiByUserId(userID));
                 request.setAttribute("listaGruppi", listaGruppi);
                 
                 request.getRequestDispatcher("/M2/profilo.jsp").forward(request, response);

@@ -50,20 +50,37 @@ public class Bacheca extends HttpServlet
             Utente utenteLoggato = UtenteFactory.getInstance().getUserById(userID); //restituisce l'utente loggato
             GruppoFactory listaGruppi = GruppoFactory.getInstance();
             UtenteFactory listaUtenti = UtenteFactory.getInstance();
-            PostFactory listaPost = PostFactory.getInstance();     
-            int utenteBacheca = Integer.parseInt(request.getParameter("utenteBacheca"));//id utente bacheca cast da String a int
+            PostFactory listaPost = PostFactory.getInstance(); 
+            int bachecaPost;
+            boolean listaPostChecker;
+            
+            if(request.getParameter("utenteBacheca") == null && request.getParameter("gruppoBacheca") != null)
+            {
+                listaPostChecker = true;
+                bachecaPost = Integer.parseInt(request.getParameter("gruppoBacheca"));
+            }else
+            {
+                listaPostChecker = false;    
+                bachecaPost = Integer.parseInt(request.getParameter("utenteBacheca"));
+            }
             
             if(utenteLoggato != null)
             {                
-                request.setAttribute("utenteBacheca", utenteBacheca);// id dell'utente cliccato nella sidebar
+                request.setAttribute("utenteBacheca", bachecaPost);// id dell'utente cliccato nella sidebar
                 request.setAttribute("userID", (Integer)session.getAttribute("logID")); // id dell'utente loggato
                 request.setAttribute("utenteLoggato", utenteLoggato);
                 request.setAttribute("listaGruppi", listaGruppi);
                 request.setAttribute("listaUtenti", listaUtenti);
-                request.setAttribute("appartenenza", listaGruppi.getListaGruppiByUserId(userID)); // non connette
+                request.setAttribute("groupOrUser", listaPostChecker);//true se è un post per gruppi, false se post per utenti
+                request.setAttribute("appartenenza", listaGruppi.getListaGruppiByUserId(userID));
                 request.setAttribute("amicizie", listaUtenti.getListaAmiciByUserId((Integer)session.getAttribute("logID")));
-                request.setAttribute("listaPost", listaPost.getPostListByUserId(utenteBacheca));
                 
+                if(listaPostChecker)
+                    request.setAttribute("listaPost", listaPost.getPostListByGroupId(bachecaPost));
+                else
+                    request.setAttribute("listaPost", listaPost.getPostListByUserId(bachecaPost));
+            
+               
                 request.getRequestDispatcher("/M2/bacheca.jsp").forward(request, response);
                 
             } else {

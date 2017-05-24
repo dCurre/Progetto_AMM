@@ -21,7 +21,7 @@
     <div id="titleGruppo" class="sezioneTitle">Group List</div>
     <c:forEach items="${appartenenza}" var="i">
         <div class="persona">
-            <a href="Bacheca?gruppo=${i}"><img src='${listaGruppi.getGruppoById(i).getUrlFotoGruppo()}'> ${listaGruppi.getGruppoById(i).getNome()}
+            <a href="Bacheca?gruppoBacheca=${i}"><img src='${listaGruppi.getGruppoById(i).getUrlFotoGruppo()}'> ${listaGruppi.getGruppoById(i).getNome()}</a>
         </div>
     </c:forEach> 
         

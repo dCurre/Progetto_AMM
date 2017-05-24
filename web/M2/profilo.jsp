@@ -9,7 +9,6 @@
     </head>
     <body>
         <!--Barra di navigazione tra le pagine del sito + logo + utente logout -->
-        <c:set var="page" value="profilo" scope="request"/>
         <jsp:include page="ripetuti/header.jsp"/>
         
         <div id="divBody">
@@ -28,7 +27,7 @@
                 <div id="imgFormProfilo">
                     <img src="${utenteLoggato.getUrlFotoProfilo()}" alt="Foto Profilo">
 
-                    <div><a href="Login?deleteUser=delete">Cancella Utente</a></div>
+                    <div><a id="deleteUser" href="Login?deleteUser=delete">Cancellati da NerdBook</a></div>
                     
                 </div>
                 
