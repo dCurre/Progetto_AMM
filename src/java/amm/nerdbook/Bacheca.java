@@ -8,8 +8,6 @@ package amm.nerdbook;
 import amm.nerdbook.Classi.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -50,20 +48,19 @@ public class Bacheca extends HttpServlet
             }
             
             Utente utenteLoggato = UtenteFactory.getInstance().getUserById(userID); //restituisce l'utente loggato
-            GruppoFactory listaGruppi = GruppoFactory.getInstance(); //lista dei gruppi
+            GruppoFactory listaGruppi = GruppoFactory.getInstance();
             UtenteFactory listaUtenti = UtenteFactory.getInstance();
             PostFactory listaPost = PostFactory.getInstance();     
             int utenteBacheca = Integer.parseInt(request.getParameter("utenteBacheca"));//id utente bacheca cast da String a int
             
-            
             if(utenteLoggato != null)
             {                
                 request.setAttribute("utenteBacheca", utenteBacheca);// id dell'utente cliccato nella sidebar
-                request.setAttribute("listaPost", listaPost);
                 request.setAttribute("userID", (Integer)session.getAttribute("logID")); // id dell'utente loggato
                 request.setAttribute("utenteLoggato", utenteLoggato);
                 request.setAttribute("listaGruppi", listaGruppi);
                 request.setAttribute("listaUtenti", listaUtenti);
+                request.setAttribute("appartenenza", listaGruppi.getListaGruppiByUserId(userID)); // non connette
                 request.setAttribute("amicizie", listaUtenti.getListaAmiciByUserId((Integer)session.getAttribute("logID")));
                 request.setAttribute("listaPost", listaPost.getPostListByUserId(utenteBacheca));
                 
@@ -79,7 +76,7 @@ public class Bacheca extends HttpServlet
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
-                out.println("<title>Servlet Profilo</title>");            
+                out.println("<title>Servlet Bacheca</title>");            
                 out.println("</head>");
                 out.println("<body>");
                 out.println("<h1> Non hai effettuato l'accesso!! <a href='Login'>Login</a> </h1>");

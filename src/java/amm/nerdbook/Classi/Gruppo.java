@@ -15,17 +15,7 @@ public class Gruppo
     private String nome;
     private String urlFotoGruppo;
     
-    public Gruppo()
-    {
-        id = 0;
-        nome = "";
-        urlFotoGruppo = "";
-    }
-    public Gruppo(int id, String nome, String fotoGruppo)
-    {
-        this.id = id;
-        this.nome = nome;
-        this.urlFotoGruppo = fotoGruppo;
+    public Gruppo(){
     }
 
     /**
@@ -36,24 +26,10 @@ public class Gruppo
     }
 
     /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
      * @return the nome
      */
     public String getNome() {
         return nome;
-    }
-
-    /**
-     * @param nome the nome to set
-     */
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     /**
@@ -64,10 +40,25 @@ public class Gruppo
     }
 
     /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @param nome the nome to set
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
      * @param urlFotoGruppo the urlFotoGruppo to set
      */
     public void setUrlFotoGruppo(String urlFotoGruppo) {
         this.urlFotoGruppo = urlFotoGruppo;
     }
+
     
 }

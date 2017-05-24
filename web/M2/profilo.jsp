@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<c:set var="page" value="profilo" scope="request"/>
+<c:set var="page" value="Profilo" scope="request"/>
 <!DOCTYPE html>
 
 <html>
@@ -27,7 +27,11 @@
                 
                 <div id="imgFormProfilo">
                     <img src="${utenteLoggato.getUrlFotoProfilo()}" alt="Foto Profilo">
+
+                    <div><a href="Login?deleteUser=delete">Cancella Utente</a></div>
+                    
                 </div>
+                
                 <form action="Profilo" method="post" id="formProfilo">
                     <div class="singoloCampo">    
                         <label for="nome">Nome:</label>

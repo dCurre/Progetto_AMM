@@ -16,12 +16,13 @@
         <div class="persona">
             <a href="Bacheca?utenteBacheca=${i}"><img src='${listaUtenti.getUserById(i).getUrlFotoProfilo()}'> ${listaUtenti.getUserById(i).getNome()} ${listaUtenti.getUserById(i).getCognome()}</a>
         </div>
-    </c:forEach>  
+    </c:forEach> 
     
     <div id="titleGruppo" class="sezioneTitle">Group List</div>
-    <c:forEach var="i" begin="0" end="${listaGruppi.getArrayListSize()-1}">
-        <div class="gruppo"><img src='../${listaGruppi.getGroupById(i).getUrlFotoGruppo()}'> ${listaGruppi.getGroupById(i).getNome()} </div>
-    </c:forEach>
-        
+    <c:forEach items="${appartenenza}" var="i">
+        <div class="persona">
+            <a href="Bacheca?gruppo=${i}"><img src='${listaGruppi.getGruppoById(i).getUrlFotoGruppo()}'> ${listaGruppi.getGruppoById(i).getNome()}
+        </div>
+    </c:forEach> 
         
 </div>

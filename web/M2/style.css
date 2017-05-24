@@ -369,6 +369,10 @@ form button{
     position: relative;
     left: 85%;
 }
+.cancellaUtente
+{
+    float: left;
+}
 /* PROFILO */
 #datiFormProfilo
 {
@@ -463,6 +467,7 @@ form button{
 #loginError
 {
     width: 300px;
+    text-align: center;
 }
 /* INIZIO RESPONSIVE MIN 1024px */
 @media screen and (min-width: 1024px)

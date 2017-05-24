@@ -33,13 +33,7 @@
         </div>
         <button type="submit">Invia</button>
     </form>
-        
-    <c:if test="${ok == 1}">
-        <div class="validDataWarning"> ${resultTextPost} </div>
-        </c:if>  
-    <c:if test="${ok == 0}">
-        <div class="invalidDataWarning">${resultTextPost} </div>
-    </c:if>  
+    
 </div>
     
             

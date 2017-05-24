@@ -5,6 +5,7 @@
  */
 package amm.nerdbook.Classi;
 
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -35,67 +36,78 @@ public class GruppoFactory
     }
     //Fine gestione DB
     
-    private ArrayList<Gruppo> groupList = new ArrayList<>();
-    
-    public GruppoFactory()//costruttore
-    {
-        //creo degli utenti e li aggiungo in lista
-        
-        //utente1
-        Gruppo group0 = new Gruppo(0,"Gruppo A","img/fotoProfilo1.jpg");
-        groupList.add(group0);
-        
-        //utente2
-        Gruppo group1 = new Gruppo(1,"Gruppo B","img/fotoProfilo1.jpg");
-        groupList.add(group1);
-        
-        //utente3
-        Gruppo group2 = new Gruppo(2,"Gruppo C","img/fotoProfilo1.jpg");
-        groupList.add(group2);
-         
+    public GruppoFactory(){
     }
     
-    public Gruppo getGroupById(int id)
+    public ArrayList<Integer> getListaGruppiByUserId(int id)
     {
-        for (Gruppo groupTemp : this.groupList) 
-        {
-            if (groupTemp.getId() == id)
-                return groupTemp;
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "dCurre", "1234");
+            
+            String query = "select followed from gruppi_appartenenza " + "where follower = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, id);
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+            ArrayList<Integer> arrayList = new ArrayList<>();
+            
+            // ciclo sulle righe restituite
+            while(res.next())
+            {
+                Integer current = res.getInt("followed");
+                arrayList.add(current);
+            }
+            
+            stmt.close();
+            conn.close();
+            return arrayList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            
         }
         return null;
     }
-    public int getIdByName(String name)
+    public Gruppo getGruppoById(int id)
     {
-        for(Gruppo groupTemp : this.groupList)
-        {
-            if(groupTemp.getNome().equals(name))
-                return groupTemp.getId();
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "dCurre", "1234");
+            
+            String query = "select * from gruppi " + "where id = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, id);
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            if(res.next())
+            {
+                Gruppo current = new Gruppo();
+                current.setId(res.getInt("id"));
+                current.setNome(res.getString("nome"));
+                current.setUrlFotoGruppo(res.getString("urlfotogruppo"));
+                
+                stmt.close();
+                conn.close();
+                return current;
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return -1;
-    }
-    public ArrayList<String> getNomeGruppo() //restituisce un array con tutti i nomi
-    {
-        ArrayList<String> arrayTempNomi = new ArrayList<>();
-        for(Gruppo temp : this.groupList)
-            arrayTempNomi.add(temp.getNome());
-        
-        return arrayTempNomi;
-    }
-    public ArrayList<String> getFotoGruppo() //restituisce un array con tutti i nomi
-    {
-        ArrayList<String> arrayFoto = new ArrayList<>();
-        for(Gruppo temp : this.groupList)
-            arrayFoto.add(temp.getUrlFotoGruppo());
-        
-        return arrayFoto;
-    }
-    public int getArrayListSize()
-    {
-        int count = 0;
-        
-        for(Gruppo groupTemp : this.groupList)
-            count++;
-        
-        return count;
+        return null;
     }
 }

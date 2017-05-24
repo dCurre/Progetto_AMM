@@ -40,13 +40,13 @@ public class Login extends HttpServlet {
         //IMPOSTO LA CONNECTION STRING PER OGNI FACTORY
         UtenteFactory.getInstance().setConnectionString(dbConnection);
         PostFactory.getInstance().setConnectionString(dbConnection);
+        GruppoFactory.getInstance().setConnectionString(dbConnection);
     }
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
     {
         response.setContentType("text/html;charset=UTF-8");
         //Apero la sessione
         HttpSession session = request.getSession();
-        
         
         //Se è impostato, distrugge la sessione
         if(request.getParameter("logout")!=null)

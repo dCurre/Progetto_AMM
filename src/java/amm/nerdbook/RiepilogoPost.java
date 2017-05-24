@@ -60,7 +60,11 @@ public class RiepilogoPost extends HttpServlet {
                     Post newPost = new Post();
                     newPost.setUser(userID);
                     newPost.setContent(request.getParameter("text"));
-                    newPost.setImg(request.getParameter("img"));
+                    if(request.getParameter("img").equals(""))
+                        newPost.setImg(null);
+                    else
+                        newPost.setImg(request.getParameter("img"));
+                    
                     newPost.setRicevente(utenteBacheca);
                     
                     listaPost.addPostIntoDatabase(newPost);

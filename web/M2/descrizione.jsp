@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<c:set var="page" value="descrizione" scope="request"/>
+<c:set var="page" value="Descrizione" scope="request"/>
 <!DOCTYPE html>
 
 <html>
@@ -9,7 +9,6 @@
     </head>
     <body>
         <!--Barra di navigazione tra le pagine del sito + logo + utente logout -->
-        <c:set var="page" value="descrizione" scope="request"/>
         <jsp:include page="ripetuti/header.jsp"/>
         
         <div id="divBody">

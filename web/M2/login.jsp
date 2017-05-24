@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<c:set var="page" value="login" scope="request"/>
+<c:set var="page" value="Login" scope="request"/>
 <!DOCTYPE html>
 
 <html>
@@ -14,10 +14,9 @@
             </div>
         </header>
         <div id="divBody">
-            ${boh}
             <div id="formLogin">
                 <c:if test="${invalidData == true}">
-                    <div class="invalidDataWarning" id="loginError">ERRORE: dati inseriti non corretti!</div>
+                    <div class="invalidDataWarning" id="loginError">Dati non corretti o inesistenti</div>
                 </c:if>
                 <form action="Login" method="post">
                     <div class="inputLogin">

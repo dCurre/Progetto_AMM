@@ -11,7 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 /**
  *
  * @author davide
@@ -83,7 +82,7 @@ public class PostFactory {
         }
         return null;
     }    
-    public int addPostIntoDatabase(Post post)
+    public void addPostIntoDatabase(Post post)
     {
         try{
             Connection conn = DriverManager.getConnection(connectionString,"dCurre","1234");
@@ -106,11 +105,9 @@ public class PostFactory {
             stmt.close();
             conn.close();
             
-            return 1;
-            
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return 2;
+        
     } 
 }

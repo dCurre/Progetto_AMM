@@ -19,25 +19,7 @@ public class Utente
     private String urlFotoProfilo;
     private String frasePersonale;
     
-    public Utente()//costruttore che setta tutto a vuoto o 0
-    {
-        id = 0;
-        nome = "";
-        cognome = "";
-        email = "";
-        password = "";
-        urlFotoProfilo = "";
-        frasePersonale = "";
-    }
-    public Utente(int id, String nome, String cognome, String email, String password, String urlFotoProfilo, String fraseP)
-    {
-        this.id = id;
-        this.nome = nome;
-        this.cognome = cognome;
-        this.email = email;
-        this.password = password;
-        this.urlFotoProfilo = urlFotoProfilo;
-        this.frasePersonale = fraseP;
+    public Utente(){    
     }
     
     /**

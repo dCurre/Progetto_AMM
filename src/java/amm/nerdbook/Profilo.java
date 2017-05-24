@@ -54,6 +54,12 @@ public class Profilo extends HttpServlet {
             
             if(utenteLoggato != null)
             {   
+                if(request.getParameter("deleteUser") != null && request.getParameter("deleteUser").equals("delete"))
+                {
+                    listaUtenti.deleteUserFromDatabase(userID);
+                    request.getRequestDispatcher("Login?logout=1").forward(request, response); //manda al profilo
+                }
+                
                 if(request.getParameter("confPass") != null && request.getParameter("pass").equals(request.getParameter("confPass")))
                 {
                     utenteLoggato.setNome(request.getParameter("name"));

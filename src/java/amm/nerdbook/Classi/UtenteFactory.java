@@ -22,8 +22,6 @@ public class UtenteFactory {
         return singleton;
     }
     
-    //private ArrayList<Utente> userList = new ArrayList<>();
-    
     //Gestione DB
     private String connectionString;
     
@@ -57,7 +55,7 @@ public class UtenteFactory {
             ResultSet res = stmt.executeQuery();
 
             // ciclo sulle righe restituite
-            while(res.next())
+            if(res.next())
             {
                 Utente current = new Utente();
                 current.setId(res.getInt("id"));
@@ -149,5 +147,58 @@ public class UtenteFactory {
             
         }
         return null;
+    }
+    public int deleteUserFromDatabase(int id)
+    {
+        if(this.deleteUserPostsFromDatabase(id))
+        {
+            try{
+              Connection conn = DriverManager.getConnection(connectionString,"dCurre","1234");
+
+              String query = "delete from utenti " + "where id = ?";
+
+              // Prepared Statement
+              PreparedStatement stmt = conn.prepareStatement(query);
+
+              // Si associano i valori
+              stmt.setInt(1, id);
+
+              //update della table
+              stmt.executeUpdate();
+
+              //chiudo
+              stmt.close();
+              conn.close();
+              return 1;
+          } catch (SQLException e) {
+              e.printStackTrace();
+          }
+        }
+        return 0;
+    } 
+    public boolean deleteUserPostsFromDatabase(int id)
+    {
+        try{
+            Connection conn = DriverManager.getConnection(connectionString,"dCurre","1234");
+           
+            String query = "delete from posts " + "where author = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, id);
+            
+            //update della table
+            stmt.executeUpdate();
+            
+            //chiudo
+            stmt.close();
+            conn.close();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

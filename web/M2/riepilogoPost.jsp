@@ -6,8 +6,7 @@
 
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
-<c:set var="page" value="riepilogoPost" scope="request"/>
-<c:set var="log" value="${userID}" scope="request"/>
+<c:set var="page" value="Riepilogo Post" scope="request"/>
 <!DOCTYPE html>
 
 <html>
@@ -32,9 +31,8 @@
                     </div>
                 </div>
                 <c:if test="${ok == 1}">
-                    Messaggio inviato!
-                    ${prova}
-                    <a href="Bacheca?utenteBacheca=${userID}">Torna alla bacheca</a>
+                    Messaggio inviato, 
+                    <a href="Bacheca?utenteBacheca=${userID}">torna alla bacheca</a>
                 </c:if>
                 <c:if test="${ok == null}">
                     <form action="RiepilogoPost?utenteBacheca=${utenteBacheca}&addPost=1&text=${testo}&img=${immagine}" method="post">
@@ -43,7 +41,9 @@
                                 ${testo}
                             </div>
                             <div>
-                                <img src="${immagine}" alt="Immagine Post"> ${immagine}
+                                <c:if test="${immagine != ''}">
+                                    <img src="${immagine}" alt="Immagine Post"> ${immagine}
+                                </c:if>
                             </div>
                             <button type="submit">Conferma invio</button>
                         </div>
