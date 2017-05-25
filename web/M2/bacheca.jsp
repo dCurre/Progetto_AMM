@@ -13,8 +13,6 @@
         <div id="divBody">
             <jsp:include page="ripetuti/leftSideBar.jsp"/>
             <div id="divContent">
-                
-            ${boh}
                 <jsp:include page="ripetuti/post.jsp"/>
             </div>
         </div>
