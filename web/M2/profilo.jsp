@@ -27,7 +27,7 @@
                 <div id="imgFormProfilo">
                     <img src="${utenteLoggato.getUrlFotoProfilo()}" alt="Foto Profilo">
 
-                    <div><a id="deleteUser" href="Login?deleteUser=delete">Cancellati da NerdBook</a></div>
+                    <div><a id="deleteUser" href="Profilo?deleteUser=delete">Cancellati da NerdBook</a></div>
                     
                 </div>
                 

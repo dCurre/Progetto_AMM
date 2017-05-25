@@ -51,14 +51,18 @@ public class Profilo extends HttpServlet {
             Utente utenteLoggato = UtenteFactory.getInstance().getUserById(userID);            
             UtenteFactory listaUtenti = UtenteFactory.getInstance(); //lista di utenti
             GruppoFactory listaGruppi = GruppoFactory.getInstance(); //lista dei gruppi
+            PostFactory listaPost = PostFactory.getInstance(); //lista dei gruppi
             
             if(utenteLoggato != null)
             {   
                 if(request.getParameter("deleteUser") != null && request.getParameter("deleteUser").equals("delete"))
                 {
-                    listaUtenti.deleteUserFromDatabase(userID);
-                    request.getRequestDispatcher("Login?logout=1").forward(request, response); //manda al profilo
+                    if(listaUtenti.deleteUserFromDatabase(userID))
+                        request.getRequestDispatcher("Login?logout=1&deleted=true").forward(request, response); //manda al logout con messaggio positivo
+                    else
+                        request.getRequestDispatcher("Login?logout=1&deleted=false").forward(request, response); //manda al logout con messaggio negativo
                 }
+                
                 
                 if(request.getParameter("confPass") != null && request.getParameter("pass").equals(request.getParameter("confPass")))
                 {

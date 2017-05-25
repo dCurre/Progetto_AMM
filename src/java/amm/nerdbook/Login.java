@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
     
     @Override
     public void init() {
-        String dbConnection = "jdbc:derby://localhost:1527/ammdb";
+        String dbConnection = "jdbc:derby:" + this.getServletContext().getRealPath("/") + DB_BUILD_PATH; //"jdbc:derby://localhost:1527/ammdb";
         try {
             Class.forName(JDBC_DRIVER);
         } catch (ClassNotFoundException ex) {
@@ -52,6 +52,13 @@ public class Login extends HttpServlet {
         if(request.getParameter("logout")!=null)
         {
             session.invalidate();
+            if(request.getParameter("deleted") != null && request.getParameter("deleted").equals("true"))
+                request.setAttribute("deleteConfirm", true);
+            else
+            {
+                if(request.getParameter("deleted") != null && request.getParameter("deleted").equals("true"))
+                    request.setAttribute("deleteConfirm", false);
+            }
             request.getRequestDispatcher("/M2/login.jsp").forward(request, response);
             return;
         }

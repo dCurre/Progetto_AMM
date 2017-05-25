@@ -148,57 +148,91 @@ public class UtenteFactory {
         }
         return null;
     }
-    public int deleteUserFromDatabase(int id)
+    public boolean deleteUserFromDatabase(int id)
     {
-        if(this.deleteUserPostsFromDatabase(id))
+        PostFactory postList = PostFactory.getInstance();
+        if(postList.deleteUserPostsFromDatabase(id) && this.deleteAmicizieFromDatabase(id))
         {
-            try{
-              Connection conn = DriverManager.getConnection(connectionString,"dCurre","1234");
+            try
+            {
+                Connection conn = DriverManager.getConnection(connectionString,"dCurre","1234");
 
-              String query = "delete from utenti " + "where id = ?";
+                String query = "delete from utenti " + "where id = ?";
 
-              // Prepared Statement
-              PreparedStatement stmt = conn.prepareStatement(query);
+                // Prepared Statement
+                PreparedStatement stmt = conn.prepareStatement(query);
 
-              // Si associano i valori
-              stmt.setInt(1, id);
+                // Si associano i valori
+                stmt.setInt(1, id);
 
-              //update della table
-              stmt.executeUpdate();
+                //update della table
+                stmt.executeUpdate();
 
-              //chiudo
-              stmt.close();
-              conn.close();
-              return 1;
-          } catch (SQLException e) {
-              e.printStackTrace();
+                //chiudo
+                stmt.close();
+                conn.close();
+              return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
           }
         }
-        return 0;
+        return false;
     } 
-    public boolean deleteUserPostsFromDatabase(int id)
+    public boolean deleteAmicizieFromDatabase(int id)
+    {
+        if(this.deleteFollowedFromDatabase(id) && this.deleteFollowerFromDatabase(id))
+            return true;
+        else
+            return false;
+    } 
+    public boolean deleteFollowerFromDatabase(int id)
     {
         try{
-            Connection conn = DriverManager.getConnection(connectionString,"dCurre","1234");
-           
-            String query = "delete from posts " + "where author = ?";
-            
-            // Prepared Statement
-            PreparedStatement stmt = conn.prepareStatement(query);
-            
-            // Si associano i valori
-            stmt.setInt(1, id);
-            
-            //update della table
-            stmt.executeUpdate();
-            
-            //chiudo
-            stmt.close();
-            conn.close();
-            return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+          Connection conn = DriverManager.getConnection(connectionString,"dCurre","1234");
+
+          String query = "delete from amicizie " + "where follower= ?";
+
+          // Prepared Statement
+          PreparedStatement stmt = conn.prepareStatement(query);
+
+          // Si associano i valori
+          stmt.setInt(1, id);
+
+          //update della table
+          stmt.executeUpdate();
+
+          //chiudo
+          stmt.close();
+          conn.close();
+          return true;
+      } catch (SQLException e) {
+          e.printStackTrace();
+      }
         return false;
-    }
+    } 
+    public boolean deleteFollowedFromDatabase(int id)
+    {
+        try{
+          Connection conn = DriverManager.getConnection(connectionString,"dCurre","1234");
+
+          String query = "delete from amicizie " + "where followed = ?";
+
+          // Prepared Statement
+          PreparedStatement stmt = conn.prepareStatement(query);
+
+          // Si associano i valori
+          stmt.setInt(1, id);
+
+          //update della table
+          stmt.executeUpdate();
+
+          //chiudo
+          stmt.close();
+          conn.close();
+          return true;
+      } catch (SQLException e) {
+          e.printStackTrace();
+      }
+        return false;
+    } 
 }

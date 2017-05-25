@@ -15,9 +15,18 @@
         </header>
         <div id="divBody">
             <div id="formLogin">
-                <c:if test="${invalidData == true}">
-                    <div class="invalidDataWarning" id="loginError">Dati non corretti o inesistenti</div>
-                </c:if>
+                <c:choose>   
+                    <c:when test="${invalidData == true}">
+                        <div class="invalidDataWarning" id="loginError">Dati non corretti o inesistenti</div>
+                    </c:when>
+                    <c:when test="${deleteConfirm == true}">
+                        <div class="validDataWarning" id="loginError">Account cancellato con successo</div>
+                    </c:when>
+                    <c:when test="${deleteConfirm == false && deleteConfirm != null}">
+                        <div class="invalidDataWarning" id="loginError">Account non cancellato, e' stato riscontrato un errore</div>
+                    </c:when>
+                </c:choose>
+                
                 <form action="Login" method="post">
                     <div class="inputLogin">
                         <label for="user">Username</label>

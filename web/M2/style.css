@@ -374,9 +374,14 @@ form button{
     position: relative;
     left: 85%;
 }
-.deleteUser
+#deleteUser
 {
-    
+    font-weight: bold;
+    color: green;
+}
+#deleteUser:visited
+{
+    color: grey;
 }
 /* PROFILO */
 #datiFormProfilo

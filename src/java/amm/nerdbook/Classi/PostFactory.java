@@ -39,9 +39,7 @@ public class PostFactory {
             return this.connectionString;
     }
     //Fine gestione DB
-    
-    
-    private ArrayList<Post> postList = new ArrayList<Post>();
+
 
     public PostFactory(){
     }
@@ -154,5 +152,90 @@ public class PostFactory {
             e.printStackTrace();
         }
         return false;
-    } 
+    }
+    public boolean deleteUserPostsFromDatabase(int id)
+    {
+        PostFactory postList = PostFactory.getInstance();
+        if(postList.deleteRecivedPostsByUserFromDatabase(id) && postList.deleteAppartenenzaGruppiFromDatabase(id) && postList.deleteSentPostsFromDatabase(id))
+            return true;
+        else
+            return false;
+    }
+    public boolean deleteRecivedPostsByUserFromDatabase(int id)
+    {
+        try{
+            Connection conn = DriverManager.getConnection(connectionString,"dCurre","1234");
+           
+            String query = "delete from posts " + "where ricevente = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, id);
+            
+            //update della table
+            stmt.executeUpdate();
+            
+            //chiudo
+            stmt.close();
+            conn.close();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            
+        }
+        return false;
+    }
+    public boolean deleteSentPostsFromDatabase(int id)
+    {
+        try{
+            Connection conn = DriverManager.getConnection(connectionString,"dCurre","1234");
+           
+            String query = "delete from posts " + "where author = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, id);
+            
+            //update della table
+            stmt.executeUpdate();
+            
+            //chiudo
+            stmt.close();
+            conn.close();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            
+        }
+        return false;
+    }
+    public boolean deleteAppartenenzaGruppiFromDatabase(int id)
+    {
+        try{
+            Connection conn = DriverManager.getConnection(connectionString,"dCurre","1234");
+           
+            String query = "delete from gruppi_appartenenza " + "where follower = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, id);
+            
+            //update della table
+            stmt.executeUpdate();
+            
+            //chiudo
+            stmt.close();
+            conn.close();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();   
+        }
+        return false;
+    }
 }
