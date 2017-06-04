@@ -7,6 +7,7 @@ package amm.nerdbook.Classi;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author davide
@@ -235,4 +236,46 @@ public class UtenteFactory {
       }
         return false;
     } 
+    
+    public List getUserList(String nominativo) {
+        List<Utente> listaUtenti = new ArrayList<>();
+        
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString,"dCurre","1234");
+
+            String query = "SELECT * FROM utenti where nome like ? or cognome like ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setString(1, "%" + nominativo + "%");
+            stmt.setString(2, "%" + nominativo + "%");
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            while (res.next()) {
+                Utente current = new Utente();
+                current.setId(res.getInt("id"));
+                current.setNome(res.getString("nome"));
+                current.setCognome(res.getString("cognome"));
+                current.setEmail(res.getString("email"));
+                current.setPassword(res.getString("password"));
+                current.setUrlFotoProfilo(res.getString("urlfotoprofilo"));
+                current.setFrasePersonale(res.getString("frasepersonale"));
+                
+                listaUtenti.add(current);
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return listaUtenti;
+    }
 }
