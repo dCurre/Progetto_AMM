@@ -31,7 +31,7 @@ public class Filter extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+         
         
         String command = request.getParameter("cmd");
         if (command != null) 

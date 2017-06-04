@@ -2,7 +2,7 @@ function createElement(utente){
 
     var img = $("<img>")
             .attr("alt","Foto Profilo")
-            .attr("src",utente.urlFotoProfilo)
+            .attr("src",utente.urlFotoProfilo);
     
     var link = $("<a>")
             .attr("href", "Bacheca?utenteBacheca="+utente.id)
