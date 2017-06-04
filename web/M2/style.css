@@ -116,9 +116,18 @@ li.indice:last-child>a:hover
     background-color: #98F6C0;
     border-radius: 15px 15px 15px 15px;
 }
-#searchText
+#searchBar
 {
-    display:none;
+    width: 100%;
+    padding-bottom: 10px;
+}
+#searchBar input
+{
+    width: 65%;
+}
+#searchBar button
+{
+    width: 25%;
 }
 .sezioneTitle
 {
