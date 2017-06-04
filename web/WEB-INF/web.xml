@@ -16,6 +16,10 @@
         <servlet-name>RiepilogoPost</servlet-name>
         <servlet-class>amm.nerdbook.RiepilogoPost</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Filter</servlet-name>
+        <servlet-class>amm.nerdbook.Filter</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Bacheca</servlet-name>
         <url-pattern>/M2/Bacheca</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>RiepilogoPost</servlet-name>
         <url-pattern>/M2/RiepilogoPost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Filter</servlet-name>
+        <url-pattern>/M2/Filter</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
