@@ -11,10 +11,11 @@
         <!--Barra di navigazione tra le pagine del sito + logo + utente logout -->
         <jsp:include page="ripetuti/header.jsp"/>
         
+             
         <div id="divBody">
             
-            <jsp:include page="ripetuti/leftSideBar.jsp"/>
-             
+        <jsp:include page="ripetuti/leftSideBar.jsp"/>
+        
             <div id='datiFormProfilo'>
                 
                 <c:if test="${nullData == true}">

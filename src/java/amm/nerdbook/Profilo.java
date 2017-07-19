@@ -66,12 +66,9 @@ public class Profilo extends HttpServlet {
                 
                 if(request.getParameter("confPass") != null && request.getParameter("pass").equals(request.getParameter("confPass")))
                 {
-                    utenteLoggato.setNome(request.getParameter("name"));
-                    utenteLoggato.setCognome(request.getParameter("surname"));
-                    utenteLoggato.setUrlFotoProfilo(request.getParameter("url"));
-                    utenteLoggato.setEmail(request.getParameter("email"));
-                    utenteLoggato.setFrasePersonale(request.getParameter("frase"));
-                    utenteLoggato.setPassword(request.getParameter("pass"));
+                    listaUtenti.refreshUserDataById(userID, request.getParameter("name"), request.getParameter("surname"), request.getParameter("email"),
+                            request.getParameter("pass"), request.getParameter("url"), request.getParameter("frase"));
+                    
                     request.setAttribute("wrongPass", false);
                     request.setAttribute("nullData", false);
                 }

@@ -23,11 +23,14 @@
             </div>
         </c:forEach> 
     </div>
-    <div id="titleGruppo" class="sezioneTitle">Group List</div>
-    <c:forEach items="${appartenenza}" var="i">
-        <div class="persona">
-            <a href="Bacheca?gruppoBacheca=${i}"><img src='${listaGruppi.getGruppoById(i).getUrlFotoGruppo()}'> ${listaGruppi.getGruppoById(i).getNome()}</a>
-        </div>
-    </c:forEach> 
+    
+    <div id="groupList">
+        <div id="titleGruppo" class="sezioneTitle">Group List</div>
+        <c:forEach items="${appartenenza}" var="i">
+            <div class="gruppo">
+                <a href="Bacheca?gruppoBacheca=${i}"><img src='${listaGruppi.getGruppoById(i).getUrlFotoGruppo()}'> ${listaGruppi.getGruppoById(i).getNome()}</a>
+            </div>
+        </c:forEach> 
+    </div>
         
 </div>

@@ -115,6 +115,37 @@ public class UtenteFactory {
         }
         return -1;
     }
+    public void refreshUserDataById(int id, String nome,String cognome,String email,String password,String url,String frase)
+    {
+        
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "dCurre", "1234");
+            
+            String query = "UPDATE utenti " + "SET nome = ?, email = ?, password = ?, urlfotoprofilo = ?, frasepersonale = ?, cognome = ?" + "where id = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            
+            stmt.setString(1, nome);
+            stmt.setString(2, email);
+            stmt.setString(3, password);
+            stmt.setString(4, url);
+            stmt.setString(5, frase);
+            stmt.setString(6, cognome);
+            stmt.setInt(7, id);
+            
+            // Esecuzione query
+            stmt.executeUpdate();
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     public ArrayList<Integer> getListaAmiciByUserId(int id)
     {
         try {
@@ -257,7 +288,8 @@ public class UtenteFactory {
             ResultSet res = stmt.executeQuery();
 
             // ciclo sulle righe restituite
-            while (res.next()) {
+            while (res.next())
+            {
                 Utente current = new Utente();
                 current.setId(res.getInt("id"));
                 current.setNome(res.getString("nome"));
